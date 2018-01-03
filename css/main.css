@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100% !important;
+    height: 100%;
+}
+
+body{
+    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+}
+
+header {
+    background: #26bf80;
+    bottom: 0;
+    height: 50px;
+}
+
+footer {
+    background: #26bf80;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    clear: left;
+    position: fixed;
+    text-align: center;
+}
+
+main{
+    height: 100%;
+    background-image: url('../assets/paper-full.jpg');
+}
+
+.container {
+    width: 80%;
+    margin:auto;
+    height: inherit;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .container {
+        width: 100%;
+    }
+}
+
+nav > ul li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.decoration-clear{
+    text-decoration: none;
+}
+
+.icon-vertical-align{
+    padding: 10px
+}
+
+.icon-right-section{
+    float: right;
+    padding-right: 6.5%;
+}
+
+.icon-left-section{
+    float: left;
+    padding-left: 6.5%;
+}
+
+.active-user{
+    display: inline-block;
+    padding: 16px;
+    /* padding-left: 75%; */
+}
