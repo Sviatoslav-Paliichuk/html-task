@@ -47,7 +47,7 @@ main{
 .content{
     margin: auto;
     width: 100%;
-    background-color: red;
+    /* background-color:lightblue; */
 }
 
 /* @media screen and (max-width: 699px) and (min-width: 520px) {
@@ -96,10 +96,9 @@ nav > ul li{
 .column {
     float: left;
     width: 30%;
-    /* padding: 20px; */
+    /* padding: 5px; */
     /* margin: 10px; */
     /* box-sizing: content-box; */
-    border: 1px solid red;
     /* height: 300px; Should be removed. Only for demonstration */
 }
 
@@ -115,7 +114,7 @@ nav > ul li{
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .column {
         width: 50%;
     }
@@ -129,8 +128,46 @@ nav > ul li{
 .column-content-rating{
     width: 100%;
     height: 10%;
+    background-color: black;
+    opacity: 0.5;
+    position: relative;
+    margin-top: -32px;
 }
 
 img{
     width: 100%;
+}
+
+hr{
+    width: 90%;
+    color:lightcyan;
+    margin: auto;
+}
+
+#item-price{
+    font-size: 36px;
+    float: left;
+    padding-left: 20px;
+    margin: 10px 0px 10px 0px;    
+}
+
+.item-description, .item-header{
+    padding: 15px;
+}
+
+#show-more {
+    background-color: #26bf80;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0px;    
 }

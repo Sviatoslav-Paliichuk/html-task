@@ -5,12 +5,16 @@
 .rating {
     unicode-bidi: bidi-override;
     direction: rtl;
-    text-align: center;
+    text-align: left;
+    color: white;
+    padding: 0px 0px 0px 15px;
   }
   .rating > span {
     display: inline-block;
     position: relative;
-    width: 1.1em;
+    width: 1.2em;
+    font-size: 20px;
+    font-weight: bold;
   }
   .rating > span:hover,
   .rating > span:hover ~ span {
@@ -21,5 +25,9 @@
      content: "\2605";
      position: absolute;
      left: 0; 
-     color: gold;
+     color: yellow;
+  }
+
+  .active{
+    color: white;
   }
