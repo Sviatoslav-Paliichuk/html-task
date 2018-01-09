@@ -117,23 +117,7 @@ label, #login, #password {
     border-radius: 5px;
 }
 
-/* .group-container input[type=text]{
-    padding-left: 40px;
-}
-
-.group-container{
-    position: relative;
-}
-
-.group-container i{
-    position: absolute;
-    left: 0;
-    top: 8px;
-    padding: 8px 9px;
-    color: #aaa;
-} */
-
-input[type=text]{
+input[type=text], input[type=password]{
     width:100%;
     height: 50px;
     padding: 15px;
@@ -143,15 +127,19 @@ input[type=text]{
     margin:8px 0;
     outline:none;
     padding:8px;
-    transition:.3s;
   }
   
   input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
+    border-color: #26bf80;
+    box-shadow:0 0 8px 0  #26bf80;
+  }
+
+  input[type=text]:invalid, input[type=password]:invalid{
+    border-color: red;
+    box-shadow:0 0 8px 0  red;
   }
   
-  .inputWithIcon input[type=text]{
+  .inputWithIcon input[type=text], .inputWithIcon input[type=password]{
     padding-left:10px;
   }
   
@@ -167,11 +155,14 @@ input[type=text]{
     margin-top: -40px;
     padding-right: 10px;
     color: #aaa;
-    transition: .3s;
   }
   
-  .inputWithIcon input[type=text]:focus + i{
-    color:dodgerBlue;
+  .inputWithIcon input[type=text]:focus + i, .inputWithIcon input[type=password]:focus + i{
+    color: #26bf80;
+  }
+
+  .inputWithIcon input[type=text]:invalid + i, .inputWithIcon input[type=password]:invalid + i{
+    color: red;
   }
   
   .inputWithIcon.inputIconBg i{
@@ -181,7 +172,7 @@ input[type=text]{
     border-radius:4px 0 0 4px;
   }
   
-  .inputWithIcon.inputIconBg input[type=text]:focus + i{
+  .inputWithIcon.inputIconBg input[type=text]:focus + i, .inputWithIcon.inputIconBg input[type=password]:focus + i{
     color:#fff;
-    background-color:dodgerBlue;
+    background-color: #26bf80;
   }
