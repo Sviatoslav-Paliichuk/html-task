@@ -36,14 +36,14 @@ main {
     background-image: url('../assets/paper-full.jpg');
 }
 
-.container {
+.content {
     width: 80%;
     margin: auto;
     height: inherit;
     background: rgba(0, 0, 0, 0.5);
 }
 
-.content {
+.content-container {
     margin: auto;
     width: 100%;
 }
@@ -84,13 +84,13 @@ nav>ul li {
     padding: 16px;
 }
 
-.column {
+.product-card {
     display: flex;
     padding: 15px 10px 0px 5px;
     width: 100%;
 }
 
-.column-container {
+.product-card__flex-container {
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -99,31 +99,31 @@ nav>ul li {
 }
 
  @media all and (min-width: 50em) {
-    .column {
+    .product-card {
         width: 33.33%;
     }
-    .container {
+    .content {
         width: 80%;
     }
 }
 
 
 @media all and (max-width: 95em) {
-    .container {
+    .content {
         width: 100%;
     }
-    .column{
+    .product-card{
         width: 50%;
     }
 }
 
 @media all and (max-width: 700px) {
-    .column {
+    .product-card {
         width: 100%;
     }
 }
 
-.row {
+.products-list {
     width: 94%;
     margin: auto;
     display: flex;
@@ -131,13 +131,13 @@ nav>ul li {
     padding-top: 50px;
 }
 
-.row:after {
+.products-list:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.column-content {
+.product-card__image {
     width: 100%;
 }
 
@@ -165,7 +165,7 @@ hr {
     margin: 10px 0px 15px 0px;
 }
 
-.item-description, .item-header {
+.product-card__text, .product-card__title {
     padding: 15px;
 }
 
@@ -186,7 +186,7 @@ hr {
     margin: 10px 10px 15px 0px;
 }
 
-.description-section {
+.product-card__description {
     background-color: white;
 }
 

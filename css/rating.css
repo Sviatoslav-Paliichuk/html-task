@@ -2,36 +2,37 @@
 	Ratings Stars
 	(with as little code as possible)
 */
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    text-align: left;
-    color: white;
-    padding: 0px 0px 0px 15px;
-  }
-  .rating > span {
-    display: inline-block;
-    position: relative;
-    width: 1.2em;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .rating > span:hover,
-  .rating > span:hover ~ span {
-    color: transparent;
-  }
-  /* .rating > span:hover:before,
-  .rating > span:hover ~ span:before {
-     content: "\2605";
-     position: absolute;
-     left: 0; 
-     color: yellow;
-  } */
 
-  .rating > span:hover:before,
-  .rating > span:nth-child(2) ~ span:before {
-     content: "\2605";
-     position: absolute;
-     left: 0; 
-     color: yellow;
-  }
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  color: white;
+  padding: 0px 0px 0px 15px;
+}
+
+.rating>span {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rating>span:hover, .rating>span:hover~span {
+  color: transparent;
+}
+
+.rating>span:hover:before, .rating>span:hover~span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: yellow;
+}
+
+.rating>span:hover:before, .rating>span:nth-child(2)~span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: yellow;
+}
