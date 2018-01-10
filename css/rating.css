@@ -20,8 +20,16 @@
   .rating > span:hover ~ span {
     color: transparent;
   }
-  .rating > span:hover:before,
+  /* .rating > span:hover:before,
   .rating > span:hover ~ span:before {
+     content: "\2605";
+     position: absolute;
+     left: 0; 
+     color: yellow;
+  } */
+
+  .rating > span:hover:before,
+  .rating > span:nth-child(2) ~ span:before {
      content: "\2605";
      position: absolute;
      left: 0; 
