@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/rating.css">
+    <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -30,6 +31,21 @@
     <main>
         <div class="content">
             <div class="content-container">
+                <div class="product-filter">
+                    <div class="product-filter__container">
+                        <input type="button" id="filter" value="Filter options" onclick="showFilter()">
+                        <input type="text" id="search" name="" placeholder="Filter by text...">
+                    </div>
+                </div>
+                <div class="product-filter__modal">
+                    <div class="tooltip-wrapper">
+                        <p class="tooltip">
+                            <strong>It's tooltip with a border!</strong>
+                            <br /> Ipsum dolor sit amet, consectetur adipisicing elit. Omnis quos aut dolores harum repellat quaerat
+                            amet. Vitae blanditiis accusamus expedita!
+                        </p>
+                    </div>
+                </div>
                 <div class="products-list" id="c-place">
                     <div class="product-card">
                         <div class="product-card__flex-container">
@@ -74,11 +90,15 @@
         window.onload = function () {
             for (var i = 0; i < 8; i++) {
                 if (i == 0) {
-                   document.getElementById("c-place").innerHTML += INCtemplate;
+                    //    document.getElementById("c-place").innerHTML += INCtemplate;
                 }
                 document.getElementById("c-place").innerHTML += template;
             }
-        } 
+        }
+
+        function showFilter() {
+
+        }
     </script>
 </body>
 
