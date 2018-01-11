@@ -60,7 +60,7 @@
     position: absolute;
     margin-top: 65px;
     z-index: 9999;
-    opacity: 0.5; /* default */
+    opacity: 1; /* default */
 }
 
 h1:hover + .tooltip-wrapper {
@@ -99,3 +99,4 @@ h1:hover + .tooltip-wrapper {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
 }
+
