@@ -1,0 +1,42 @@
+.customized-dropdown-wrap {
+    height: 40px;
+    width: 240px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.customized-dropdown-wrap:after {
+    content: "┏";
+    padding: 2px 0px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    width: 10%;
+    font-size: 20px;
+    transform: rotate(-135deg);
+    height: 100%;
+    pointer-events: none;    
+}
+
+.customized-dropdown {
+    height: 40px;
+    width: 100%;
+    padding: 5px 15px;
+    background-color: #3b8d82;
+    border: 0;
+    color: white;
+    outline: none;
+    font-size: 16px;
+    -webkit-appearance: none; /* for webkit browsers */
+    -moz-appearance: none; /* for firefox */
+    appearance: none; /* for modern browsers */
+}
+
+/* remove default caret for ie */
+.customized-dropdown::-ms-expand {
+   display:none;
+}
