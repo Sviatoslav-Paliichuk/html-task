@@ -1,0 +1,106 @@
+/* How To Use */
+
+.product-card__details {
+    width: 94%;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+.how-container {
+    width: 96%;
+    margin: auto;
+    height: 390px;
+}
+
+.left-container {
+    float: left;
+    height: 375px;
+    width: 46%;
+    margin-top: 15px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 375px;
+    background: #fff;
+    width: 54%;
+    margin-top: 15px;
+    float: left;
+}
+
+.left-content {
+    width: 96%;
+    height: 100%;
+    /* margin-top: 3%;  */
+}
+
+.right-content {
+    width: 96%;
+    height: 90%;
+}
+
+.product-card-detail__title {
+    height: 59px;
+    width: 550px;
+    color: #000000;
+    font-family: "PT Sans";
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+}
+
+.product-card__rating{
+    width: 96% !important;
+}
+/* 
+img{
+    width: 100% !important;
+    height: 100% !important;
+} */
+
+img {max-width:100%;}
+
+ @media screen and (max-width: 999px) {
+    .how-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 0 auto 60px auto;
+    }
+    .left-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: none;
+        text-align: center;
+        margin: 15px auto 0px auto;
+    }
+    .right-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: none;
+        text-align: center;
+        margin: 15px auto 0px auto;
+    }
+    .left-content {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: none;
+        text-align: center;
+        margin: 15px auto 0px auto;
+    }
+    .right-content {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: none;
+        text-align: center;
+        margin: 15px auto 0px auto;
+        max-width: 90%;
+    }
+} 
