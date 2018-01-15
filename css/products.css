@@ -125,6 +125,29 @@ nav>ul li {
     }
 }
 
+@media all and (max-width: 700px) {
+    .product-card {
+        /* background: red !important; tmp */
+    }
+    .row-top div{
+        width: 100% !important;
+    } 
+}
+
+@media all and (max-width: 1024px) {
+    .product-card {
+        /* background: blue; tmp */
+    }
+    
+    .row-top div, section.range-slider, section.range-slider input{
+        width: 100% !important;
+    }
+
+    .custom-hr-hidden{
+        display: block !important;
+    }
+}
+
 .products-list {
     width: 94%;
     margin: auto;

@@ -1,16 +1,23 @@
 /* The radio-button container */
 
 .radio-button-container {
-    display: inline-block;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
+    padding-top: 3px;
     cursor: pointer;
-    font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    float: left;
+}
+
+.radio-button-container > label {
+    font-family: "PT Sans";	
+    font-size: 14px;	
+    line-height: 19px;
+    margin-right: 5px;
 }
 
 .radio-button-container input {
@@ -49,8 +56,4 @@
     height: 23px;
     border-radius: 50%;
     background: #3b8d82;
-}
-
-.radio-button-container > span{
-    font-size: 16px;
 }

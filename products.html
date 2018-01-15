@@ -35,70 +35,75 @@
     <main>
         <div class="content">
             <div class="content-container">
-                <div class="product-filter">
+                <!-- <div class="product-filter">
                     <div class="product-filter__container">
                         <input type="button" id="filter" value="Filter options" onclick="showFilter()">
                         <input type="text" id="search" name="" placeholder="Filter by text...">
                     </div>
-                </div>
+                </div> -->
                 <div class="product-filter__modal">
                     <div class="tooltip-wrapper">
                         <div class="tooltip">
                             <div class="row-top">
-                                <fieldset>
-                                    <div class="flexbox-container wrap">
-                                        <div class="box left-column">
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                            <span>Aviable only</span>
-                                        </div>
-                                        <div class="box center-column">
-                                            <label class="radio-button-container">
-                                                <span>Man</span>
-                                                <input type="radio" checked="checked" name="radio">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="radio-button-container">
-                                                <span>Woman</span>
-                                                <input type="radio" name="radio">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="radio-button-container">
-                                                <span>Unisex</span>
-                                                <input type="radio" name="radio">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="box right-column">
-                                            <div class="customized-dropdown-wrap">
-                                                <select name="" class="customized-dropdown">
-                                                    <option value="-1" selected>Active wear</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                <div>
+                                    <p class="label-top">Availability:</p>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <label class="switch-aviable-only">Available only</label>
+                                </div>
+                                <hr class="custom-hr-hidden">
+                                <div>
+                                    <p class="label-top">Gender:</p>
+                                    <div class="radio-group">
+                                        <label class="radio-button-container">
+                                            <label>Man</label>
+                                            <input type="radio" checked="checked" name="radio" id="cs">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-button-container">
+                                            <label>Woman</label>
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-button-container">
+                                            <label>Unisex</label>
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
-
-
-                                </fieldset>
+                                </div>
+                                <hr class="custom-hr-hidden">
+                                <div>
+                                    <p class="label-top">Category:</p>
+                                    <div class="customized-dropdown-wrap">
+                                        <select name="" class="customized-dropdown">
+                                            <option value="-1" selected>Active wear</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr class="custom-hr">
                             </div>
-                            <!-- <div class="row-bottom">
-                                <section class="range-slider">
-                                    <span class="rangeValues"></span>
-                                    <input value="5" min="0" max="15" step="1" type="range" id="filter-rating__min">
-                                    <input value="10" min="0" max="15" step="1" type="range" id="filter-rating__max">
-                                </section>
+                            <div class="row-bottom">
 
                                 <section class="range-slider">
-                                    <span class="rangeValues"></span>
-                                    <input value="5" min="0" max="15" step="1" type="range" id="filter-price__min">
-                                    <input value="10" min="0" max="15" step="1" type="range" id="filter-price__max">
+                                    <p class="label-top">Rating:</p>
+                                    <span class="rangeValues">0-10</span>
+                                    <input value="0" min="0" max="5" step="1" type="range" id="filter-rating__min">
+                                    <input value="2" min="0" max="5" step="1" type="range" id="filter-rating__max">
                                 </section>
-                            </div> -->
+                                <hr class="custom-hr-hidden">
+                                <section class="range-slider">
+                                    <p class="label-top">Price:</p>
+                                    <span class="rangeValues">0-10</span>
+                                    <input value="87" min="0" max="1500" step="1" type="range" id="filter-price__min">
+                                    <input value="822" min="0" max="1500" step="1" type="range" id="filter-price__max">
+                                </section>
+                            </div>
 
                         </div>
 
@@ -108,7 +113,7 @@
                     <div class="product-card">
                         <div class="product-card__flex-container">
                             <div class="product-card__image">
-                                <img src="./assets/new-content.jpg" alt="" width="250px" height="270px">
+                                <img src="./assets/new-content.jpg" alt="" width="240px" height="360px">
                             </div>
                             <div class="product-card__rating">
                                 <div class="rating">
@@ -143,8 +148,8 @@
         <p class="centered-text white">Copyright 'DemoShop', 2017</p>
     </footer>
     <script>
-        var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='250px' height='270px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
-        var INCtemplate = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='250px' height='270px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
+        var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
+        var INCtemplate = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
         window.onload = function () {
             for (var i = 0; i < 8; i++) {
                 if (i == 0) {

@@ -1,11 +1,13 @@
 .customized-dropdown-wrap {
-    height: 40px;
-    width: 240px;
+    width: 235px !important;
+    height: 35px !important;
+    max-width: 235px;
+    margin: 0 !important;
     color: white;
     overflow: hidden;
     position: relative;
     border-radius: 5px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .customized-dropdown-wrap:after {
@@ -24,14 +26,15 @@
 }
 
 .customized-dropdown {
-    height: 40px;
+    height: 35px;
     width: 100%;
     padding: 5px 15px;
     background-color: #3b8d82;
     border: 0;
     color: white;
     outline: none;
-    font-size: 16px;
+    font-size: 14px;
+    font-family: "PT Sans";
     -webkit-appearance: none; /* for webkit browsers */
     -moz-appearance: none; /* for firefox */
     appearance: none; /* for modern browsers */
