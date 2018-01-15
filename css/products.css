@@ -18,7 +18,7 @@ body {
 header {
     background: #3b8e82;
     bottom: 0;
-    height: 50px;
+    height: 45px;
 }
 
 footer {
@@ -30,6 +30,15 @@ footer {
     clear: left;
     position: relative;
     text-align: center;
+    height: 45px;    
+}
+
+#shopping-cart{
+    padding-left: 235px;
+}
+
+#personal-account{
+    padding-right: 235px;
 }
 
 main {
@@ -50,9 +59,11 @@ main {
     position: relative;
 }
 
-nav>ul li {
+nav > ul li {
     text-decoration: none;
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 .centered-text {
@@ -68,7 +79,18 @@ nav>ul li {
 }
 
 .icon-vertical-align {
-    padding: 10px
+    padding: 10px;
+    font-size: 24px !important;
+}
+
+.user-lable{
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    margin-left: -110px;
+    margin-top: 16px;
+    font-size: 15px;
 }
 
 .icon-right-section {
@@ -77,13 +99,11 @@ nav>ul li {
 }
 
 .icon-left-section {
-    /* float: left; tmp disabled */
     padding-left: 6.5%;
 }
 
 .active-user {
     display: inline-block;
-    padding: 16px;
 }
 
 .product-card {
@@ -111,6 +131,14 @@ nav>ul li {
 
 
 @media all and (max-width: 95em) {
+    #shopping-cart{
+        padding-left: 50px;
+    }
+
+    #personal-account{
+        padding-right: 50px;
+    }
+    
     .content {
         width: 100%;
     }
@@ -135,10 +163,28 @@ nav>ul li {
 }
 
 @media all and (max-width: 1024px) {
-    .product-card {
-        /* background: blue; tmp */
+    #shopping-cart{
+        padding-left: 50px;
+    }
+
+    #personal-account{
+        padding-right: 50px;
     }
     
+    .product-filter{
+        justify-content:space-between !important;
+    }
+
+    #search{
+        position: absolute !important;
+        right: 0 !important;
+        margin-right: 35px !important;
+    }
+
+    .tooltip:after{
+        right: calc(100% + 1%) !important;
+    }
+
     .row-top div, section.range-slider, section.range-slider input{
         width: 100% !important;
     }
@@ -153,7 +199,7 @@ nav>ul li {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .products-list:after {
@@ -179,7 +225,7 @@ img {
 
 hr {
     width: 90%;
-    color: lightcyan;
+    border: 1px solid #3b8e82;
     margin: auto;
 }
 
@@ -187,23 +233,41 @@ hr {
     font-size: 36px;
     float: left;
     padding-left: 20px;
+    font-family: "PT Sans";
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
     margin: 10px 0px 15px 0px;
 }
 
+#item-price::first-letter{
+    color:#3b8e82;
+}
+
 .product-card__text, .product-card__title {
-    padding: 15px;
+    padding: 18px;
+    font-family: "PT Sans";
+}
+
+.product-card__title {
+    font-size: 18px;	
+    font-weight: bold;	
+    line-height: 23px;
 }
 
 #show-more {
+    width: 120px;
+    height: 35px;
     background-color: #3b8e82;
     border: none;
     color: white;
-    padding: 12px 30px;
     text-align: center;
     text-decoration: none;
     margin-right: 20px;
     display: block;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: "PT Sans";
     cursor: pointer;
     float: right;
     position: relative;

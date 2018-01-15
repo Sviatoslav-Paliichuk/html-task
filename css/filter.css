@@ -1,11 +1,14 @@
 #search {
-    width: 300px;
-    height: 50px;
+    width: 275px;
+    height: 35px;
     padding: 15px;
     box-sizing: border-box;
     border: 2px solid #aaa;
     border-radius: 5px;
     font-size: 14px;
+    font-family: "PT Sans";
+    font-style: italic;
+    line-height: 19px;
     outline: none;
 }
 
@@ -33,12 +36,20 @@
     justify-content: flex-end;
 }
 
-.product-filter__container {
+/* .product-filter__container {
     margin: 30px 10px 0px 0px;
-}
+} */
 
+.product-filter__container { 
+    display: flex; 
+    justify-content:flex-end; 
+    margin: 30px 10px 0px 0px;
+    /* justify-content: space-between; */
+  }
+  
 #filter {
-    height: 50px;
+    width: 180px;
+    height: 35px;
     background-color: #3b8d82;
     border: none;
     color: white;
@@ -58,7 +69,7 @@
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    margin-top: 65px;
+    margin-top: 40px;
     z-index: 9999;
     opacity: 1; /* default */
 }
@@ -85,15 +96,17 @@ h1:hover + .tooltip-wrapper {
     padding: 10px;
     font-size: 14px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color:white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 }
+
 .tooltip:after {
     content: "";
     position: absolute;
     top: -20px;
     right: 50%;
-    margin-right: -30px;
+    margin-right: -120px;
 
     /*triangle main*/
     border-bottom: 20px solid white;
