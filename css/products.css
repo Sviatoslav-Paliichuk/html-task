@@ -154,9 +154,6 @@ nav > ul li {
 }
 
 @media all and (max-width: 700px) {
-    .product-card {
-        /* background: red !important; tmp */
-    }
     .row-top div{
         width: 100% !important;
     } 
