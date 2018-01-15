@@ -5,6 +5,7 @@
     overflow: hidden;
     position: relative;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .customized-dropdown-wrap:after {

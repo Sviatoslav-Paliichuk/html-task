@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/toggle-switch.css">
     <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/custom-range.css">
+    <link rel="stylesheet" href="css/radio-buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -15,14 +17,14 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="">
                         <i class="fa fa-shopping-cart fa-2x icon-vertical-align icon-left-section white" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="decoration-clear active-user white">
+                    <a href="" class="decoration-clear active-user white">
                         Hello,
                         <i>John_Doe</i>
                     </a>
-                    <a href="#">
+                    <a href="">
                         <i class="fa fa-sign-out fa-2x icon-vertical-align icon-right-section white" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -42,31 +44,62 @@
                 <div class="product-filter__modal">
                     <div class="tooltip-wrapper">
                         <div class="tooltip">
-                            <label class="switch">
-                                <input type="checkbox" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <p>Aviable only</p>
+                            <div class="row-top">
+                                <fieldset>
+                                    <div class="flexbox-container wrap">
+                                        <div class="box left-column">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <span>Aviable only</span>
+                                        </div>
+                                        <div class="box center-column">
+                                            <label class="radio-button-container">
+                                                <span>Man</span>
+                                                <input type="radio" checked="checked" name="radio">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-button-container">
+                                                <span>Woman</span>
+                                                <input type="radio" name="radio">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-button-container">
+                                                <span>Unisex</span>
+                                                <input type="radio" name="radio">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="box right-column">
+                                            <div class="customized-dropdown-wrap">
+                                                <select name="" class="customized-dropdown">
+                                                    <option value="-1" selected>Active wear</option>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <fieldset>
-                                <div class="some-class">
-                                    <input type="radio" class="radio" name="x" value="y" id="y" />
-                                    <label for="y">Man</label>
-                                    <input type="radio" class="radio" name="x" value="z" id="z" />
-                                    <label for="z">Woman</label>
-                                    <input type="radio" class="radio" name="x" value="zz" id="zz" />
-                                    <label for="z">Unisex</label>
-                                </div>
-                            </fieldset>
 
-                            <div class="customized-dropdown-wrap">
-                                <select name="" class="customized-dropdown">
-                                    <option value="-1" selected>Active wear</option>
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                </select>
+                                </fieldset>
                             </div>
+                            <!-- <div class="row-bottom">
+                                <section class="range-slider">
+                                    <span class="rangeValues"></span>
+                                    <input value="5" min="0" max="15" step="1" type="range" id="filter-rating__min">
+                                    <input value="10" min="0" max="15" step="1" type="range" id="filter-rating__max">
+                                </section>
+
+                                <section class="range-slider">
+                                    <span class="rangeValues"></span>
+                                    <input value="5" min="0" max="15" step="1" type="range" id="filter-price__min">
+                                    <input value="10" min="0" max="15" step="1" type="range" id="filter-price__max">
+                                </section>
+                            </div> -->
+
                         </div>
 
                     </div>
@@ -124,6 +157,34 @@
         function showFilter() {
 
         }
+
+        function getVals() {
+            // Get slider values
+            var parent = this.parentNode;
+            var slides = parent.getElementsByTagName("input");
+            var slide1 = parseFloat(slides[0].value);
+            var slide2 = parseFloat(slides[1].value);
+            // Neither slider will clip the other, so make sure we determine which is larger
+            if (slide1 > slide2) { var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+
+            var displayElement = parent.getElementsByClassName("rangeValues")[0];
+            displayElement.innerHTML = slide1 + " - " + slide2;
+        }
+
+            // window.onload = function () {
+            //     // Initialize Sliders
+            //     var sliderSections = document.getElementsByClassName("range-slider");
+            //     for (var x = 0; x < sliderSections.length; x++) {
+            //         var sliders = sliderSections[x].getElementsByTagName("input");
+            //         for (var y = 0; y < sliders.length; y++) {
+            //             if (sliders[y].type === "range") {
+            //                 sliders[y].oninput = getVals;
+            //                 // Manually trigger event first time to display values
+            //                 sliders[y].oninput();
+            //             }
+            //         }
+            //     }
+            // }
     </script>
 </body>
 
