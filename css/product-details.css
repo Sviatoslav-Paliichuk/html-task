@@ -1,9 +1,13 @@
-/* How To Use */
+/* @override content-container */
+
+.content-container{
+    min-height: calc(86vh + 5px) !important;
+}
 
 .product-card__details {
-    width: 94%;
+    width: 1400px;
     margin: auto;
-    background-color: lightgrey;
+    background-color: white;
 }
 
 .how-container {
@@ -33,42 +37,65 @@
 .left-content {
     width: 96%;
     height: 100%;
-    /* margin-top: 3%;  */
 }
 
 .right-content {
     width: 96%;
     height: 90%;
+    position: relative;
 }
 
 .product-card-detail__title {
-    height: 59px;
     width: 550px;
     color: #000000;
     font-family: "PT Sans";
     font-size: 24px;
     font-weight: bold;
     line-height: 32px;
+    padding: 0px 0px 20px 0px;
 }
 
-.product-card__rating{
-    width: 96% !important;
-}
-/* 
-img{
+hr{
     width: 100% !important;
-    height: 100% !important;
-} */
+}
 
-img {max-width:100%;}
+u{
+    color: #3b8e82;
+}
 
- @media screen and (max-width: 999px) {
+.product-card-detail__description {
+    color: #000000;
+    font-family: "PT Sans";
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px 0px 20px 0px
+}
+
+.product-card__nav{
+    position: absolute !important;
+}
+
+img {
+    min-width: 590px !important;
+    min-height: 350px !important;
+}
+
+@media (max-width: 1750px) {
+    .content {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 1500px) {
     .how-container {
         display: block;
         width: 100%;
         height: auto;
         text-align: center;
         margin: 0 auto 60px auto;
+    }
+    .product-card__details {
+        width: 94% !important;
     }
     .left-container {
         display: block;
@@ -101,6 +128,10 @@ img {max-width:100%;}
         float: none;
         text-align: center;
         margin: 15px auto 0px auto;
-        max-width: 90%;
+        max-width: 96%;
     }
-} 
+
+    .product-card__nav{
+        position: relative !important;
+    }
+}
