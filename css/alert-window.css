@@ -26,6 +26,20 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
+.alert-window__container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    text-align: left;
+    position: relative;
+    transform: translateY(-50%);
+}
+
 .continue-shopping-button {
     height: 50px;
     width: 220px;
