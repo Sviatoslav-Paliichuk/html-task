@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/dropdown.css">
     <link rel="stylesheet" href="css/product-admin.css">
     <link rel="stylesheet" href="css/radio-buttons.css">
+    <link rel="stylesheet" href="css/confirm-window.css">
+    <link rel="stylesheet" href="css/alert-window.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -32,7 +34,7 @@
 
     <main>
         <div class="content">
-            <div id="openModal" class="modalDialog">
+            <!-- <div id="openModal" class="modalDialog">
                 <div class="modal-container">
                     <div class="modal-header">
                         <span>Lorem ipsum dolor sit amet consectetur adipissicg elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque reprehenderit quia facilis, amet nemo incidunt neque quod nesciunt alias nostrum at voluptas blanditiis aliquid doloribus ipsa laborum temporibus? Quos, corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsa, corrupti illo hic amet, voluptas libero autem harum odit sequi excepturi itaque cupiditate eos aut cum iste! Modi, voluptate neque?</span>
@@ -103,12 +105,38 @@
                             </div>
                         </div>
                         <input type="button" class="modal-button" value="Submit">
-                        <input type="button" id="modal-cancel" class="modal-button" value="Cancel">
+                        <input type="button" class="modal-button btn-cancel" value="Cancel">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
+            <!-- <div id="popup-confirm-dialog">
+                <div class="popup-window-container popup-window">
+                    <div class="header-container">
+                        <p class="header-container__caption">Are you sure?</p>
+                    </div>
+                    <div class="popup-confirm-dialog__content">
+                        <p class="popup-confirm-dialog__message">You are trying to delete this product.</p>
+                        <p class="popup-confirm-dialog__message">Are you sure want this?</p>
+                        <input type="button" class="modal-button" value="Submit">
+                        <input type="button" class="modal-button btn-cancel" value="Cancel">
+                    </div>
+                </div>
+            </div> -->
 
+                <!-- <div id="popup-alert-dialog">
+                    <div class="modal-container alert-window">
+                        <div class="header-container">
+                            <p class="header-container__caption">Thank you!</p>
+                        </div>
+                        <div class="popup-alert-dialog__content"> 
+                            <p class="popup-alert-dialog__message">You have successfully purchased this item</p>
+                
+                            <input type="button" class="modal-button continue-shopping-button" value="Continue shopping">
+                        </div>
+                    </div>
+                </div> -->
+       
             <div class="content-container">
                 <nav class="product-card-details__navigation">
                     <ul>
@@ -147,7 +175,7 @@
                                     nihil sequi</p>
                                 <p class="product-card-detail__description">You can
                                     <u> add 5 more.</u> You can also
-                                    <u> edit </u> details or
+                                    <u onclick="edit()"> edit </u> details or
                                     <u> delete </u> them</p>
 
                                 <nav class="product-card__nav">
@@ -168,7 +196,13 @@
     <footer>
         <p class="centered-text white">Copyright 'DemoShop', 2017</p>
     </footer>
-
+    <script>
+        function edit(){
+            var modal = document.getElementById('openModal');
+            modal.style.display = 'block';  
+        }
+        
+    </script>
 </body>
 
 </html>

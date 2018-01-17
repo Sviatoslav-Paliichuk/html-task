@@ -3,6 +3,10 @@
     /* for DEMO */
 }
 
+u:hover {
+    cursor: pointer;
+}
+
 .product-card-detail__edit {
     height: 680px;
     width: 730px;
@@ -24,7 +28,8 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 99999;
-    /* opacity: 0; show window */
+    /* opacity: 0;  show window */
+    /* display: none; */
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
@@ -78,10 +83,10 @@
 }
 
 .modal-header span {
-    display:inline-block;
-    width:100%;
+    display: inline-block;
+    width: 100%;
     white-space: nowrap;
-    overflow:hidden !important;
+    overflow: hidden !important;
     text-overflow: ellipsis;
 }
 
@@ -197,7 +202,7 @@ input[type="text"], input[type="number"] {
     margin: 25px 25px 20px 0px !important;
 }
 
-#modal-cancel {
+.btn-cancel {
     background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%);
 }
 
@@ -210,6 +215,10 @@ input[type="text"], input[type="number"] {
         width: 96% !important;
         height: 98% !important;
         overflow: scroll !important;
+    }
+    #confirm-dialog>div {
+        height: 288px !important;
+        width: 730px !important;
     }
     .flexbox-container {
         display: initial !important;

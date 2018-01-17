@@ -1,0 +1,82 @@
+/*** Alert window ***/
+
+#popup-alert-dialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    /* opacity: 0;  show window */
+    /* display: none; */
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+
+#popup-alert-dialog>div {
+    position: relative;
+    margin: auto;
+    background: repeating-linear-gradient( -45deg, #eee, #eee 10px, #d8d8d8 12px, #465298 11px);
+    height: 288px !important;
+    width: 730px !important;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.continue-shopping-button {
+    height: 50px;
+    width: 220px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
+    margin-top: 60px !important;
+}
+
+#continue-dialog>div{
+	height: 257px !important;
+	width: 730px !important;
+	border-radius: 15px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.alert-window {
+    height: 288px !important;
+    width: 730px !important;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+    height: 70px;
+    width: 730px;
+    border-radius: 15px 15px 0 0;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11);
+}
+
+.header-container__caption {
+    height: 26px;
+    width: 730px;
+    color: #000000;
+    font-family: "PT Sans Caption";
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 29px;
+    text-align: center;
+    padding-top: 22px;
+}
+
+.popup-alert-dialog__content {
+    padding-top: 50px;
+}
+
+.popup-alert-dialog__message {
+    width: 730px;
+    color: #000000;
+    font-family: "PT Sans Caption";
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
