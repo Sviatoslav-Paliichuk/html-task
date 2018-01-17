@@ -35,7 +35,7 @@
 
     <main>
         <div class="content">
-                <div id="openModal" class="edit-window-popup">
+                <div id="edit-item-window" class="edit-window-popup">
                     <div class="edit-window__container">
                         <div class="edit-window__header">
                             <span>Lorem ipsum dolor sit amet consectetur adipissicg elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -44,80 +44,80 @@
                                 elit. Perferendis ipsa, corrupti illo hic amet, voluptas libero autem harum odit sequi excepturi itaque cupiditate
                                 eos aut cum iste! Modi, voluptate neque?</span>
                         </div>
-                    <div class="edit-window__content">
-                        <div class="edit-window__flexbox-container">
-                            <div class="flexbox-container__left">
-                                <div class="form-group">
-                                    <label for="">Name:</label>
-                                    <input type="text" class="form-control" placeholder="Please, enter name...">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Category:</label>
-                                    <div class="customized-dropdown-wrap">
-                                        <select name="" class="customized-dropdown">
-                                            <option value="-1" selected>Active wear</option>
-                                            <option>Used</option>
-                                        </select>
+                        <div class="edit-window__content">
+                            <div class="edit-window__flexbox-container">
+                                <div class="flexbox-container__left">
+                                    <div class="form-group">
+                                        <label for="">Name:</label>
+                                        <input type="text" class="form-control" placeholder="Please, enter name...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Category:</label>
+                                        <div class="customized-dropdown-wrap">
+                                            <select name="" class="customized-dropdown">
+                                                <option value="-1" selected>Active wear</option>
+                                                <option>Used</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Gender:</label>
+                                        <div class="radio-group">
+                                            <label class="radio-button-container">
+                                                <label>Man</label>
+                                                <input type="radio" name="radio" id="cs">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-button-container">
+                                                <label>Woman</label>
+                                                <input type="radio" name="radio">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-button-container">
+                                                <label>Unisex</label>
+                                                <input type="radio" name="radio" checked="checked">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Description:</label>
+                                        <textarea class="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit nostrum dignissimos animi eos non quia perspiciatis eaque nam omnis, facere porro neque, soluta aspernatur labore ipsam quam temporibus pariatur voluptates!</textarea>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Gender:</label>
-                                    <div class="radio-group">
-                                        <label class="radio-button-container">
-                                            <label>Man</label>
-                                            <input type="radio" name="radio" id="cs">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-button-container">
-                                            <label>Woman</label>
-                                            <input type="radio" name="radio">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-button-container">
-                                            <label>Unisex</label>
-                                            <input type="radio" name="radio" checked="checked">
-                                            <span class="checkmark"></span>
-                                        </label>
+                                <div class="flexbox-container__right">
+                                    <div class="form-group">
+                                        <label for="usr">Link to image:</label>
+                                        <input type="text" class="form-control" placeholder="htpp://">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Description:</label>
-                                    <textarea class="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit nostrum dignissimos animi eos non quia perspiciatis eaque nam omnis, facere porro neque, soluta aspernatur labore ipsam quam temporibus pariatur voluptates!</textarea>                            
+                                    <div class="form-group">
+                                        <img src="./assets/detail.jpg" class="bitmap" alt="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usr">Price:</label>
+                                        <input type="number" class="form-control" value="45.99">
+                                    </div>
+                
+                                    <div class="form-group">
+                                        <label for="usr">Rating:</label>
+                                        <div class="customized-dropdown-wrap">
+                                            <select name="" class="customized-dropdown">
+                                                <option value="-1" selected>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                
                                 </div>
                             </div>
-                            <div class="flexbox-container__right">
-                                <div class="form-group">
-                                    <label for="usr">Link to image:</label>
-                                    <input type="text" class="form-control" placeholder="htpp://">
-                                </div>
-                                <div class="form-group">
-                                    <img src="./assets/detail.jpg" class="bitmap" alt="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="usr">Price:</label>
-                                    <input type="number" class="form-control" value="45.99">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="usr">Rating:</label>
-                                    <div class="customized-dropdown-wrap">
-                                        <select name="" class="customized-dropdown">
-                                            <option value="-1" selected>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                            <input type="button" class="modal-button" value="Submit">
+                            <input type="button" class="modal-button btn-cancel" onclick="handlePopup(this)" data-window-type="edit-item-window" value="Cancel">
                         </div>
-                        <input type="button" class="modal-button" value="Submit">
-                        <input type="button" class="modal-button btn-cancel" value="Cancel">
                     </div>
                 </div>
-            </div>
 
-            <!-- <div id="popup-confirm-dialog">
+            <div id="popup-confirm-dialog">
                 <div class="popup-window-container popup-window">
                     <div class="header-container">
                         <p class="header-container__caption">Are you sure?</p>
@@ -126,23 +126,23 @@
                         <p class="popup-confirm-dialog__message">You are trying to delete this product.</p>
                         <p class="popup-confirm-dialog__message">Are you sure want this?</p>
                         <input type="button" class="modal-button" value="Submit">
-                        <input type="button" class="modal-button btn-cancel" value="Cancel">
+                        <input type="button" class="modal-button btn-cancel" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog" value="Cancel">
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-                <!-- <div id="popup-alert-dialog">
-                    <div class="modal-container alert-window">
-                        <div class="header-container">
-                            <p class="header-container__caption">Thank you!</p>
-                        </div>
-                        <div class="popup-alert-dialog__content"> 
-                            <p class="popup-alert-dialog__message">You have successfully purchased this item</p>
-                
-                            <input type="button" class="modal-button continue-shopping-button" value="Continue shopping">
-                        </div>
+            <div id="popup-alert-dialog">
+                <div class="alert-window__container alert-window">
+                    <div class="header-container">
+                        <p class="header-container__caption">Thank you!</p>
                     </div>
-                </div> -->
+                    <div class="popup-alert-dialog__content"> 
+                        <p class="popup-alert-dialog__message">You have successfully purchased this item</p>
+            
+                        <input type="button" class="modal-button continue-shopping-button" onclick="handlePopup(this)" data-window-type="popup-alert-dialog" value="Continue shopping">
+                    </div>
+                </div>
+            </div>
        
             <div class="content-container">
                 <nav class="product-card-details__navigation">
@@ -182,13 +182,13 @@
                                     nihil sequi</p>
                                 <p class="product-card-detail__description">You can
                                     <u> add 5 more.</u> You can also
-                                    <u onclick="edit()"> edit </u> details or
-                                    <u> delete </u> them</p>
+                                    <u onclick="handlePopup(this)" data-window-type="edit-item-window"> edit </u> details or
+                                    <u onclick="handlePopup(this)" data-window-type="popup-confirm-dialog"> delete </u> them</p>
 
                                 <nav class="product-card__nav">
                                     <hr>
                                     <h1 id="item-price">$47.95</h1>
-                                    <input type="button" id="show-more" value="Buy">
+                                    <input type="button" id="show-more" onclick="handlePopup(this)" data-window-type="popup-alert-dialog" value="Buy">
                                 </nav>
                             </div>
 
@@ -204,11 +204,13 @@
         <p class="centered-text white">Copyright 'DemoShop', 2017</p>
     </footer>
     <script>
-        function edit(){
-            var modal = document.getElementById('openModal');
-            modal.style.display = 'block';  
-        }
-        
+            function handlePopup(popup) {
+                var elem = popup.getAttribute("data-window-type");
+                if (document.getElementById(elem).style.display == '')
+                    document.getElementById(elem).style.display = 'block';
+                else
+                    document.getElementById(elem).style.display = '';
+            }        
     </script>
 </body>
 
