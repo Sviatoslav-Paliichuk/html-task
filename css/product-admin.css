@@ -19,89 +19,6 @@ u:hover {
     margin-top: 150px;
 }
 
-.modalDialog {
-    position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 99999;
-    /* opacity: 0;  show window */
-    /* display: none; */
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    /* pointer-events: none; */
-}
-
-.modalDialog:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modalDialog>div {
-    position: relative;
-    margin: auto;
-    background: repeating-linear-gradient( -45deg, #eee, #eee 10px, #d8d8d8 12px, #465298 11px);
-    height: 680px;
-    width: 730px;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-}
-
-.modal-container {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    margin: 0;
-    padding: 0;
-    top: 50%;
-    text-align: left;
-    position: relative;
-    transform: translateY(-50%);
-}
-
-.modal-header {
-    padding: 20px !important;
-    height: auto;
-    font-size: 24px;
-    background-color: #ffffff;
-    color: #000000;
-    font-family: "PT Sans Caption";
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 29px;
-    text-align: center;
-}
-
-.modal-content {
-    background: repeating-linear-gradient( -45deg, #eee, #eee 10px, #d8d8d8 12px, #465298 11px);
-}
-
-.modal-header span {
-    display: inline-block;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-}
-
-.flexbox-container {
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.flexbox-container>div {
-    width: 50%;
-    padding: 10px;
-    padding: 15px 30px 15px 30px;
-}
-
 .form-group>label {
     display: block;
     color: #000000;
@@ -211,7 +128,7 @@ input[type="text"], input[type="number"] {
 }
 
 @media (max-width: 1024px) {
-    .modalDialog>div {
+    .edit-window-popup>div {
         width: 96% !important;
         height: 98% !important;
         overflow: scroll !important;
@@ -220,10 +137,10 @@ input[type="text"], input[type="number"] {
         height: 288px !important;
         width: 730px !important;
     }
-    .flexbox-container {
+    .edit-window__flexbox-container {
         display: initial !important;
     }
-    .flexbox-container>div {
+    .edit-window__flexbox-container>div {
         width: 100% !important;
     }
     .form-control, .textarea {
