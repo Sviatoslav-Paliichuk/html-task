@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/product-details.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/rating.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/product-admin.css">
+    <link rel="stylesheet" href="css/radio-buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="header-navigation">
+            <ul>
+                <li>
+                    <a href="" id="shopping-cart">
+                        <i class="fa fa-shopping-cart fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    </a>
+                    <a href="" id="personal-account" class="decoration-clear active-user white">
+                        <span class="user-lable"> Hello,
+                            <i>John_Doe</i>
+                        </span>
+                        <i class="fa fa-sign-out fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div id="openModal" class="modalDialog">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p>Lorem ipsum dolor sit amet consectetur adipissicg elit. Dolor...
+                        </p>
+                    </div>
+                    <div class="modal-content">
+                        <div class="flexbox-container">
+                            <div class="flexbox-container__left">
+                                <div class="form-group">
+                                    <label for="usr">Name:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="usr">Category:</label>
+                                    <div class="customized-dropdown-wrap">
+                                        <select name="" class="customized-dropdown">
+                                            <option value="-1" selected>Active wear</option>
+                                            <option>Used</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender:</label>
+                                    <div class="radio-group">
+                                        <label class="radio-button-container">
+                                            <label>Man</label>
+                                            <input type="radio" checked="checked" name="radio" id="cs">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-button-container">
+                                            <label>Woman</label>
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-button-container">
+                                            <label>Unisex</label>
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Description:</label>
+                                    <textarea class="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit nostrum dignissimos animi eos non quia perspiciatis eaque nam omnis, facere porro neque, soluta aspernatur labore ipsam quam temporibus pariatur voluptates!</textarea>                            
+                                </div>
+                            </div>
+                            <div class="flexbox-container__right">
+                                <div class="form-group">
+                                    <label for="usr">Link to image:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <img src="./assets/detail.jpg" class="bitmap" alt="">
+                                <div class="form-group">
+                                    <label for="usr">Price:</label>
+                                    <input type="text" class="form-control" value="45.99">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="usr">Rating:</label>
+                                    <div class="customized-dropdown-wrap">
+                                        <select name="" class="customized-dropdown">
+                                            <option value="-1" selected>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <input type="button" class="modal-button" value="Submit">
+                        <input type="button" id="modal-cancel" class="modal-button" value="Cancel">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content-container">
+                <nav class="product-card-details__navigation">
+                    <ul>
+                        <li>
+                            <a href="" class="white product-card__back-button">Back</a>
+                            <a href="" class="decoration-clear white product-card__category-name">Category:
+                                <b> Man / Active wear </b>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="product-card__details">
+                    <div class="how-container">
+                        <div class="left-container">
+                            <div class="left-content">
+                                <img src="./assets/new-content.jpg">
+                                <div class="product-card__rating">
+                                    <div class="rating">
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="right-container">
+                            <div class="right-content">
+                                <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit.4</h4>
+                                <hr>
+                                <p class="product-card-detail__description">It’s self-adhesive so just use the pressure and warmth from your hands to shape and mold
+                                    Abeego over or around your food. Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Illo quos consequuntur, quia suscipit alias inventore facere, expedita voluptates
+                                    nihil sequi</p>
+                                <p class="product-card-detail__description">You can
+                                    <u> add 5 more.</u> You can also
+                                    <u> edit </u> details or
+                                    <u> delete </u> them</p>
+
+                                <nav class="product-card__nav">
+                                    <hr>
+                                    <h1 id="item-price">$47.95</h1>
+                                    <input type="button" id="show-more" value="Buy">
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="centered-text white">Copyright 'DemoShop', 2017</p>
+    </footer>
+
+</body>
+
+</html>

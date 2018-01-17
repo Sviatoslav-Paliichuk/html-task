@@ -76,7 +76,7 @@ u{
     position: absolute !important;
 }
 
-img {
+.new-content {
     min-width: 590px !important;
     min-height: 350px !important;
 }

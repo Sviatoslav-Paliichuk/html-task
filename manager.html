@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/products.css">
+    <!-- <link rel="stylesheet" href="css/product-details.css"> -->
+    <link rel="stylesheet" href="css/manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="header-navigation">
+            <ul>
+                <li>
+                    <a href="" id="shopping-cart">
+                        <i class="fa fa-shopping-cart fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    </a>
+                    <a href="" id="personal-account" class="decoration-clear active-user white">
+                        <span class="user-lable"> Hello,
+                            <i>John_Doe</i>
+                        </span>
+                        <i class="fa fa-sign-out fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="content-container">
+                <div class="manager-chart__view">
+                    <div class="manager-chart__container">
+                        <div class="left-container">
+                            <div class="left-content">
+                                    <svg class="chart-left"></svg>
+                            </div>
+
+                        </div>
+                        <div class="right-container">
+                            <div class="right-content">
+                                    <svg class="chart-right"></svg>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="centered-text white">Copyright 'DemoShop', 2017</p>
+    </footer>
+<script>
+        var chart_left = c3.generate({
+            bindto: d3.select('.chart-left'),
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 400, 150, 250],
+                    ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+            }
+        });
+
+        var chart_right = c3.generate({
+            bindto: d3.select('.chart-right'),
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 400, 150, 250],
+                    ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+            }
+        });
+</script>
+</body>
+
+</html>

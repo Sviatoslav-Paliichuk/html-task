@@ -1,0 +1,28 @@
+.manager-chart__view{
+    width: 90% !important;
+    margin: auto;
+}
+
+/* .left-container, .right-container{
+    width: 100% !important
+} */
+
+.chart-left, .chart-right{
+    width: 900px;
+    min-height: 400px;
+    border: 1px solid red;
+}
+  
+.manager-chart__container{
+    /* height: 430px !important; */
+    background-color: white;
+}
+
+@media (max-width: 1750px) {
+
+}
+
+@media screen and (max-width: 1500px) {
+
+  
+}
