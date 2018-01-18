@@ -1,3 +1,13 @@
 .content-container{
     height: calc(100vh - 140px); /* only for demo page */
 }
+
+/*** override header ***/
+
+#shopping-cart {
+    padding-left: 11%;
+}
+
+#personal-account {
+    padding-right: 11%;
+}
