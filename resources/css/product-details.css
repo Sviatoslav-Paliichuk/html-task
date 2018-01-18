@@ -10,20 +10,20 @@
     background-color: white;
 }
 
-.how-container {
+.product-card__details-container {
     width: 96%;
     margin: auto;
     height: 390px;
 }
 
-.left-container {
+.product-card-details__image-container {
     float: left;
     height: 375px;
     width: 46%;
     margin-top: 19px;
 }
 
-.right-container {
+.product-card-details__description-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -34,12 +34,12 @@
     float: left;
 }
 
-.left-content {
+.product-card-details__image-content {
     width: 96%;
     height: 100%;
 }
 
-.right-content {
+.product-card-details__description-content {
     width: 100%;
     height: 100%;
     position: relative;
