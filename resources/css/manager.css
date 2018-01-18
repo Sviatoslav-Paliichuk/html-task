@@ -1,6 +1,5 @@
-.manager-chart__view {
-    width: 90% !important;
-    margin: auto;
+main {
+    height: inherit !important;
 }
 
 .chart-left, .chart-right {
@@ -8,49 +7,35 @@
     min-height: 340px;
 }
 
-.c3-chart-texts .c3-text {
-    display: none;
-}
-
 .manager-chart__container {
-    /* height: 430px !important; */
     background-color: white;
 }
 
-@media (max-width: 1750px) {}
-
-@media screen and (max-width: 1500px) {}
-
-#speedChartLeft {
-    width: 100% !important;
-    height: 500px !important;
+#shopping-cart {
+    padding-left: 11%;
 }
 
-#speedChartRight {
-    width: 100% !important;
-    height: 500px !important;
+#personal-account {
+    padding-right: 11%;
 }
 
-.left {
-    padding: 1em;
+.chart-content__column-left {
+    margin-right: 5px;
     background-color: white;
     text-align: left;
 }
 
-.right {
-    padding: 1em;
+.chart-content__column-right {
+    margin-left: 5px;
     text-align: center;
     background-color: white;
 }
 
-.parent {
+.chart-content__container {
+    padding: 30px 30px 0px 30px;
     display: flex;
     overflow: hidden;
     align-items: center;
-}
-
-#parent5>div {
-    flex: 1;
 }
 
 .chart-label {
@@ -60,5 +45,9 @@
     color: #000000;
     font-family: "PT Sans";
     font-size: 20px;
-    line-height: 20px;
+    padding: 10px;
+}
+
+#chart-content > div {
+    flex: 1;
 }
