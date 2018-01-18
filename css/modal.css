@@ -89,6 +89,15 @@ body {
 }
 
 .modal-header p {
+    display: inline-block;
+    width: 100%;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 800px) {
+    .modalDialog>div {
+        width: 86% !important;
+    }
 }
