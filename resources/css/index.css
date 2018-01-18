@@ -1,0 +1,3 @@
+.content-container{
+    height: calc(100vh - 140px); /* only for demo page */
+}
