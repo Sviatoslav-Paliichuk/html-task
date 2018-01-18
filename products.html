@@ -37,12 +37,12 @@
 
                 <div class="product-filter">
                     <div class="product-filter__container">
-                        <input type="button" id="filter" value="Filter options" onclick="showFilter()">
+                        <input type="button" id="filter" value="Filter options" onclick="handleFilter()">
                         <input type="text" id="search" placeholder="Filter by text...">
                     </div>
                 </div>
 
-                <div class="product-filter__modal">
+                <div class="product-filter__modal" id="product-filter__popup">
                     <div class="tooltip-wrapper">
                         <div class="tooltip">
                             <div class="row-top">
@@ -152,44 +152,19 @@
         var INCtemplate = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
         window.onload = function () {
             for (var i = 0; i < 8; i++) {
-                if (i == 0) {
-                    //    document.getElementById("c-place").innerHTML += INCtemplate;
-                }
                 document.getElementById("c-place").innerHTML += template;
             }
         }
 
-        function showFilter() {
+    function handleFilter() {
+        var filter = document.getElementById('product-filter__popup');
 
-        }
+        if (filter.style.display == '')
+            filter.style.display = 'block';
+        else
+            filter.style.display = '';
+    }
 
-        function getVals() {
-            // Get slider values
-            var parent = this.parentNode;
-            var slides = parent.getElementsByTagName("input");
-            var slide1 = parseFloat(slides[0].value);
-            var slide2 = parseFloat(slides[1].value);
-            // Neither slider will clip the other, so make sure we determine which is larger
-            if (slide1 > slide2) { var tmp = slide2; slide2 = slide1; slide1 = tmp; }
-
-            var displayElement = parent.getElementsByClassName("rangeValues")[0];
-            displayElement.innerHTML = slide1 + " - " + slide2;
-        }
-
-            // window.onload = function () {
-            //     // Initialize Sliders
-            //     var sliderSections = document.getElementsByClassName("range-slider");
-            //     for (var x = 0; x < sliderSections.length; x++) {
-            //         var sliders = sliderSections[x].getElementsByTagName("input");
-            //         for (var y = 0; y < sliders.length; y++) {
-            //             if (sliders[y].type === "range") {
-            //                 sliders[y].oninput = getVals;
-            //                 // Manually trigger event first time to display values
-            //                 sliders[y].oninput();
-            //             }
-            //         }
-            //     }
-            // }
     </script>
 </body>
 
