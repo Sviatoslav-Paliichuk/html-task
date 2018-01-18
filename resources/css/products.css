@@ -42,7 +42,7 @@ footer {
 }
 
 main {
-    background-image: url('../assets/paper-full.jpg');
+    background-image: url('../images/paper-full.jpg');
 }
 
 .content {
@@ -119,77 +119,6 @@ nav > ul li {
     flex-direction: column;
     width: 100%;
     position: relative;
-}
-
- @media all and (min-width: 50em) {
-    .product-card {
-        width: 33.33%;
-    }
-    .content {
-        width: 80%;
-    }
-}
-
-
-@media all and (max-width: 95em) {
-    #shopping-cart{
-        padding-left: 50px;
-    }
-
-    #personal-account{
-        padding-right: 50px;
-    }
-    
-    .content {
-        width: 100%;
-    }
-    .product-card{
-        width: 50%;
-    }
-}
-
-@media all and (max-width: 700px) {
-    .product-card {
-        width: 100%;
-    }
-}
-
-@media all and (max-width: 700px) {
-    .row-top div{
-        width: 100% !important;
-    } 
-}
-
-@media all and (max-width: 1024px) {
-    #shopping-cart{
-        padding-left: 50px;
-    }
-
-    #personal-account{
-        padding-right: 50px;
-    }
-    
-    .product-filter{
-        justify-content:space-between !important;
-    }
-
-    #search{
-        position: absolute !important;
-        right: 0 !important;
-        margin-right: 35px !important;
-    }
-
-    .tooltip:after{
-        right: calc(100% + 1%) !important;
-    }
-
-    .row-top div, section.range-slider, section.range-slider input{
-        width: 100% !important;
-    }
-
-    .custom-hr-hidden{
-        display: block !important;
-    }
 }
 
 .products-list {

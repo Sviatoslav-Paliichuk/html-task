@@ -2,13 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/rating.css">
-    <link rel="stylesheet" href="css/filter.css">
-    <link rel="stylesheet" href="css/toggle-switch.css">
-    <link rel="stylesheet" href="css/dropdown.css">
-    <link rel="stylesheet" href="css/custom-range.css">
-    <link rel="stylesheet" href="css/radio-buttons.css">
+    <link rel="stylesheet" href="resources/css/products.css">
+    <link rel="stylesheet" href="resources/css/variables/breakpoints/products-breakpoints.css">
+    <link rel="stylesheet" href="resources/css/objects/rating/rating.css">
+    <link rel="stylesheet" href="resources/css/components/filter.css">
+    <link rel="stylesheet" href="resources/css/objects/toggle-switch/toggle-switch.css">
+    <link rel="stylesheet" href="resources/css/objects/dropdown/dropdown.css">
+    <link rel="stylesheet" href="resources/css/objects/multirange/custom-range.css">
+    <link rel="stylesheet" href="resources/css/objects/radio-button/radio-buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -113,7 +114,7 @@
                     <div class="product-card">
                         <div class="product-card__flex-container">
                             <div class="product-card__image">
-                                <img src="./assets/new-content.jpg" alt="" width="240px" height="360px">
+                                <img src="./resources/images/new-content.jpg" alt="" width="240px" height="360px">
                             </div>
                             <div class="product-card__rating">
                                 <div class="rating">
@@ -148,22 +149,21 @@
         <p class="centered-text white">Copyright 'DemoShop', 2017</p>
     </footer>
     <script>
-        var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
-        var INCtemplate = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./assets/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicaboctetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
-        window.onload = function () {
-            for (var i = 0; i < 8; i++) {
-                document.getElementById("c-place").innerHTML += template;
+            var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./resources/images/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
+            window.onload = function () {
+                for (var i = 0; i < 8; i++) {
+                    document.getElementById("c-place").innerHTML += template;
+                }
             }
-        }
 
-    function handleFilter() {
-        var filter = document.getElementById('product-filter__popup');
+            function handleFilter() {
+                var filter = document.getElementById('product-filter__popup');
 
-        if (filter.style.display == '')
-            filter.style.display = 'block';
-        else
-            filter.style.display = '';
-    }
+                if (filter.style.display == '')
+                    filter.style.display = 'block';
+                else
+                    filter.style.display = '';
+            }
 
     </script>
 </body>
