@@ -10,7 +10,7 @@
         width: 100%;
         height: auto;
         text-align: center;
-        margin: 0 auto 60px auto;
+        margin: 0 auto 60px auto;        
     }
     .product-card__details {
         width: 94% !important;
@@ -63,5 +63,15 @@
         width: 100% !important;
         margin: auto !important;
         padding: 10px 3% 0px 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    .new-content {
+        min-width: inherit !important;
+    }
+
+    .how-container{
+        min-height: 785px;
     }
 }

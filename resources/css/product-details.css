@@ -1,7 +1,7 @@
 /* @override content-container */
 
 .content-container{
-    min-height: calc(86vh + 5px) !important;
+    min-height: calc(87vh + 5px) !important;
 }
 
 .product-card__details {
@@ -46,7 +46,10 @@
 }
 
 .product-card-detail__title {
-    width: 550px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
     color: #000000;
     font-family: "PT Sans";
     font-size: 24px;
