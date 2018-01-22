@@ -1,7 +1,3 @@
-#product-filter__popup{
-    width: 80%; 
-} 
-
 @media all and (min-width: 50em) {
     .product-card {
         width: 33.33%;
