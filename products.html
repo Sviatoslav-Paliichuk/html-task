@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="resources/css/objects/rating/rating.css">
     <link rel="stylesheet" href="resources/css/objects/toggle-switch/toggle-switch.css">
     <link rel="stylesheet" href="resources/css/objects/dropdown/dropdown.css">
-    <link rel="stylesheet" href="resources/css/objects/multirange/custom-range.css">
     <link rel="stylesheet" href="resources/css/objects/radio-button/radio-buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/lib/jquery-ui.css">
+    <link rel="stylesheet" href="resources/css/objects/multirange/custom-range.css">
+    <script src="resources/js/lib/jquery.min.js"></script>
+    <script src="resources/js/lib/jquery-ui.min.js"></script>
+    <script src="resources/js/custom-slider/custom-slider.js" defer></script>
+    
 </head>
 
 <body>
@@ -94,16 +99,12 @@
 
                                 <section class="range-slider">
                                     <p class="label-top">Rating:</p>
-                                    <span class="rangeValues">0-10</span>
-                                    <input value="0" min="0" max="5" step="1" type="range" id="filter-rating__min">
-                                    <input value="2" min="0" max="5" step="1" type="range" id="filter-rating__max">
+                                    <div id="rating-slider"></div>
                                 </section>
                                 <hr class="custom-hr-hidden">
                                 <section class="range-slider">
                                     <p class="label-top">Price:</p>
-                                    <span class="rangeValues">0-10</span>
-                                    <input value="87" min="0" max="1500" step="1" type="range" id="filter-price__min">
-                                    <input value="822" min="0" max="1500" step="1" type="range" id="filter-price__max">
+                                    <div id="price-slider"></div>
                                 </section>
                             </div>
 
@@ -165,7 +166,6 @@
                 else
                     filter.style.display = '';
             }
-
     </script>
 </body>
 

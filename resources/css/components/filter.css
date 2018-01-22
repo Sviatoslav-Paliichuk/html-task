@@ -120,7 +120,7 @@ h1:hover + .tooltip-wrapper {
 section.range-slider {
     position: relative;
     min-width: 350px;
-    height: 60px;
+    height: 75px;
     text-align: center;
     margin: 0px 20px 10px 20px;    
 }

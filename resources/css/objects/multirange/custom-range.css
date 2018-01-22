@@ -1,106 +1,53 @@
-input[type=range] {
-    /*removes default webkit styles*/
-    -webkit-appearance: none;
-    /*fix for FF unable to apply focus style bug */
-    border: 1px solid white;
-    /*required for proper track sizing in FF*/
-    width: 300px;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #ddd;
-    border: none;
-    border-radius: 3px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #3b8d82;
-    margin-top: -8px;
-}
-
-input[type=range]:focus {
-    outline: none;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ccc;
-}
-
-input[type=range]:-moz-focusring {
-    outline: 1px solid white;
-    outline-offset: -1px;
-}
-
-input[type=range]::-ms-track {
-    width: 300px;
-    height: 5px;
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-    background: transparent;
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
-    /*remove default tick marks*/
-    color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
-}
-
-input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
-}
-
-input[type=range]::-ms-thumb {
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #3b8d82;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-    background: #888;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
-}
-
-section.range-slider input {
-    /* pointer-events: none; tmp */
+.thumb {
     position: absolute;
-    overflow: hidden;
-    left: 0;
-    width: 350px;
-    outline: none;
-    height: 40px;
-    margin: 0;
-    padding: 0;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -20px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-family: "PT Sans";
+    color: #333;
 }
 
-section.range-slider input::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    padding-top: -20px; 
-    background-color:#3b8d82;
-    border-radius: 50%;
-    cursor: pointer;
-} 
+.price-range-both.thumb {
+    width: 100px;
+    margin: 0 0 0 -50px;
+    top: 26px;
+}
 
- section.range-slider input::-webkit-slider-thumb {
-    pointer-events: all;
-    position: relative;
-    z-index: 1;
-    outline: 0;
-}  
+.price-range-both {
+    display: none;
+}
+
+.thumb i {
+    font-style: normal;
+}
+
+.ui-slider-horizontal {
+    height: 2px;
+    border: 1px solid #3b8e82;
+    background: #3b8e82;
+}
+
+#price-slider {
+    min-width: 500px;
+}
+
+#rating-slider, #price-slider {
+    margin-top: 25px;
+}
+
+/* OVERRIDE DEFAULT JQUERY WIDGET STYLES */
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #3b8e82;
+    background: #3b8e82;
+    font-weight: normal;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-top: -7px;
+}
+
