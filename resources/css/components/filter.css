@@ -5,7 +5,7 @@
 #search {
     width: 275px;
     height: 35px;
-    padding: 15px;
+    padding-left: 15px;
     box-sizing: border-box;
     border: 2px solid #aaa;
     border-radius: 5px;
@@ -80,7 +80,8 @@
 h1:hover + .tooltip-wrapper {
     opacity: .9;
     top: 105px;
-  }
+}
+
 .tooltip-wrapper {
     position: relative;
     padding: 0px 5px 0px 0px;
