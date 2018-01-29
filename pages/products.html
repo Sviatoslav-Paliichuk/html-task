@@ -3,36 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="resources/css/layouts/main-layout.css">
-    <link rel="stylesheet" href="resources/css/products.css">
-    <link rel="stylesheet" href="resources/css/components/filter.css">
-    <link rel="stylesheet" href="resources/css/variables/breakpoints/products-breakpoints.css">
-    <link rel="stylesheet" href="resources/css/objects/rating/rating.css">
-    <link rel="stylesheet" href="resources/css/objects/toggle-switch/toggle-switch.css">
-    <link rel="stylesheet" href="resources/css/objects/dropdown/dropdown.css">
-    <link rel="stylesheet" href="resources/css/objects/radio-button/radio-buttons.css">
+    <link rel="stylesheet" href="../vendors/reset.min.css">
+    <link rel="stylesheet" href="../resources/css/shared/index.css">
+    <link rel="stylesheet" href="../resources/css/pages/product_customer/products.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
+    <link rel="stylesheet" href="../resources/css/shared/components/filter/filter.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/rating/rating.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/toggle-switch/toggle-switch.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/dropdown/dropdown.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/radio-button/radio-buttons.css">
+    <link rel="stylesheet" href="../vendors/jquery-ui.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/multirange/custom-range.css">
+    <script src="../vendors/jquery.min.js"></script>
+    <script src="../vendors/jquery-ui.min.js"></script>
+    <script src="../resources/js/custom-slider/custom-slider.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/css/lib/jquery-ui.css">
-    <link rel="stylesheet" href="resources/css/objects/multirange/custom-range.css">
-    <script src="resources/js/lib/jquery.min.js"></script>
-    <script src="resources/js/lib/jquery-ui.min.js"></script>
-    <script src="resources/js/custom-slider/custom-slider.js" defer></script>
-    
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav class="header-navigation">
             <ul>
                 <li>
                     <a href="" id="shopping-cart">
-                        <i class="fa fa-shopping-cart fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart fa-2x icon-default" aria-hidden="true"></i>
                     </a>
-                    <a href="" id="personal-account" class="decoration-clear active-user white">
-                        <span class="user-lable"> Hello,
-                            <i>John_Doe</i>
-                        </span>
-                        <i class="fa fa-sign-out fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    <a href="" id="personal-account">
+                        <span class="user-lable">Hello, John_Doe</span>
+                        <i class="fa fa-sign-out fa-2x icon-default" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
@@ -41,84 +39,81 @@
 
     <main>
         <div class="content">
-            <div class="content-container">
-
-                <div class="product-filter">
-                    <div class="product-filter__container">
-                        <input type="button" id="filter" value="Filter options" onclick="handleFilter()">
-                        <input type="text" id="search" placeholder="Filter by text...">
-                    </div>
+            <div class="product-filter">
+                <div class="product-filter__container">
+                    <input type="button" id="filter" class="btn btn-primary btn-regular" value="Filter options" onclick="handleFilter()">
+                    <input type="text" id="search" placeholder="Filter by text...">
                 </div>
+            </div>
 
-                <div class="product-filter__modal" id="product-filter__popup">
-                    <div class="tooltip-wrapper">
-                        <div class="tooltip">
-                            <div class="row-top">
-                                <div>
-                                    <p class="label-top">Availability:</p>
-                                    <label class="switch">
-                                        <input type="checkbox" checked>
-                                        <span class="slider round"></span>
+            <div class="product-filter__modal" id="product-filter__popup">
+                <div class="tooltip-wrapper">
+                    <div class="tooltip">
+                        <div class="row-top">
+                            <div>
+                                <p class="label-top">Availability:</p>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                                <label class="switch-aviable-only">Available only</label>
+                            </div>
+                            <hr class="custom-hr-hidden">
+                            <div>
+                                <p class="label-top">Gender:</p>
+                                <div class="radio-group">
+                                    <label class="radio-button-container">
+                                        <label>Man</label>
+                                        <input type="radio" checked="checked" name="radio" id="cs">
+                                        <span class="checkmark"></span>
                                     </label>
-                                    <label class="switch-aviable-only">Available only</label>
+                                    <label class="radio-button-container">
+                                        <label>Woman</label>
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-button-container">
+                                        <label>Unisex</label>
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
-                                <hr class="custom-hr-hidden">
-                                <div>
-                                    <p class="label-top">Gender:</p>
-                                    <div class="radio-group">
-                                        <label class="radio-button-container">
-                                            <label>Man</label>
-                                            <input type="radio" checked="checked" name="radio" id="cs">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-button-container">
-                                            <label>Woman</label>
-                                            <input type="radio" name="radio">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-button-container">
-                                            <label>Unisex</label>
-                                            <input type="radio" name="radio">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <hr class="custom-hr-hidden">
-                                <div>
-                                    <p class="label-top">Category:</p>
-                                    <div class="customized-dropdown-wrap">
-                                        <select name="" class="customized-dropdown">
-                                            <option value="-1" selected>Active wear</option>
-                                            <option>A brand new</option>
-                                            <option>Used</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <hr class="custom-hr">
                             </div>
-                            <div class="row-bottom">
-
-                                <section class="range-slider">
-                                    <p class="label-top">Rating:</p>
-                                    <div id="rating-slider"></div>
-                                </section>
-                                <hr class="custom-hr-hidden">
-                                <section class="range-slider">
-                                    <p class="label-top">Price:</p>
-                                    <div id="price-slider"></div>
-                                </section>
+                            <hr class="custom-hr-hidden">
+                            <div>
+                                <p class="label-top">Category:</p>
+                                <div class="customized-dropdown-wrap">
+                                    <select name="" class="customized-dropdown">
+                                        <option value="-1" selected>Active wear</option>
+                                        <option>A brand new</option>
+                                        <option>Used</option>
+                                    </select>
+                                </div>
                             </div>
+                            <hr class="custom-hr">
+                        </div>
+                        <div class="row-bottom">
 
+                            <section class="range-slider">
+                                <p class="label-top">Rating:</p>
+                                <div id="rating-slider"></div>
+                            </section>
+                            <hr class="custom-hr-hidden">
+                            <section class="range-slider">
+                                <p class="label-top">Price:</p>
+                                <div id="price-slider"></div>
+                            </section>
                         </div>
 
                     </div>
+
                 </div>
-                <div class="products-list" id="c-place">
-                    <div class="product-card">
-                        <div class="product-card__flex-container">
-                            <div class="product-card__image">
-                                <img src="./resources/images/new-content.jpg" alt="" width="240px" height="360px">
-                            </div>
+            </div>
+            <div class="products-list" id="c-place">
+                <div class="product-card">
+                    <div class="product-card__flex-container">
+                        <div class="product-card__image">
+                            <img src="../resources/images/new-content.jpg" alt="" width="240px" height="360px">
                             <div class="product-card__rating">
                                 <div class="rating">
                                     <span>☆</span>
@@ -128,20 +123,22 @@
                                     <span>☆</span>
                                 </div>
                             </div>
-                            <div class="product-card__description">
-                                <h1 class="product-card__title">
-                                    Active Coat Lorem 1
-                                </h1>
-                                <hr>
-                                <p class="product-card__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis
-                                    porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo
-                                    architecto iusto repudiandae, et amet.</p>
-                            </div>
-                            <nav class="product-card__nav">
-                                <h1 id="item-price">$47.95</h1>
-                                <input type="button" id="show-more" value="Show more">
-                            </nav>
                         </div>
+
+                        <div class="product-card__description">
+                            <h1 class="product-card__title">
+                                Active Coat Lorem 1
+                            </h1>
+                            <hr>
+                            <p class="product-card__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis
+                                porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto
+                                iusto repudiandae, et amet.</p>
+                        </div>
+                        <nav class="product-card__nav">
+                            <h1 id="item-price">$47.95</h1>
+                            <!-- <input type="button" id="show-more" value="Show more"> -->
+                            <button class="btn btn-primary btn-regular" id="show-more">Show more</button>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -149,24 +146,24 @@
     </main>
 
     <footer>
-        <p class="centered-text white">Copyright 'DemoShop', 2017</p>
+        <p class="copyright">Copyright 'DemoShop', 2017</p>
     </footer>
     <script>
-            var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='./resources/images/new-content.jpg' alt='' width='240px' height='360px'> </div> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div> <div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <input type='button' id='show-more' value='Show more'> </nav> </div> </div>";
-            window.onload = function () {
-                for (var i = 0; i < 8; i++) {
-                    document.getElementById("c-place").innerHTML += template;
-                }
+        var template = "<div class='product-card'> <div class='product-card__flex-container'> <div class='product-card__image'> <img src='../resources/images/new-content.jpg' alt='' width='240px' height='360px'> <div class='product-card__rating'> <div class='rating'> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> </div> </div>  </div><div class='product-card__description'> <h1 class='product-card__title'> Active Coat Lorem 1 </h1> <hr> <p class='product-card__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, repellat! Quae quia debitis porro? Tenetur assumenda aliquid quod eaque qui at laudantium explicabo pariatur nemo architecto iusto repudiandae, et amet.</p> </div> <nav class='product-card__nav'> <h1 id='item-price'>$47.95</h1> <button class='btn btn-primary btn-regular' id='show-more'>Show more</button> </nav> </div> </div>";
+        window.onload = function () {
+            for (var i = 0; i < 8; i++) {
+                document.getElementById("c-place").innerHTML += template;
             }
+        }
 
-            function handleFilter() {
-                var filter = document.getElementById('product-filter__popup');
+        function handleFilter() {
+            var filter = document.getElementById('product-filter__popup');
 
-                if (filter.style.display == '')
-                    filter.style.display = 'block';
-                else
-                    filter.style.display = '';
-            }
+            if (filter.style.display == '')
+                filter.style.display = 'block';
+            else
+                filter.style.display = '';
+        }
     </script>
 </body>
 
