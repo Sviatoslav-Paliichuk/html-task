@@ -1,17 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html, body, main {
+main {
     height: 100%;
-    min-height: 100% !important;
 }
 
 body {
     height: 100vh;
     /* Avoid the IE 10-11 `min-height` bug. */
-    background-image: url('../images/paper-full.jpg');
+    background-image: url('../../../images/paper-full.jpg');
 }
 
 .container {
@@ -94,4 +88,10 @@ body {
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 800px) {
+    .modalDialog>div {
+        width: 86% !important;
+    }
 }

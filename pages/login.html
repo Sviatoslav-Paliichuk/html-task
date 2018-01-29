@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="resources/css/login.css">
-    <link rel="stylesheet" href="resources/css/variables/breakpoints/login-breakpoints.css">
+    <link rel="stylesheet" href="../vendors/reset.min.css">
+    <link rel="stylesheet" href="../resources/css/pages/login/login.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -18,18 +19,18 @@
                     </div>
                     <div class="modal-content">
                         <form action="">
-                            <div class="inputWithIcon">
-                                <label for="login">Your Login:</label>
+                            <div class="form-group">
+                                <label for="login">Your login:</label>
                                 <input type="text" placeholder="" minlength="5">
                                 <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
-                            <div class="inputWithIcon">
-                                <label for="password">Your Password:</label>
+                            <div class="form-group">
+                                <label for="password">Your password:</label>
                                 <input type="password" placeholder="" minlength="5" maxlength="12">
                                 <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
-                            <div class="inputWithIcon submit-area">
-                                <input type="submit" value="Submit" id="submit">
+                            <div class="form-group submit-area">
+                                <button class="btn btn-primary btn-big" id="submit">Submit</button>
                             </div>
                         </form>
                     </div>

@@ -1,0 +1,43 @@
+.btn {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    font-family: "PT Sans";
+    font-size: 18px;
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.btn-big {
+    height: 50px;
+    width: 170px;
+}
+
+.btn-regular {
+    height: 35px;
+    width: 120px;
+    color: #FFFFFF;
+    font-family: "PT Sans";
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
+}
+
+.btn-secondary {
+    background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%);
+}
+
+.pressed {
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.disabled {
+    opacity: 0.75;
+}
