@@ -24,7 +24,6 @@ body {
     position: relative;
     margin: auto;
     border-radius: 15px;
-    background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -40,7 +39,7 @@ body {
     text-align: left;
     position: relative;
     transform: translateY(-50%);
-    background: repeating-linear-gradient( -45deg, #eee, #eee 10px, #d8d8d8 12px, #465298 11px) !important;
+    background: repeating-linear-gradient( -45deg, #eee, #eee 10px, #d8d8d8 12px, #465298 11px);
 }
 
 .login-popup-window__header {
