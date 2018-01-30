@@ -27,6 +27,10 @@
 
 .ui-slider-horizontal {
     height: 2px;
+    background: lightgray;
+}
+
+.ui-slider-horizontal .ui-slider-range{
     background: #3b8e82;
 }
 

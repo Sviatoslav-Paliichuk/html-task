@@ -6,12 +6,13 @@ main {
 
 .product-card {
     display: flex;
-    padding: 15px 10px 0px 5px;
+    padding: 15px 10px 0px 0px;
     width: 360px;
+    margin: auto;
 }
 
 .product-card__flex-container {
-    background-color: #fff;
+    background-image: url('../../../images/modal-bg.png');
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -24,6 +25,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     padding-top: 30px;
+    position: relative;
 }
 
 .products-list:after {
@@ -132,9 +134,6 @@ footer {
     .product-card__image {
         height: auto;
     }
-    .product-filter__wrapper {
-        padding: 0px 10px 0px 15px;
-    }
     .product-filter__component {
         width: 100%;
     }
@@ -170,6 +169,13 @@ footer {
         right: -10px;
         top: -10px;
     }
+    .filter-component__select-group, .filter-component__range-group {
+        height: auto;
+    }
+    #filter-search {
+        right: 30px;
+        position: absolute;
+    }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 800px) {
@@ -183,49 +189,16 @@ footer {
     .product-card__image {
         height: auto;
     }
-    .product-filter__wrapper, .product-filter__component {
-        width: 96%;
-    }
-    .product-filter__wrapper {
-        margin: initial;
-        padding: 0px;
-    }
-    #filter-price {
-        width: 45%;
-    }
-    #filter-rating {
-        width: 40%;
-    }
-    .product-filter__component:after {
-        right: 450px;
-    }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1000px) {
-    .content, .header-navigation {
-        width: 100% !important;
-    }
-    .product-card {
-        width: 48%;
-        height: auto;
-    }
     .product-card__image {
         height: auto;
     }
-    .product-filter__wrapper, .product-filter__component {
-        width: 96%;
+    .product-card {
+        width: 48%;
     }
-    .product-filter__wrapper {
-        margin: initial;
-        padding: 0px;
-    }
-    #filter-price {
-        width: 50%;
-    }
-    #filter-rating {
-        width: 40%;
-    }
-    .product-filter__component:after {
-        right: 450px;
+    .product-filter__modal {
+        right: 15px;
     }
 }

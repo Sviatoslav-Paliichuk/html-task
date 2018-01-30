@@ -58,9 +58,10 @@
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    margin-top: 40px;
+    margin-top: 10px;
     z-index: 9999;
     opacity: 1;
+    right: 10px;
 }
 
 h1:hover+.product-filter__wrapper {
@@ -70,16 +71,15 @@ h1:hover+.product-filter__wrapper {
 
 .product-filter__wrapper {
     position: relative;
-    padding: 0px 0px 0px 400px;
     z-index: 9999;
-    width: 750px;
+    width: 740px;
     margin: auto;
     display: flex;
     justify-content: flex-end;
 }
 
 .product-filter__component {
-    width: 750px;
+    width: 740px;
     height: 160px;
     display: flex;
     flex-wrap: wrap;
@@ -96,8 +96,7 @@ h1:hover+.product-filter__wrapper {
     content: "";
     position: absolute;
     top: -20px;
-    right: 60%;
-    margin-right: -120px;
+    right: 45%;
     /*triangle main*/
     border-bottom: 20px solid white;
     border-left: 15px solid transparent;
@@ -121,7 +120,7 @@ section.range-slider input::-webkit-slider-thumb {
 
 .filter-component__select-group, .filter-component__range-group {
     width: 100%;
-    height: auto;
+    height: 80px;
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     display: flex;
