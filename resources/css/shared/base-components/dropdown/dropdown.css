@@ -1,8 +1,8 @@
 .customized-dropdown-wrap {
-    width: 235px !important;
+    width: 235px;
     height: 35px !important;
     max-width: 235px;
-    margin: 0 !important;
+    margin: 0 ;
     color: white;
     overflow: hidden;
     position: relative;

@@ -1,15 +1,15 @@
-.switch {
+.toggle-switch__container {
     width: 42px;
     height: 24px;
     float: left;
     position: relative;
 }
 
-.switch input {
+.toggle-switch__container input {
     display: none;
 }
 
-.slider {
+.toggle-switch {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -22,7 +22,7 @@
     transition: .4s;
 }
 
-.slider:before {
+.toggle-switch:before {
     position: absolute;
     content: "";
     height: 20px;
@@ -34,28 +34,28 @@
     transition: .4s;
 }
 
-input:checked+.slider {
+input:checked+.toggle-switch {
     background-color: white;
 }
 
-input+.slider {
+input+.toggle-switch {
     background-color: white;
 }
 
-input:focus+.slider {
+input:focus+.toggle-switch {
     box-shadow: 0 0 1px #3b8d82;
 }
 
-input:checked+.slider:before {
+input:checked+.toggle-switch:before {
     -webkit-transform: translateX(18px);
     -ms-transform: translateX(18px);
     transform: translateX(18px);
 }
 
-.slider.round {
+.toggle-switch.round {
     border-radius: 34px;
 }
 
-.slider.round:before {
+.toggle-switch.round:before {
     border-radius: 50%;
 }
