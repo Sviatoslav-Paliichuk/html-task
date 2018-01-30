@@ -163,6 +163,11 @@ footer {
         left: 65px;
         right: initial;
     }
+    .customized-dropdown-wrap:after{
+        padding: 10px;
+        right: -10px;
+        top: -10px;
+    }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 800px) {
