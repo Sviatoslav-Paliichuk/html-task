@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../vendors/reset.min.css">
-    <link rel="stylesheet" href="../resources/css/pages/login/login.css">
-    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
+    <link rel="stylesheet" href="../resources/css/pages/login/login.css">
 </head>
 
 <body>
     <main>
 
-        <div class="modalDialog">
-            <div class="modal-container">
-                <div class="modal-header">
+        <div class="login-popup-container">
+            <div class="login-popup-window">
+                <div class="login-popup-window__header">
                     <p>Login to "Demo Shop"</p>
                 </div>
-                <div class="modal-content">
+                <div class="login-popup-window__content">
                     <form action="">
-                        <div class="form-group">
-                            <label for="login">Your login:</label>
+                        <div class="login-popup__form-group">
+                            <label class="form-group__label" for="login">Your login:</label>
                             <input type="text" placeholder="" minlength="5">
                             <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Your password:</label>
+                        <div class="login-popup__form-group">
+                            <label class="form-group__label" for="password">Your password:</label>
                             <input type="password" placeholder="" minlength="5" maxlength="12">
                             <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
                         </div>
-                        <div class="form-group submit-area">
-                            <button class="btn btn-primary btn-big" id="submit">Submit</button>
+                        <div class="login-popup__form-group submit-area">
+                            <button class="login-popup-window__submit btn btn-primary btn-big">Submit</button>
                         </div>
                     </form>
                 </div>
