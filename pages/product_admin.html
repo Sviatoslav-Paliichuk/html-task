@@ -128,8 +128,12 @@
                     <div class="popup-confirm-dialog__content">
                         <p class="popup-confirm-dialog__message">You are trying to delete this product.</p>
                         <p class="popup-confirm-dialog__message">Are you sure want this?</p>
-                        <input type="button" class="modal-button" value="Submit">
-                        <input type="button" class="modal-button btn-cancel" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog" value="Cancel">
+                        <div class="popup-confirm-dialog__buttons">
+                            <input type="button" id="popup-confirm-dialog__submit" class="btn btn-primary btn-big" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog"
+                                value="Submit">
+                            <input type="button" id="popup-confirm-dialog__cancel" class="btn btn-secondary btn-big" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog"
+                                value="Cancel">
+                        </div>
                     </div>
                 </div>
             </div>

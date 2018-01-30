@@ -126,7 +126,7 @@ input[type="text"], input[type="number"] {
 }
 
 @media (max-width: 800px) and (min-width: 480px) {
-    .edit-window-popup>div {
+    /* .edit-window-popup>div {
         width: 96% !important;
         height: 98% !important;
         overflow: scroll !important;
@@ -150,13 +150,14 @@ input[type="text"], input[type="number"] {
     }
     .customized-dropdown-wrap:after {
         right: -25px;
-    }
+    } */
 
 
-    #popup-alert-dialog>div{
+    #popup-alert-dialog>div, #popup-confirm-dialog>div{
         width: 96% !important;
     }
-    .popup-alert-dialog__message{
+    
+    .popup-alert-dialog__message, .popup-confirm-dialog__message{
         width: 100%;
     }
     
