@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../vendors/reset.min.css">
     <link rel="stylesheet" href="../resources/css/shared/index.css">
+    <link rel="stylesheet" href="../resources/css/shared/components/filter/filter.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer/products.css">
     <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
-    <link rel="stylesheet" href="../resources/css/shared/components/filter/filter.css">
     <link rel="stylesheet" href="../resources/css/shared/base-components/rating/rating.css">
     <link rel="stylesheet" href="../resources/css/shared/base-components/toggle-switch/toggle-switch.css">
     <link rel="stylesheet" href="../resources/css/shared/base-components/dropdown/dropdown.css">
@@ -94,12 +94,12 @@
                         </div>
                         <div class="row-bottom">
 
-                            <section class="range-slider">
+                            <section class="range-slider" id="filter-rating">
                                 <p class="label-top">Rating:</p>
                                 <div id="rating-slider"></div>
                             </section>
                             <hr class="custom-hr-hidden">
-                            <section class="range-slider">
+                            <section class="range-slider" id="filter-price">
                                 <p class="label-top">Price:</p>
                                 <div id="price-slider"></div>
                             </section>
@@ -136,7 +136,6 @@
                         </div>
                         <nav class="product-card__nav">
                             <h1 id="item-price">$47.95</h1>
-                            <!-- <input type="button" id="show-more" value="Show more"> -->
                             <button class="btn btn-primary btn-regular" id="show-more">Show more</button>
                         </nav>
                     </div>

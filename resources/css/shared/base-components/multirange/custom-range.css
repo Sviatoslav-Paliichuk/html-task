@@ -27,12 +27,11 @@
 
 .ui-slider-horizontal {
     height: 2px;
-    border: 1px solid #3b8e82;
     background: #3b8e82;
 }
 
 #price-slider {
-    min-width: 500px;
+    min-width: 350px;
 }
 
 #rating-slider, #price-slider {
