@@ -1,7 +1,3 @@
-main {
-    height: inherit !important;
-}
-
 .chart-left, .chart-right {
     width: 100%;
     min-height: 340px;
@@ -9,14 +5,6 @@ main {
 
 .manager-chart__container {
     background-color: white;
-}
-
-#shopping-cart {
-    padding-left: 11%;
-}
-
-#personal-account {
-    padding-right: 11%;
 }
 
 .chart-content__column-left {
@@ -52,19 +40,7 @@ main {
     flex: 1;
 }
 
-@media (max-width: 1280px) {
-    .content {
-        width: 100% !important;
-    }
-    #shopping-cart {
-        padding-left: 2% !important;
-    }
-    #personal-account {
-        padding-right: 2% !important;
-    }
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 800px) and (min-width: 400px) {
     .chart-content__container{
         display: block !important;
     }
