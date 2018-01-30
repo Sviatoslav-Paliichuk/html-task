@@ -136,7 +136,7 @@ input[type="text"], input[type="number"] {
     
     .modal-button{
         width: inherit;
-        margin: 60px 25px 20px 0px !important;  
+        margin: 35px 25px 20px 0px !important;  
     }
 
     .edit-window__flexbox-container{
