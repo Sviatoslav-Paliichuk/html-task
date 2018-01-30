@@ -99,7 +99,7 @@ main {
 
 .product-card__nav {
     background-image: url('../../../images/modal-bg.png');
-    background-position: -1px;
+    background-position: 2px;
     margin-top: auto;
     bottom: 0;
     right: 0;

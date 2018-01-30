@@ -42,11 +42,11 @@
 
 @media screen and (max-width: 800px) and (min-width: 400px) {
     .chart-content__container{
-        display: block !important;
+        display: block;
     }
     .chart-content__column-left, .chart-content__column-right{
-        margin-left: 0px !important; 
-        margin-right: 0px !important; 
+        margin-left: 0px; 
+        margin-right: 0px; 
         margin: 10px 0px 10px 0px;
     }
 }
