@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="resources/css/layouts/main-layout.css">
+
+    <link rel="stylesheet" href="../vendors/reset.min.css">
+    <link rel="stylesheet" href="../resources/css/shared/index.css">
+
+    <!--
+        
     <link rel="stylesheet" href="resources/css/manager.css">
     <link rel="stylesheet" href="resources/css/variables/breakpoints/manager-breakpoints.css">
     <link rel="stylesheet" href="resources/css/lib/c3.min.css">
     <script src="resources/js/lib/d3.min.js" defer></script>
-    <script src="resources/js/lib/c3.min.js" defer></script>
+    <script src="resources/js/lib/c3.min.js" defer></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -18,13 +23,11 @@
             <ul>
                 <li>
                     <a href="" id="shopping-cart">
-                        <i class="fa fa-shopping-cart fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart fa-2x icon-default" aria-hidden="true"></i>
                     </a>
-                    <a href="" id="personal-account" class="decoration-clear active-user white">
-                        <span class="user-lable"> Hello,
-                            <i>John_Doe</i>
-                        </span>
-                        <i class="fa fa-sign-out fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    <a href="" id="personal-account">
+                        <span class="user-lable">Hello, John_Doe</span>
+                        <i class="fa fa-sign-out fa-2x icon-default" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
@@ -49,7 +52,7 @@
     </main>
 
     <footer>
-        <p class="centered-text white">Copyright 'DemoShop', 2017</p>
+        <p class="copyright">Copyright 'DemoShop', 2017</p>
     </footer>
 
     <script src="./resources/js/charts/manager-chart/manager-chart.js" defer></script>
