@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="resources/css/layouts/main-layout.css">
-    <link rel="stylesheet" href="resources/css/product-details.css">
-    <link rel="stylesheet" href="resources/css/variables/breakpoints/product-details-breakpoints.css">
-    <link rel="stylesheet" href="resources/css/products.css">
-    <link rel="stylesheet" href="resources/css/objects/rating/rating.css">
+    <link rel="stylesheet" href="../vendors/reset.min.css">
+    <link rel="stylesheet" href="../resources/css/shared/index.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/rating/rating.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
+    <link rel="stylesheet" href="../resources/css/pages/product_customer/products.css">
+    <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -17,13 +18,11 @@
             <ul>
                 <li>
                     <a href="" id="shopping-cart">
-                        <i class="fa fa-shopping-cart fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart fa-2x icon-default" aria-hidden="true"></i>
                     </a>
-                    <a href="" id="personal-account" class="decoration-clear active-user white">
-                        <span class="user-lable"> Hello,
-                            <i>John_Doe</i>
-                        </span>
-                        <i class="fa fa-sign-out fa-2x icon-vertical-align white" aria-hidden="true"></i>
+                    <a href="" id="personal-account">
+                        <span class="user-lable">Hello, John_Doe</span>
+                        <i class="fa fa-sign-out fa-2x icon-default" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
@@ -45,20 +44,17 @@
                 </nav>
                 <div class="product-card__details">
                     <div class="product-card__details-container">
-                        <div class="product-card-details__image-container">
-                            <div class="product-card-details__image-content">
-                                <img src="./resources/images/new-content.jpg" class="new-content">
-                                <div class="product-card__rating">
-                                    <div class="rating">
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                    </div>
+                        <div class="product-card-details__image">
+                            <img src="../resources/images/new-content.jpg" class="product-card__image" alt="" />
+                            <div class="product-card__rating">
+                                <div class="rating">
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
                                 </div>
                             </div>
-
                         </div>
                         <div class="product-card-details__description-container">
                             <div class="product-card-details__description-content">
@@ -66,8 +62,7 @@
                                 <hr>
                                 <p class="product-card-detail__description">It’s self-adhesive so just use the pressure and warmth from your hands to shape and mold
                                     Abeego over or around your food. Lorem ipsum, dolor sit amet consectetur adipisicing
-                                    elit. Illo quos consequuntur, quia suscipit alias inventore facere, expedita voluptates
-                                    nihil sequi</p>
+                                    elit.</p>
                                 <p class="product-card-detail__description">You can
                                     <u> add 5 more.</u> You can also
                                     <u> edit </u> details or
@@ -76,10 +71,9 @@
                                 <nav class="product-card__nav">
                                     <hr>
                                     <h1 id="item-price">$47.95</h1>
-                                    <input type="button" id="show-more" value="Show more">
+                                    <button class="btn btn-primary btn-regular" id="show-more">Show more</button>
                                 </nav>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -89,7 +83,7 @@
     </main>
 
     <footer>
-        <p class="centered-text white">Copyright 'DemoShop', 2017</p>
+        <p class="copyright">Copyright 'DemoShop', 2017</p>
     </footer>
 
 </body>
