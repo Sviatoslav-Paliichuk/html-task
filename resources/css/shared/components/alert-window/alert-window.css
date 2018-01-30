@@ -63,7 +63,6 @@
 
 .header-container {
     height: 70px;
-    width: 730px;
     border-radius: 15px 15px 0 0;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11);
@@ -71,7 +70,6 @@
 
 .header-container__caption {
     height: 26px;
-    width: 730px;
     color: #000000;
     font-family: "PT Sans Caption";
     font-size: 22px;
