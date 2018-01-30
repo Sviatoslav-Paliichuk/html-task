@@ -126,50 +126,43 @@ input[type="text"], input[type="number"] {
 }
 
 @media (max-width: 800px) and (min-width: 480px) {
-    #popup-alert-dialog>div, #popup-confirm-dialog>div{
+    #popup-alert-dialog>div, #popup-confirm-dialog>div {
         width: 96% !important;
     }
-    
-    .popup-alert-dialog__message, .popup-confirm-dialog__message{
+    .popup-alert-dialog__message, .popup-confirm-dialog__message {
         width: 100%;
     }
-    
-    .modal-button{
+    .modal-button {
         width: inherit;
-        margin: 35px 25px 20px 0px !important;  
+        margin: 35px 25px 20px 0px !important;
     }
-
-    .edit-window__flexbox-container{
+    .edit-window__flexbox-container {
         display: block;
     }
-
-    .edit-window-popup>div{
+    .edit-window-popup>div {
         width: 98%;
         height: auto;
         overflow: scroll;
         margin-top: 15px;
     }
-    .edit-window__container{
-        top:0;
+    .edit-window__container {
+        top: 0;
         transform: initial;
     }
-
-    .form-control, .textarea{
+    .form-control, .textarea {
         width: 90%;
     }
-
-    .customized-dropdown-wrap{
+    .customized-dropdown-wrap {
         width: 92% !important;
-        max-width: 92%  !important;
+        max-width: 92% !important;
     }
-    .edit-window__flexbox-container>div{
+    .edit-window__flexbox-container>div {
         width: 100%;
     }
-
     .form-group {
         padding-bottom: 10px;
     }
-    #popup-edit-dialog__submit, #popup-edit-dialog__cancel{
+    #popup-edit-dialog__submit, #popup-edit-dialog__cancel {
         margin-bottom: 45px;
     }
 }
