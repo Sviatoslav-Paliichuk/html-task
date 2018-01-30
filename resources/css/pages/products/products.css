@@ -121,14 +121,14 @@ footer {
 
 @media screen and (max-width: 800px) and (min-width: 480px) {
     .content, .header-navigation {
-        width: 100%;
+        width: 100% !important;
     }
     .product-card {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
     }
     .product-card__image {
-        height: auto;
+        height: auto !important;
     }
     .product-filter__wrapper {
         padding: 0px 10px 0px 15px;
@@ -146,18 +146,18 @@ footer {
         max-width: 100%;
     }
     .filter-component__select-group div, section.range-slider, .customized-dropdown-wrap, section.range-slider input {
-        width: 100%;
+        width: 100% !important;
     }
     .custom-hr-hidden {
-        display: block;
+        display: block !important;
     }
     .product-filter {
-        justify-content: space-between;
+        justify-content: space-between !important;
     }
     #search {
-        position: absolute;
-        right: 0;
-        margin-right: 35px;
+        position: absolute !important;
+        right: 0 !important;
+        margin-right: 35px !important;
     }
     .product-filter__component:after {
         left: 65px;
@@ -167,21 +167,21 @@ footer {
 
 @media screen and (max-width: 1000px) and (min-width: 800px) {
     .content, .header-navigation {
-        width: 100%;
+        width: 100% !important;
     }
     .product-card {
-        width: 48%;
-        height: auto;
+        width: 48% !important;
+        height: auto !important;
     }
     .product-card__image {
-        height: auto;
+        height: auto !important;
     }
     .product-filter__wrapper, .product-filter__component {
-        width: 96%;
+        width: 96% !important;
     }
     .product-filter__wrapper {
-        margin: initial;
-        padding: 0px;
+        margin: initial !important;
+        padding: 0px !important;
     }
     #filter-price {
         width: 45%;
@@ -196,21 +196,21 @@ footer {
 
 @media screen and (max-width: 1200px) and (min-width: 1000px) {
     .content, .header-navigation {
-        width: 100%;
+        width: 100% !important;
     }
     .product-card {
-        width: 48%;
-        height: auto;
+        width: 48% !important;
+        height: auto !important;
     }
     .product-card__image {
-        height: auto;
+        height: auto !important;
     }
     .product-filter__wrapper, .product-filter__component {
-        width: 96%;
+        width: 96% !important;
     }
     .product-filter__wrapper {
-        margin: initial;
-        padding: 0px;
+        margin: initial !important;
+        padding: 0px !important;
     }
     #filter-price {
         width: 50%;
