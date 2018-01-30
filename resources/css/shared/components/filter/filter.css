@@ -1,4 +1,4 @@
-#search {
+#filter-search {
     width: 275px;
     height: 35px;
     padding-left: 15px;
@@ -46,7 +46,7 @@
     margin: 30px 10px 0px 0px;
 }
 
-#filter {
+#filter-popup {
     width: 140px;
     height: 35px;
     margin: 0px 10px 0px 0px;
@@ -54,7 +54,6 @@
 }
 
 .product-filter__modal {
-    /* width: 100%; */
     margin: auto;
     display: flex;
     justify-content: flex-end;
@@ -62,15 +61,14 @@
     margin-top: 40px;
     z-index: 9999;
     opacity: 1;
-    /* default */
 }
 
-h1:hover+.tooltip-wrapper {
+h1:hover+.product-filter__wrapper {
     opacity: .9;
     top: 105px;
 }
 
-.tooltip-wrapper {
+.product-filter__wrapper {
     position: relative;
     padding: 0px 0px 0px 400px;
     z-index: 9999;
@@ -80,7 +78,7 @@ h1:hover+.tooltip-wrapper {
     justify-content: flex-end;
 }
 
-.tooltip {
+.product-filter__component {
     width: 750px;
     height: 160px;
     display: flex;
@@ -94,7 +92,7 @@ h1:hover+.tooltip-wrapper {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
-.tooltip:after {
+.product-filter__component:after {
     content: "";
     position: absolute;
     top: -20px;
@@ -121,49 +119,18 @@ section.range-slider input::-webkit-slider-thumb {
     outline: 0;
 }
 
-.row-top, .row-bottom {
+.filter-component__select-group, .filter-component__range-group {
     width: 100%;
     height: auto;
     display: -webkit-flex;
-    /* Safari */
     -webkit-flex-wrap: wrap;
-    /* Safari 6.1+ */
     display: flex;
     flex-wrap: wrap;
 }
 
-.row-top div {
+.filter-component__select-group div {
     margin: auto;
     height: 58px;
-}
-
-.inline {
-    display: inline-block;
-}
-
-.left-column {
-    width: 30% !important;
-}
-
-.center-column {
-    width: 40% !important;
-}
-
-.right-column {
-    width: 30% !important;
-}
-
-.flexbox-container {
-    display: flex;
-}
-
-.flexbox-container.wrap {
-    flex-wrap: wrap;
-}
-
-.box {
-    width: 33%;
-    height: 50px;
 }
 
 .custom-hr {
@@ -183,7 +150,7 @@ section.range-slider input::-webkit-slider-thumb {
     margin: 15px 0px 15px 0px;
 }
 
-.label-top {
+.filter-items__label {
     text-align: left;
     color: #000000;
     font-family: "PT Sans";
