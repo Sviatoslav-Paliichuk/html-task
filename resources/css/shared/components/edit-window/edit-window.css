@@ -76,6 +76,14 @@
 
 .edit-window__flexbox-container>div {
     width: 50%;
-    padding: 10px;
-    padding: 15px 30px 15px 30px;
+    padding: 15px 20px 15px 25px;
+}
+
+#popup-edit-dialog__submit, #popup-edit-dialog__cancel{
+    margin-top: 0px;
+    margin-right: 25px; 
+}
+
+#popup-edit-dialog__submit{
+    margin-right: 215px;
 }

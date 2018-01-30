@@ -126,33 +126,6 @@ input[type="text"], input[type="number"] {
 }
 
 @media (max-width: 800px) and (min-width: 480px) {
-    /* .edit-window-popup>div {
-        width: 96% !important;
-        height: 98% !important;
-        overflow: scroll !important;
-    }
-    #confirm-dialog>div {
-        height: 288px !important;
-        width: 730px !important;
-    }
-    .edit-window__flexbox-container {
-        display: initial !important;
-    }
-    .edit-window__flexbox-container>div {
-        width: 100% !important;
-    }
-    .form-control, .textarea {
-        width: 100% !important;
-    }
-    .customized-dropdown-wrap {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    .customized-dropdown-wrap:after {
-        right: -25px;
-    } */
-
-
     #popup-alert-dialog>div, #popup-confirm-dialog>div{
         width: 96% !important;
     }
@@ -165,10 +138,38 @@ input[type="text"], input[type="number"] {
         width: inherit;
         margin: 60px 25px 20px 0px !important;  
     }
-}
 
-/* @media (max-width: 800px) {
-    .customized-dropdown-wrap:after {
-        right: -5px;
+    .edit-window__flexbox-container{
+        display: block;
     }
-} */
+
+    .edit-window-popup>div{
+        width: 98%;
+        height: auto;
+        overflow: scroll;
+        margin-top: 15px;
+    }
+    .edit-window__container{
+        top:0;
+        transform: initial;
+    }
+
+    .form-control, .textarea{
+        width: 90%;
+    }
+
+    .customized-dropdown-wrap{
+        width: 92% !important;
+        max-width: 92%  !important;
+    }
+    .edit-window__flexbox-container>div{
+        width: 100%;
+    }
+
+    .form-group {
+        padding-bottom: 10px;
+    }
+    #popup-edit-dialog__submit, #popup-edit-dialog__cancel{
+        margin-bottom: 45px;
+    }
+}
