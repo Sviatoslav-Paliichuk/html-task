@@ -9,7 +9,7 @@ header {
 }
 
 main {
-    background-image: url('../../images/paper-full.jpg');
+    background-image: url('../../images/bg.jpg');
     height: 92vh;
     /* ONLY FOR DEMO MODE! */
 }

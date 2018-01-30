@@ -5,7 +5,7 @@ main {
 body {
     height: 100vh;
     /* Avoid the IE 10-11 `min-height` bug. */
-    background-image: url('../../../images/paper-full.jpg');
+    background-image: url('../../../images/bg.jpg');
 }
 
 .container {
