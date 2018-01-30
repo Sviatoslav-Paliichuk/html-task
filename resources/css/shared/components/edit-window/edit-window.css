@@ -1,4 +1,3 @@
-
 .edit-window-popup {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
@@ -79,11 +78,11 @@
     padding: 15px 20px 15px 25px;
 }
 
-#popup-edit-dialog__submit, #popup-edit-dialog__cancel{
+#popup-edit-dialog__submit, #popup-edit-dialog__cancel {
     margin-top: 0px;
-    margin-right: 25px; 
+    margin-right: 25px;
 }
 
-#popup-edit-dialog__cancel{
+#popup-edit-dialog__cancel {
     margin-right: 215px;
 }
