@@ -11,10 +11,15 @@
     border-radius: 5px;
 }
 
-.btn:active {
+.btn-primary:active {
     background: linear-gradient(0deg, #2BBCC2 0%, #1B745F 100%);
     box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
- }
+}
+
+.btn-secondary:active {
+    background: linear-gradient(0deg, #B1B1B1 0%, #777777 100%);
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
 
 .btn-big {
     height: 50px;
