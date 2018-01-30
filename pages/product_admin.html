@@ -28,7 +28,9 @@
                         <i class="fa fa-shopping-cart fa-2x icon-default" aria-hidden="true"></i>
                     </a>
                     <a href="" id="personal-account">
-                        <span class="user-lable">Hello, John_Doe</span>
+                        <span class="active-user">Hello,
+                            <span class="active-user__name">John_Doe</span>
+                        </span>
                         <i class="fa fa-sign-out fa-2x icon-default" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -41,11 +43,11 @@
             <div id="edit-item-window" class="edit-window-popup">
                 <div class="edit-window__container">
                     <div class="edit-window__header">
-                        <span>Lorem ipsum dolor sit amet consectetur adipissicg elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Doloremque reprehenderit quia facilis, amet nemo incidunt neque quod nesciunt alias nostrum at voluptas blanditiis
-                            aliquid doloribus ipsa laborum temporibus? Quos, corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Perferendis ipsa, corrupti illo hic amet, voluptas libero autem harum odit sequi excepturi itaque cupiditate
-                            eos aut cum iste! Modi, voluptate neque?</span>
+                        <span>Lorem ipsum dolor sit amet consectetur adipissicg elit. Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Doloremque reprehenderit quia facilis, amet nemo incidunt neque quod nesciunt alias nostrum
+                            at voluptas blanditiis aliquid doloribus ipsa laborum temporibus? Quos, corrupti! Lorem, ipsum
+                            dolor sit amet consectetur adipisicing elit. Perferendis ipsa, corrupti illo hic amet, voluptas
+                            libero autem harum odit sequi excepturi itaque cupiditate eos aut cum iste! Modi, voluptate neque?</span>
                     </div>
                     <div class="edit-window__content">
                         <div class="edit-window__flexbox-container">
@@ -100,7 +102,7 @@
                                     <label>Price:</label>
                                     <input type="number" class="form-control" value="45.99">
                                 </div>
-            
+
                                 <div class="form-group">
                                     <label>Rating:</label>
                                     <div class="customized-dropdown-wrap">
@@ -111,10 +113,11 @@
                                         </select>
                                     </div>
                                 </div>
-            
+
                             </div>
-                        </div>                        
-                        <input type="button" id="popup-edit-dialog__cancel" class="btn btn-secondary btn-big" onclick="handlePopup(this)" data-window-type="edit-item-window" value="Cancel">
+                        </div>
+                        <input type="button" id="popup-edit-dialog__cancel" class="btn btn-secondary btn-big" onclick="handlePopup(this)" data-window-type="edit-item-window"
+                            value="Cancel">
                         <input type="button" id="popup-edit-dialog__submit" class="btn btn-primary btn-big" value="Submit">
                     </div>
                 </div>
@@ -143,76 +146,77 @@
                     <div class="header-container">
                         <p class="header-container__caption">Thank you!</p>
                     </div>
-                    <div class="popup-alert-dialog__content"> 
+                    <div class="popup-alert-dialog__content">
                         <p class="popup-alert-dialog__message">You have successfully purchased this item</p>
-            
-                        <input type="button" class="modal-button continue-shopping-button" onclick="handlePopup(this)" data-window-type="popup-alert-dialog" value="Continue shopping">
+
+                        <input type="button" class="modal-button continue-shopping-button" onclick="handlePopup(this)" data-window-type="popup-alert-dialog"
+                            value="Continue shopping">
                     </div>
                 </div>
             </div>
-       
+
             <div class="content-container">
-                    <nav class="product-card-details__navigation">
-                        <ul>
-                            <li>
-                                <a href="" class="product-card__back-button">Back</a>
-                                <a href="" class="product-card__category-name">Category:
-                                    <b> Man / Active wear </b>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="product-card__details">
-                        <div class="product-card__details-container">
-                            <div class="product-card-details__image">
-                                <img src="../resources/images/new-content.jpg" class="product-card__image" alt="" />
-                                <div class="product-card__rating">
-                                    <div class="rating">
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                    </div>
+                <nav class="product-card-details__navigation">
+                    <ul>
+                        <li>
+                            <a href="" class="product-card__back-button">Back</a>
+                            <a href="" class="product-card__category-name">Category:
+                                <b> Man / Active wear </b>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="product-card__details">
+                    <div class="product-card__details-container">
+                        <div class="product-card-details__image">
+                            <img src="../resources/images/new-content.jpg" class="product-card__image" alt="" />
+                            <div class="product-card__rating">
+                                <div class="rating">
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
                                 </div>
                             </div>
-                            <div class="product-card-details__description-container">
-                                <div class="product-card-details__description-content">
-                                    <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit.4</h4>
+                        </div>
+                        <div class="product-card-details__description-container">
+                            <div class="product-card-details__description-content">
+                                <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit.4</h4>
+                                <hr class="product-card__hr">
+                                <p class="product-card-detail__description">It’s self-adhesive so just use the pressure and warmth from your hands to shape and mold
+                                    Abeego over or around your food. Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit.
+                                </p>
+                                <p class="product-card-detail__description">You can
+                                    <u class="default-color"> add 5 more.</u> You can also
+                                    <u class="default-color" onclick="handlePopup(this)" data-window-type="edit-item-window"> edit </u> details or
+                                    <u class="default-color" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog"> delete </u> them</p>
+                                <nav class="product-card__nav">
                                     <hr class="product-card__hr">
-                                    <p class="product-card-detail__description">It’s self-adhesive so just use the pressure and warmth from your hands to shape and mold
-                                        Abeego over or around your food. Lorem ipsum, dolor sit amet consectetur adipisicing
-                                        elit.
-                                    </p>
-                                    <p class="product-card-detail__description">You can
-                                        <u class="default-color" > add 5 more.</u> You can also
-                                        <u class="default-color" onclick="handlePopup(this)" data-window-type="edit-item-window"> edit </u> details or
-                                        <u class="default-color" onclick="handlePopup(this)" data-window-type="popup-confirm-dialog"> delete </u> them</p>
-                                    <nav class="product-card__nav">
-                                        <hr class="product-card__hr">
-                                        <h1 id="item-price">$47.95</h1>
-                                        <button class="btn btn-primary btn-regular"  id="show-more" onclick="handlePopup(this)" data-window-type="popup-alert-dialog">Buy</button>
-                                    </nav>
-                                </div>
+                                    <h1 id="item-price">$47.95</h1>
+                                    <button class="btn btn-primary btn-regular" id="show-more" onclick="handlePopup(this)" data-window-type="popup-alert-dialog">Buy</button>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         </div>
     </main>
 
     <footer>
-            <p class="copyright">Copyright 'DemoShop', 2017</p>
-        </footer>
+        <p class="copyright">Copyright 'DemoShop', 2017</p>
+    </footer>
     <script>
-            function handlePopup(popup) {
-                var elem = popup.getAttribute("data-window-type");
-                if (document.getElementById(elem).style.display == '')
-                    document.getElementById(elem).style.display = 'block';
-                else
-                    document.getElementById(elem).style.display = '';
-            }        
+        function handlePopup(popup) {
+            var elem = popup.getAttribute("data-window-type");
+            if (document.getElementById(elem).style.display == '')
+                document.getElementById(elem).style.display = 'block';
+            else
+                document.getElementById(elem).style.display = '';
+        }        
     </script>
 </body>
 
