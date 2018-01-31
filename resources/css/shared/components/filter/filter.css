@@ -58,10 +58,9 @@
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    margin-top: 10px;
     z-index: 9999;
     opacity: 1;
-    right: 10px;
+    right: 9px;
 }
 
 h1:hover+.product-filter__wrapper {
@@ -92,15 +91,15 @@ h1:hover+.product-filter__wrapper {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
+/* FILTER TRIANGLE */
 .product-filter__component:after {
     content: "";
     position: absolute;
-    top: -20px;
-    right: 45%;
-    /*triangle main*/
-    border-bottom: 20px solid white;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
+    top: -10px;
+    right: 43%;
+    border-bottom: 30px solid white;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
 }
 
 section.range-slider {

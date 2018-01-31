@@ -6,9 +6,9 @@ main {
 
 .product-card {
     display: flex;
-    padding: 15px 10px 0px 0px;
+    padding: 0px;
     width: 360px;
-    margin: auto;
+    margin: 10px auto 10px auto;
 }
 
 .product-card__flex-container {
@@ -161,13 +161,16 @@ footer {
         margin-right: 35px;
     }
     .product-filter__component:after {
-        left: 65px;
+        left: 40px;
         right: initial;
     }
     .customized-dropdown-wrap:after {
         padding: 10px;
         right: -10px;
         top: -10px;
+    }
+    .product-filter__modal{
+        right: 0px;
     }
     .filter-component__select-group, .filter-component__range-group {
         height: auto;
@@ -197,8 +200,5 @@ footer {
     }
     .product-card {
         width: 48%;
-    }
-    .product-filter__modal {
-        right: 15px;
     }
 }
