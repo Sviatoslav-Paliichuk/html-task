@@ -44,6 +44,7 @@
     padding: 0px 0px 20px 0px;
 }
 
+/* OVERRIDE HR STYLES FOR THIS PAGE */
 hr {
     width: 100% !important;
     margin-bottom: 10px !important;

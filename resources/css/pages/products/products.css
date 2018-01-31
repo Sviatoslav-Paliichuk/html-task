@@ -114,19 +114,10 @@ main {
 }
 
 footer {
-    position: inherit !important;
-}
-
-@media screen and (max-width: 480px) and (min-width: 400px) {
-    .content, .header-navigation {
-        width: 100% !important;
-    }
+    position: inherit;
 }
 
 @media screen and (max-width: 800px) and (min-width: 480px) {
-    .content, .header-navigation {
-        width: 100% !important;
-    }
     .product-card {
         width: 100%;
         height: auto;
@@ -182,9 +173,6 @@ footer {
 }
 
 @media screen and (max-width: 1000px) and (min-width: 800px) {
-    .content, .header-navigation {
-        width: 100% !important;
-    }
     .product-card {
         width: 48%;
         height: auto;
