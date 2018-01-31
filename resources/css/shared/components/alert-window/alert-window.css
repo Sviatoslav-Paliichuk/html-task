@@ -44,14 +44,16 @@
     width: 220px;
     border-radius: 5px;
     background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
-    margin-top: 60px !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
-#continue-dialog>div{
-	height: 257px !important;
-	width: 730px !important;
-	border-radius: 15px;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+#continue-dialog>div {
+    height: 257px !important;
+    width: 730px !important;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .alert-window {

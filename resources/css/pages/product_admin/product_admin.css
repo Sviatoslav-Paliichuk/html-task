@@ -75,18 +75,20 @@ u:hover {
     background-color: #FFFFFF;
     padding: 10px;
     border: none;
+    box-sizing: border-box;
 }
 
 .radio-group {
-    height: 26px !important;
+    height: 28px;
 }
 
 .checkmark {
-    background-color: white !important;
+    background-color: white;
 }
 
 input[type="text"], input[type="number"] {
     padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .modal-button[value] {
@@ -96,24 +98,19 @@ input[type="text"], input[type="number"] {
     font-weight: bold;
     line-height: 23px;
     text-align: center;
+    margin: 0px 25px 25px 0px;
 }
 
 .modal-button {
-    height: 50px;
-    background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    margin-right: 20px;
-    display: block;
-    font-size: 14px;
-    line-height: 19px;
-    font-family: "PT Sans";
     cursor: pointer;
-    float: right;
-    position: relative;
-    border-radius: 5px;
+}
+
+.confirm-buttons__flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-cancel {
@@ -132,14 +129,10 @@ input[type="text"], input[type="number"] {
     .popup-alert-dialog__message, .popup-confirm-dialog__message {
         width: 100%;
     }
-    .modal-button {
-        width: inherit;
-        margin: 35px 25px 20px 0px !important;
-    }
     .edit-window__flexbox-container {
         display: block;
     }
-    .edit-window-popup{
+    .edit-window-popup {
         margin: 10px;
         background: transparent;
     }
@@ -153,19 +146,33 @@ input[type="text"], input[type="number"] {
         transform: initial;
     }
     .form-control, .textarea {
-        width: 90%;
+        width: 100%;
+        margin: 0px;
     }
     .customized-dropdown-wrap {
-        width: 92%;
-        max-width: 92%;
+        width: 100%;
+        max-width: 100%;
     }
     .edit-window__flexbox-container>div {
         width: 100%;
+        padding: 0px;
     }
     .form-group {
-        padding-bottom: 10px;
+        margin: 10px 35px 10px 35px;
+    }
+    input[type="text"], input[type="number"] {
+        padding-left: 10px;
+        box-sizing: border-box;
     }
     #popup-edit-dialog__submit, #popup-edit-dialog__cancel {
-        margin-bottom: 45px;
+        right: 0px;
+        position: relative;
+        margin: 0px 0px 25px 0px;
+    }
+    #popup-edit-dialog__submit {
+        margin-left: 10px;
+    }
+    #popup-edit-dialog__cancel {
+        margin-right: 10px;
     }
 }
