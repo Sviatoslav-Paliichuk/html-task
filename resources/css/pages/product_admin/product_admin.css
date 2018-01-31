@@ -36,22 +36,21 @@ u:hover {
 }
 
 .bitmap {
-    height: 200px !important;
-    width: 301px !important;
+    height: 200px;
+    width: 300px;
     border: 1px solid #D8D8D8;
 }
 
 .customized-dropdown {
-    background-color: #FFFFFF !important;
-    color: black !important;
+    background-color: #FFFFFF;
+    color: black;
 }
 
 .customized-dropdown-wrap {
-    width: 300px !important;
-    height: 35px !important;
-    max-width: 300px !important;
+    width: 300px;
+    max-width: 300px;
     border-radius: 5px;
-    color: #3b8d82 !important;
+    color: #3b8d82;
 }
 
 .customized-dropdown-wrap:after {
@@ -127,7 +126,8 @@ input[type="text"], input[type="number"] {
 
 @media (max-width: 800px) and (min-width: 480px) {
     #popup-alert-dialog>div, #popup-confirm-dialog>div {
-        width: 96% !important;
+        width: auto;
+        margin: 10px;
     }
     .popup-alert-dialog__message, .popup-confirm-dialog__message {
         width: 100%;
@@ -139,11 +139,14 @@ input[type="text"], input[type="number"] {
     .edit-window__flexbox-container {
         display: block;
     }
+    .edit-window-popup{
+        margin: 10px;
+        background: transparent;
+    }
     .edit-window-popup>div {
-        width: 98%;
-        height: auto;
+        width: 100%;
+        height: 100%;
         overflow: scroll;
-        margin-top: 15px;
     }
     .edit-window__container {
         top: 0;
@@ -153,8 +156,8 @@ input[type="text"], input[type="number"] {
         width: 90%;
     }
     .customized-dropdown-wrap {
-        width: 92% !important;
-        max-width: 92% !important;
+        width: 92%;
+        max-width: 92%;
     }
     .edit-window__flexbox-container>div {
         width: 100%;

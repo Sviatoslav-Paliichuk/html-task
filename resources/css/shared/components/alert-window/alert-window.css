@@ -19,8 +19,8 @@
     position: relative;
     margin: auto;
     background-image: url('../../../../images/modal-bg.png');
-    height: 288px !important;
-    width: 730px !important;
+    height: 288px;
+    width: 730px;
     border-radius: 15px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
@@ -55,8 +55,8 @@
 }
 
 .alert-window {
-    height: 288px !important;
-    width: 730px !important;
+    height: 288px;
+    width: 730px;
     border-radius: 15px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }

@@ -44,7 +44,7 @@
 }
 
 .edit-window__header {
-    padding: 20px !important;
+    padding: 20px;
     height: auto;
     font-size: 24px;
     background-color: #ffffff;
@@ -60,7 +60,7 @@
     display: inline-block;
     width: 100%;
     white-space: nowrap;
-    overflow: hidden !important;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
