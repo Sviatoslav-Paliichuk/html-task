@@ -159,7 +159,8 @@ input[type=text]:invalid, input[type=password]:invalid {
         width: initial;
     }
     .login-popup-container>div {
-        width: 98%;
+        width: auto;
+        margin: 5px;
     }
     .login-popup__form-group {
         width: 100%;

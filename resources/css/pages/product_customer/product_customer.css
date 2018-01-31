@@ -5,8 +5,8 @@
 }
 
 .product-card__details {
-    width: 96%;
-    margin: auto;
+    width: auto;
+    margin: 25px;
     background-image: url('../../../images/modal-bg.png');
 }
 
@@ -14,13 +14,6 @@
     margin-left: 20px;
     margin-right: 20px;
     padding-bottom: 20px;
-}
-
-.product-card-details__image-container {
-    float: left;
-    height: 375px;
-    width: 46%;
-    margin-top: 19px;
 }
 
 .product-card-details__description-container {
@@ -78,7 +71,6 @@ nav>hr {
 
 .product-card__image {
     height: 350px;
-    width: 525px;
     padding-top: 20px;
 }
 
@@ -92,10 +84,6 @@ nav>hr {
 
 .product-card__category-name {
     margin: 15px 0px 15px 0px;
-}
-
-.product-card__rating {
-    width: 94%;
 }
 
 .header-navigation {
@@ -118,9 +106,6 @@ nav>hr {
     .product-card-details__image, .product-card-details__description-container {
         float: none;
         width: auto;
-    }
-    .product-card__rating {
-        width: 100%;
     }
     .product-card__image {
         width: 100%;
