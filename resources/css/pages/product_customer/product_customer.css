@@ -1,7 +1,9 @@
-/* @override content-container */
+main{
+    height: calc(100% - 90px);
+}
 
 .content-container {
-    min-height: calc(90vh + 15px) !important;
+    min-height: 100%;
 }
 
 .product-card__details {
@@ -90,7 +92,6 @@ nav>hr {
 }
 
 .header-navigation {
-    width: 1200px;
     margin: auto;
 }
 
