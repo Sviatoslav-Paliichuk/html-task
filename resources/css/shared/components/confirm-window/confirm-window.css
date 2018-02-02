@@ -75,11 +75,11 @@
     padding-top: 50px;
 }
 
-#popup-confirm-dialog__cancel, #popup-confirm-dialog__submit{
+#popup-confirm-dialog__cancel, #popup-confirm-dialog__submit {
     margin-top: 25px;
-    margin-right: 25px; 
+    margin-right: 25px;
 }
 
-#popup-confirm-dialog__cancel{
+#popup-confirm-dialog__cancel {
     margin-right: 225px;
 }

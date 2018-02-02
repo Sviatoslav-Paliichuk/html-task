@@ -92,6 +92,7 @@ h1:hover+.product-filter__wrapper {
 }
 
 /* FILTER TRIANGLE */
+
 .product-filter__component:after {
     content: "";
     position: absolute;

@@ -36,17 +36,17 @@
     padding: 10px;
 }
 
-#chart-content > div {
+#chart-content>div {
     flex: 1;
 }
 
 @media screen and (max-width: 800px) and (min-width: 400px) {
-    .chart-content__container{
+    .chart-content__container {
         display: block;
     }
-    .chart-content__column-left, .chart-content__column-right{
-        margin-left: 0px; 
-        margin-right: 0px; 
+    .chart-content__column-left, .chart-content__column-right {
+        margin-left: 0px;
+        margin-right: 0px;
         margin: 10px 0px 10px 0px;
     }
 }

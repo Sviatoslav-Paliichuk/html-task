@@ -2,7 +2,7 @@
     width: 235px;
     height: 35px !important;
     max-width: 235px;
-    margin: 0 ;
+    margin: 0;
     color: white;
     overflow: hidden;
     position: relative;
@@ -21,7 +21,7 @@
     font-size: 20px;
     transform: rotate(-135deg);
     height: 100%;
-    pointer-events: none;    
+    pointer-events: none;
 }
 
 .customized-dropdown {
@@ -34,12 +34,16 @@
     outline: none;
     font-size: 14px;
     font-family: "PT Sans";
-    -webkit-appearance: none; /* for webkit browsers */
-    -moz-appearance: none; /* for firefox */
-    appearance: none; /* for modern browsers */
+    -webkit-appearance: none;
+    /* for webkit browsers */
+    -moz-appearance: none;
+    /* for firefox */
+    appearance: none;
+    /* for modern browsers */
 }
 
 /* remove default caret for ie */
+
 .customized-dropdown::-ms-expand {
-   display:none;
+    display: none;
 }

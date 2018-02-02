@@ -13,9 +13,9 @@
     float: left;
 }
 
-.radio-button-container > label {
-    font-family: "PT Sans";	
-    font-size: 14px;	
+.radio-button-container>label {
+    font-family: "PT Sans";
+    font-size: 14px;
     line-height: 19px;
     margin-right: 5px;
 }
@@ -35,6 +35,7 @@
     border-radius: 50%;
     border: 1px solid #3b8d82;
 }
+
 .radio-button-container input:checked~.checkmark {
     background-color: #3b8d82;
 }
