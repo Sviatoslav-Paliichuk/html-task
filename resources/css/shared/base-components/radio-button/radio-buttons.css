@@ -52,7 +52,7 @@
 
 .radio-button-container .checkmark:after {
     box-shadow: 0 0 0 1px white inset;
-    left: 0px;
+    left: 0;
     width: 25px;
     height: 25px;
     border-radius: 50%;

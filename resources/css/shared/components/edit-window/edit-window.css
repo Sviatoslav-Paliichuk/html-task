@@ -46,7 +46,6 @@
 .edit-window__header {
     padding: 20px;
     height: auto;
-    font-size: 24px;
     background-color: #ffffff;
     color: #000000;
     font-family: "PT Sans Caption";
@@ -80,7 +79,7 @@
 }
 
 #popup-edit-dialog__submit, #popup-edit-dialog__cancel {
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 25px;
 }
 

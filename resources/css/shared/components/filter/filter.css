@@ -43,13 +43,13 @@
 .product-filter__container {
     display: flex;
     justify-content: flex-end;
-    margin: 30px 10px 0px 0px;
+    margin: 30px 10px 0 0;
 }
 
 #filter-popup {
     width: 140px;
     height: 35px;
-    margin: 0px 10px 0px 0px;
+    margin: 0 10px 0 0;
     position: inherit;
 }
 
@@ -108,7 +108,7 @@ section.range-slider {
     min-width: 268px;
     height: 75px;
     text-align: center;
-    margin: 0px 20px 10px 20px;
+    margin: 0 20px 10px 20px;
 }
 
 section.range-slider input::-webkit-slider-thumb {
@@ -137,7 +137,7 @@ section.range-slider input::-webkit-slider-thumb {
     height: 0.5px;
     box-sizing: border-box;
     border: 0.5px solid #288575;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0 15px 0;
 }
 
 .custom-hr-hidden {
@@ -146,7 +146,7 @@ section.range-slider input::-webkit-slider-thumb {
     height: 0.5px;
     box-sizing: border-box;
     border: 0.5px solid #288575;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0 15px 0;
 }
 
 .filter-items__label {
@@ -156,7 +156,7 @@ section.range-slider input::-webkit-slider-thumb {
     font-size: 12px;
     line-height: 15px;
     height: 14px;
-    margin: 5px 0px 5px 0px;
+    margin: 5px 0 5px 0;
 }
 
 .radio-group {
@@ -168,6 +168,6 @@ section.range-slider input::-webkit-slider-thumb {
     font-size: 14px;
     line-height: 19px;
     float: left;
-    margin: 0px 0px 0px 10px;
+    margin: 0 0 0 10px;
     padding-top: 2px;
 }

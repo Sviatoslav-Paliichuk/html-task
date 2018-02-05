@@ -46,9 +46,9 @@
 
 .customized-dropdown-wrap:after {
     content: "┏";
-    padding: 0px 0px;
+    padding: 0;
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 0;
     z-index: 1;
     text-align: center;
@@ -93,7 +93,7 @@ input[type="text"], input[type="number"] {
     font-weight: bold;
     line-height: 23px;
     text-align: center;
-    margin: 0px 25px 25px 0px;
+    margin: 0 25px 25px 0;
 }
 
 .modal-button {
@@ -142,7 +142,7 @@ input[type="text"], input[type="number"] {
     }
     .form-control, .textarea {
         width: 100%;
-        margin: 0px;
+        margin: 0;
     }
     .customized-dropdown-wrap {
         width: 100%;
@@ -150,7 +150,7 @@ input[type="text"], input[type="number"] {
     }
     .edit-window__flexbox-container>div {
         width: 100%;
-        padding: 0px;
+        padding: 0;
     }
     .form-group {
         margin: 10px 35px 10px 35px;
@@ -160,9 +160,9 @@ input[type="text"], input[type="number"] {
         box-sizing: border-box;
     }
     #popup-edit-dialog__submit, #popup-edit-dialog__cancel {
-        right: 0px;
+        right: 0;
         position: relative;
-        margin: 0px 0px 25px 0px;
+        margin: 0 0 25px 0;
     }
     #popup-edit-dialog__submit {
         margin-left: 10px;

@@ -117,7 +117,7 @@ input[type=text]:invalid, input[type=password]:invalid {
 
 .login-popup__form-group {
     width: 570px;
-    margin: 0px 55px 0px 55px;
+    margin: 0 55px 0 55px;
     position: relative;
 }
 
@@ -148,12 +148,12 @@ input[type=text]:invalid, input[type=password]:invalid {
 }
 
 .login-popup-window__submit {
-    margin: 25px 120px 0px 0px;
+    margin: 25px 120px 0 0;
 }
 
 @media screen and (max-width: 580px) and (min-width: 400px) {
     .login-popup-window__submit {
-        margin: 25px 45px 0px 0px;
+        margin: 25px 45px 0 0;
     }
     .login-popup-window__header, .login-popup-window__header>p {
         width: initial;
@@ -164,7 +164,7 @@ input[type=text]:invalid, input[type=password]:invalid {
     }
     .login-popup__form-group {
         width: 100%;
-        margin: 0px 20px 0px 20px;
+        margin: 0 20px 0 20px;
     }
     .login-popup__form-group input {
         width: 90%;

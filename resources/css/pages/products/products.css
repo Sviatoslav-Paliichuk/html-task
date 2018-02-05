@@ -6,9 +6,8 @@ main {
 
 .product-card {
     display: flex;
-    padding: 0px;
     width: 360px;
-    padding: 15px 10px 0px 5px;
+    padding: 15px 10px 0 5px;
 }
 
 .product-card__flex-container {
@@ -60,14 +59,13 @@ main {
 }
 
 #item-price {
-    font-size: 36px;
     float: left;
     padding-left: 20px;
     font-family: "PT Sans";
     font-size: 24px;
     font-weight: bold;
     line-height: 32px;
-    margin: 10px 0px 15px 0px;
+    margin: 10px 0 15px 0;
 }
 
 #item-price::first-letter {
@@ -92,7 +90,7 @@ main {
     float: right;
     position: relative;
     padding: 1px;
-    margin: 10px 15px 15px 0px;
+    margin: 10px 15px 15px 0;
 }
 
 .product-card__description {
@@ -161,7 +159,7 @@ footer {
         top: -10px;
     }
     .product-filter__modal {
-        right: 0px;
+        right: 0;
     }
     .filter-component__select-group, .filter-component__range-group {
         height: auto;
