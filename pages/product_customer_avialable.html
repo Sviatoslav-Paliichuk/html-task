@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../vendors/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resources/css/shared/main-layout.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/rating/rating.css">
+    <link rel="stylesheet" href="../resources/css/shared/base-components/buttons/buttons.css">
+    <link rel="stylesheet" href="../resources/css/pages/products/products.css">
+    <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
+    <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
+    <script src="../resources/js/image-slider/image-slider.js"></script>
+</head>
+
+<body>
+<header>
+    <nav class="header-navigation">
+        <ul>
+            <li>
+                <a id="shopping-cart">
+                    <i class="fa fa-shopping-cart fa-2x icon-default" aria-hidden="true"></i>
+                </a>
+                <a id="personal-account">
+                        <span class="active-user">Hello,
+                            <span class="active-user__name">John_Doe</span>
+                        </span>
+                    <i class="fa fa-sign-out fa-2x icon-default" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="content">
+        <div class="content-container">
+            <nav class="product-card-details__navigation">
+                <ul>
+                    <li>
+                        <a class="product-card__back-button">Back</a>
+                        <a class="product-card__category-name">Category:
+                            <b> Man / Active wear </b>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="product-card__details">
+                <div class="product-card__details-container">
+                    <div class="product-card-details__image">
+                        <div class="product-card-details__image-container">
+                            <i class="prev-image__icon" onclick="prevImage()"></i>
+                            <i class="next-image__icon" onclick="nextImage()"></i>
+                            <img src="../resources/images/product-items/1.jpg" class="product-card__image"
+                                 id="product-card__image-slider"/>
+                            <span class="product-card-details__image-description" id="product-card__image-label">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </span>
+                            <div class="product-card__rating">
+                                <div class="rating">
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card-details__description-container">
+                        <div class="product-card-details__description-content">
+                            <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
+                                Adipisicing Elit.4</h4>
+                            <hr class="product-card__hr">
+                            <p class="product-card-detail__description">It’s self-adhesive so just use the pressure and
+                                warmth from your hands to shape and mold
+                                Abeego over or around your food. Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.
+                            </p>
+                            <p class="product-card-detail__description">You can
+                                <u class="default-color"> add 5 more.</u> You can also
+                                <u class="default-color"> edit </u> details or
+                                <u class="default-color"> delete </u> them</p>
+                            <nav class="product-card__nav">
+                                <hr class="product-card__hr">
+                                <h1 id="item-price">$47.95</h1>
+                                <button class="btn btn-primary btn-regular" id="show-more">Show more</button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p class="copyright">Copyright 'DemoShop', 2017</p>
+</footer>
+
+</body>
+
+</html>
