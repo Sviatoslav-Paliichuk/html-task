@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
     <script src="../resources/js/image-slider/image-slider.js" defer></script>
     <script src="../resources/js/image-zoom/image-zoom.js"></script>
+    <script src="../resources/js/product_customer/product-review.js"></script>
     <!--<script src="../resources/js/watermark-generator/watermark-generator.js" defer  ></script>-->
 
 </head>
@@ -59,13 +60,14 @@
                             <i class="next-image__icon" onclick="nextImage()" onmouseover="destroyimageZoom()"></i>
 
                             <!--<img src="../resources/images/product-items/1.jpg" class="product-card__image"-->
-                                 <!--id="product-card__image-slider"-->
-                                 <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');"-->
+                            <!--id="product-card__image-slider"-->
+                            <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');"-->
                             <!--/>-->
 
 
-                            <img id="scream"  src="../resources/images/product-items/2.jpg" class="product-card__image"  alt="The Scream" src=""
-                                 crossorigin="Anonymous" style="display: none;" >
+                            <img id="scream" src="../resources/images/product-items/2.jpg" class="product-card__image"
+                                 alt="The Scream" src=""
+                                 crossorigin="Anonymous" style="display: none;">
 
                             <canvas id="myCanvas"
                                     style="border:1px solid #d3d3d3;display: none"
@@ -76,15 +78,14 @@
                             </canvas>
 
                             <!--<img class="product-card__image" id="product-card__image-slider"-->
-                                 <!--alt="The Scream" src="" crossorigin="Anonymous"-->
-                                 <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');">-->
+                            <!--alt="The Scream" src="" crossorigin="Anonymous"-->
+                            <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');">-->
 
 
                             <img src="../resources/images/product-items/1.jpg" class="product-card__image"
-                            id="product-card__image-slider"
-                            onmouseenter="imageZoom('product-card__image-slider', 'myresult');"
+                                 id="product-card__image-slider"
+                                 onmouseenter="imageZoom('product-card__image-slider', 'myresult');"
                             />
-
 
 
                             <span class="product-card-details__image-description" id="product-card__image-label">
@@ -123,6 +124,77 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="product-card__review">
+                <p class="product-card__review--purpose">There is no user to reviews for now</p>
+                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review"> share your thoughts with other customers</span>
+                    ?</p>
+            </div>
+            <div class="product-card__edit-review">
+                <span class="product-card__edit-review-label">Add review</span>
+                <div class="product-card__edit-review-header">
+                    <p class="product-card__edit-review--username">By <span class="editor-name">your name</span> March
+                        4, 2017</p>
+                    <img src="../resources/images/empty-logo.png" alt="" class="empty-avatar" align="left">
+                    <p class="product-card__review-text">Start typing and your review text will appear here...</p>
+                </div>
+                <div class="product-card__edit-review-content">
+                    <!--<div class="product-card__edit-review-content-label">-->
+                    <!--<span>EDIT YOUR REVIEW</span>-->
+                    <!--</div>-->
+                    <div class="edit-review__controls-container">
+                        <div class="personal-data-column">
+                            <label for="personal-data__reviewer-name" class="form-group__label">Enter your name:</label>
+                            <input type="text" class="personal-data__name" id="personal-data__reviewer-name" onkeyup="editorNameChanged(this.value)">
+
+                            <div class="upload-btn__container">
+                                <label for="upload-avatar" class="form-group__label">Choose your avatar:</label>
+                                <div class="upload-btn-wrapper" id="upload-avatar">
+                                    <button class="upload-btn">
+                                        <p class="">Image not selected</p>
+                                        <span class="upload-btn__logo"></span>
+                                    </button>
+                                    <input type="file" name="myfile"/>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="review-data-column">
+                            <div class="review-data-column__lable-container">
+                                <label for="review-data__review--text">Write your review:</label>
+                                <span for="">Rate product:
+                                 <div class="review-data__rating">
+                                    <div class="review-rating__star" id="review-data__rating" onclick="selectRating(event)">
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                    </div>
+                                </div>
+                                </span>
+
+                            </div>
+
+                            <textarea name="" id="review-data__review--text" onkeyup="reviewTextChanged(this.value)"></textarea>
+                            <div class="review-data-column__controls-container">
+                                <div class="review-data-column__edit-review-controls">
+                                    <button class="btn btn-secondary btn-regular custom-btn-regular" onclick="transformText('Bold')">Bold</button>
+                                    <button class="btn btn-secondary btn-regular custom-btn-regular" onclick="transformText('Emphasize')">Emphasize</button>
+                                    <button class="btn btn-secondary btn-regular custom-btn-regular" onclick="transformText('Quote')">Quote</button>
+                                </div>
+                                <div class="review-data-column__confirm-controls">
+
+                                    <button class="btn btn-primary btn-regular disabled">Add review</button>
+                                    <button class="btn btn-secondary btn-regular" id="review-data__review--cancel">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
