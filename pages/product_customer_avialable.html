@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="../resources/css/pages/products/products.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
-    <script src="../resources/js/image-slider/image-slider.js"></script>
+    <script src="../resources/js/image-slider/image-slider.js" defer></script>
+    <script src="../resources/js/image-zoom/image-zoom.js"></script>
+    <!--<script src="../resources/js/watermark-generator/watermark-generator.js" defer  ></script>-->
+
 </head>
 
 <body>
@@ -49,11 +52,41 @@
             <div class="product-card__details">
                 <div class="product-card__details-container">
                     <div class="product-card-details__image">
-                        <div class="product-card-details__image-container">
-                            <i class="prev-image__icon" onclick="prevImage()"></i>
-                            <i class="next-image__icon" onclick="nextImage()"></i>
+                        <div id="myresult" class="img-zoom-result"></div>
+                        <div class="product-card-details__image-container img-zoom-container"
+                             onmouseleave="destroyimageZoom()">
+                            <i class="prev-image__icon" onclick="prevImage()" onmouseover="destroyimageZoom()"></i>
+                            <i class="next-image__icon" onclick="nextImage()" onmouseover="destroyimageZoom()"></i>
+
+                            <!--<img src="../resources/images/product-items/1.jpg" class="product-card__image"-->
+                                 <!--id="product-card__image-slider"-->
+                                 <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');"-->
+                            <!--/>-->
+
+
+                            <img id="scream"  src="../resources/images/product-items/2.jpg" class="product-card__image"  alt="The Scream" src=""
+                                 crossorigin="Anonymous" style="display: none;" >
+
+                            <canvas id="myCanvas"
+                                    style="border:1px solid #d3d3d3;display: none"
+                                    class="product-card__image"
+
+                            >
+                                Your browser does not support the HTML5 canvas tag.
+                            </canvas>
+
+                            <!--<img class="product-card__image" id="product-card__image-slider"-->
+                                 <!--alt="The Scream" src="" crossorigin="Anonymous"-->
+                                 <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');">-->
+
+
                             <img src="../resources/images/product-items/1.jpg" class="product-card__image"
-                                 id="product-card__image-slider"/>
+                            id="product-card__image-slider"
+                            onmouseenter="imageZoom('product-card__image-slider', 'myresult');"
+                            />
+
+
+
                             <span class="product-card-details__image-description" id="product-card__image-label">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             </span>
@@ -98,6 +131,10 @@
 <footer>
     <p class="copyright">Copyright 'DemoShop', 2017</p>
 </footer>
+<script>
+    // Initiate zoom effect:
+
+</script>
 
 </body>
 

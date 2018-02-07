@@ -17,6 +17,26 @@ var collections = [
     }
 ];
 
+
+window.onload = function () {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("scream");
+
+    c.height = 550;
+    c.width = 850;
+
+
+    ctx.drawImage(img, 0, 0);
+    ctx.font = "18px Calibri";
+    ctx.fillStyle = "white";
+    ctx.fillText("DEMO SHOP", 40, 40);
+
+    var dataURL = c.toDataURL();
+    document.getElementById("product-card__image-slider").src = dataURL;
+}
+
+
 function nextImage() {
     currentImageIndex++;
 
@@ -30,6 +50,7 @@ function nextImage() {
     currentImage.setAttribute("src", collections[currentImageIndex]["path"]);
     currentImageLabel.innerText = collections[currentImageIndex]["description"];
     reset_animation();
+
 }
 
 function prevImage() {
@@ -58,4 +79,5 @@ function reset_animation() {
     el2.offsetHeight;
     /* trigger reflow */
     el2.style.animation = null;
+
 }

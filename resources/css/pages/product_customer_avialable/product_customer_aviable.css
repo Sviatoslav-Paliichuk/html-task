@@ -11,7 +11,7 @@
     height: 40px;
     background-image: url("../../../images/arrow.svg");
     cursor: pointer;
-    z-index: 9999;
+    z-index: 10000;
 }
 
 .next-image__icon {
@@ -37,6 +37,7 @@
     top: 75%;
     width: 100%;
     margin: 0;
+    pointer-events: none;
 
     /* for chrome and safari*/
     -webkit-animation-duration: 0.75s;
@@ -103,4 +104,36 @@
     animation-duration: 0.5s;
     animation-name: slideinImage;
 
+}
+
+
+.img-zoom-lens {
+    position: absolute;
+    border: 2px solid yellow;
+    width: 150px;
+    height: 200px;
+    background: white;
+    opacity: 0.75;
+    z-index: 9999;
+}
+
+.img-zoom-result {
+    width: 245px;
+    height: 290px;
+    z-index: 9999;
+    position: absolute;
+    top: 20px;
+    right: 300px
+}
+
+.product-card__details-container{
+    position: relative;
+}
+
+.product-card__image{
+    padding: 0;
+}
+
+.product-card-details__image-container{
+    margin-top: 20px;
 }
