@@ -1,5 +1,5 @@
 main {
-    height: auto;
+    min-height: calc(100% - 90px);
 }
 
 .product-card-details__image-container {
@@ -154,6 +154,16 @@ main {
     text-align: center;
 }
 
+.product-card__edit-review {
+    width: auto;
+    margin: 25px;
+    position: inherit;
+}
+
+#edit-review__form{
+    display: none;
+}
+
 .product-card__edit-review-label {
     color: #FFFFFF;
     font-family: "PT Sans";
@@ -166,10 +176,8 @@ main {
     color: orange;
 }
 
-.product-card__edit-review {
-    width: auto;
-    margin: 25px;
-    position: inherit;
+.product-card__add-review:hover{
+    cursor: pointer;
 }
 
 b {

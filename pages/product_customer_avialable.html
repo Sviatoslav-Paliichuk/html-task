@@ -127,10 +127,10 @@
             </div>
             <div class="product-card__review">
                 <p class="product-card__review--purpose">There is no user to reviews for now</p>
-                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review"> share your thoughts with other customers</span>
+                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review" onclick="handlePopup(this)" data-window-type="edit-review__form"> share your thoughts with other customers</span>
                     ?</p>
             </div>
-            <div class="product-card__edit-review">
+            <div class="product-card__edit-review" id="edit-review__form">
                 <span class="product-card__edit-review-label">Add review</span>
 
                 <div class="product-card__edit-review-header">
@@ -239,8 +239,16 @@
     <p class="copyright">Copyright 'DemoShop', 2017</p>
 </footer>
 <script>
-    // Initiate zoom effect:
-
+    function handlePopup(popup) {
+        var elem = popup.getAttribute("data-window-type");
+        if (document.getElementById(elem).style.display == '') {
+            document.getElementById(elem).style.display = 'block';
+            document.querySelector('main').style.minHeight = '105%';
+            document.querySelector('.product-card__review--purpose:last-child').innerText = "Share your thoughts with other customers:";
+        }
+        else
+            document.getElementById(elem).style.display = '';
+    }
 </script>
 
 </body>
