@@ -3,35 +3,68 @@
 */
 
 .rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  text-align: left;
-  color: white;
-  padding: 0 0 0 15px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+    color: white;
+    padding: 0 0 0 15px;
 }
 
-.rating>span {
-  display: inline-block;
-  position: relative;
-  width: 1.2em;
-  font-size: 20px;
-  font-weight: bold;
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.2em;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.rating>span:hover, .rating>span:hover~span {
-  color: transparent;
+.rating > span:hover, .rating > span:hover ~ span {
+    color: transparent;
 }
 
-.rating>span:hover:before, .rating>span:hover~span:before {
-  content: "\2605";
-  position: absolute;
-  left: 0;
-  color: yellow;
+.rating > span:hover:before, .rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: yellow;
 }
 
-.rating>span:hover:before, .rating>span:nth-child(2)~span:before {
-  content: "\2605";
-  position: absolute;
-  left: 0;
-  color: yellow;
+.rating > span:hover:before, .rating > span:nth-child(2) ~ span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: yellow;
+}
+
+.review-rating {
+    border: none;
+    float: left;
+}
+
+.review-rating-disabled {
+    pointer-events: none;
+    float: right;
+}
+
+.review-rating > input {
+    display: none;
+}
+
+.review-rating > label:before {
+    margin: 0 3px 0 3px;
+    font-size: 20px;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.review-rating > label {
+    color: #ddd;
+    float: right;
+}
+
+.review-rating > input:checked ~ label,
+.review-rating:not(:checked) > label:hover,
+.review-rating:not(:checked) > label:hover ~ label {
+    color: orange;
 }

@@ -35,14 +35,18 @@ function transformText(type) {
 }
 
 function selectRating(event) {
-    // e.target is the clicked element!
-    // If it was a list item
-
-    console.log(event.target);
-    if(event.target.nodeName == "span") {
-        // List item found!  Output the ID!
-        console.log("List item ", event.target.id.replace("post-", ""), " was clicked!");
-        event.target.style.color = 'red';
-        event.target.style.backgroundColor = 'red';
+    for (var i = 0; i <= 5 - event.target.value; i++) {
+        document.querySelector(".review-rating-disabled").children[i].classList.add("orange");
     }
+}
+
+function uploadAvatar() {
+    var file = document.getElementById("upload-avatar__file").files[0];
+    var reader = new FileReader();
+    reader.onloadend = function () {
+        document.getElementById('image-avatar').src = reader.result;
+        document.getElementById('upload-logo__sample').style.backgroundImage = "url(" + reader.result + ")";
+    }
+
+    reader.readAsDataURL(file);
 }

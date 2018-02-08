@@ -180,7 +180,7 @@ i {
     font-style: italic;
 }
 
-q{
+q {
     padding-top: 5px;
     font-size: 24px;
     font-style: italic;
@@ -206,8 +206,8 @@ q q:after {
 }
 
 .product-card__edit-review-header {
-    height: 155px;
     background-color: rgba(0, 0, 0, 0.7);
+    min-height: 155px;
 }
 
 .product-card__edit-review--username {
@@ -224,13 +224,21 @@ q q:after {
     background-image: url('../../../images/modal-bg.png');
 }
 
+.product-card__edit-review-content-label__container {
+    height: 10px;
+    width: 1150px;
+    position: absolute;
+}
+
 .product-card__edit-review-content-label {
     height: 40px;
     width: 180px;
     border: 3px solid #3FC5CB;
     border-radius: 15px;
     background-color: #FFFFFF;
-    margin-bottom: 300px;
+    margin: auto;
+    z-index: 9999;
+    margin-top: -20px;
 }
 
 .product-card__edit-review-content-label > span {
@@ -256,21 +264,14 @@ q q:after {
     text-align: center;
 }
 
-.empty-avatar {
-    height: 79px;
-    width: 79px;
-    margin: 0 15px 15px 15px;
-}
-
 .product-card__review-text {
-    height: 17px;
     opacity: 0.5;
     color: #FFFFFF;
     font-family: "PT Sans";
     font-size: 14px;
     font-style: italic;
     line-height: 19px;
-    padding: 0 0 15px 15px;
+    padding: 0 15px 15px 15px;
 }
 
 .edit-review__controls-container {
@@ -284,7 +285,7 @@ q q:after {
 }
 
 .review-data-column {
-    flex: 2;
+    flex: 3;
 }
 
 .personal-data__name {
@@ -355,11 +356,12 @@ q q:after {
     width: 50px;
     opacity: 0.2;
     border-radius: 15px;
+    margin-top: 5px;
 }
 
 #review-data__review--text {
     height: 178px;
-    width: 830px;
+    width: 100%;
     border-radius: 5px;
     background-color: #FFFFFF;
     border: 1px solid white;
@@ -380,6 +382,10 @@ q q:after {
     display: inline-block;
 }
 
+#review-rating__disabled-stars {
+    transform: rotateY(180deg);
+}
+
 .review-rating__star {
     unicode-bidi: bidi-override;
     direction: rtl;
@@ -396,22 +402,21 @@ q q:after {
     font-weight: bold;
 }
 
-.review-rating__star > span:hover, .review-rating__star > span:hover ~ span {
-    color: transparent;
+.review-rating__star > span:hover {
+    cursor: pointer;
 }
 
-.review-rating__star > span:hover:before, .review-rating__star > span:hover ~ span:before {
-    content: "\2605";
-    position: absolute;
-    left: 0;
-    color: grey;
+.review-data__rating {
+    height: 14px;
 }
 
-.review-rating__star > span:hover:before, .review-rating__star > span:nth-child(0) ~ span:before {
-    content: "\2605";
-    position: absolute;
-    left: 0;
-    color: grey;
+.product-card__rating {
+    height: 26px;
+    margin-top: -30px;
+}
+
+.product-rating {
+    margin: 4px 0px 0px 10px;
 }
 
 .review-data-column__confirm-controls > button, .review-data-column__edit-review-controls > button {
@@ -427,4 +432,17 @@ q q:after {
 
 #review-data__review--cancel {
     margin-right: 0;
+}
+
+.orange {
+    color: orange !important;
+}
+
+#image-avatar {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #bbb;
+    height: 79px;
+    width: 79px;
+    margin: 5px 15px 0 15px;
 }
