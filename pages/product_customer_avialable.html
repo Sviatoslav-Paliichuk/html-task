@@ -56,37 +56,12 @@
                         <div id="myresult" class="img-zoom-result"></div>
                         <div class="product-card-details__image-container img-zoom-container"
                              onmouseleave="destroyimageZoom()">
-                            <i class="prev-image__icon" onclick="prevImage()" onmouseover="destroyimageZoom()"></i>
-                            <i class="next-image__icon" onclick="nextImage()" onmouseover="destroyimageZoom()"></i>
-
-                            <!--<img src="../resources/images/product-items/1.jpg" class="product-card__image"-->
-                            <!--id="product-card__image-slider"-->
-                            <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');"-->
-                            <!--/>-->
-
-
-                            <img id="scream" src="../resources/images/product-items/2.jpg" class="product-card__image"
-                                 alt="The Scream" src=""
-                                 crossorigin="Anonymous" style="display: none;">
-
-                            <canvas id="myCanvas"
-                                    style="border:1px solid #d3d3d3;display: none"
-                                    class="product-card__image"
-
-                            >
-                                Your browser does not support the HTML5 canvas tag.
-                            </canvas>
-
-                            <!--<img class="product-card__image" id="product-card__image-slider"-->
-                            <!--alt="The Scream" src="" crossorigin="Anonymous"-->
-                            <!--onmouseenter="imageZoom('product-card__image-slider', 'myresult');">-->
-
-
-                            <img src="../resources/images/product-items/1.jpg" class="product-card__image"
-                                 id="product-card__image-slider"
-                                 onmouseenter="imageZoom('product-card__image-slider', 'myresult');"
-                            />
-
+                            <i class="prev-image__icon" onclick="changeImage('previous')"
+                               onmouseover="destroyimageZoom()"></i>
+                            <i class="next-image__icon" onclick="changeImage('next')"
+                               onmouseover="destroyimageZoom()"></i>
+                            <canvas class="product-card__image" id="slider-canvas"
+                                    onmouseenter="imageZoom('slider-canvas', 'myresult')"></canvas>
 
                             <span class="product-card-details__image-description" id="product-card__image-label">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -127,7 +102,9 @@
             </div>
             <div class="product-card__review">
                 <p class="product-card__review--purpose">There is no user to reviews for now</p>
-                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review" onclick="handlePopup(this)" data-window-type="edit-review__form"> share your thoughts with other customers</span>
+                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review"
+                                                                                 onclick="handlePopup(this)"
+                                                                                 data-window-type="edit-review__form"> share your thoughts with other customers</span>
                     ?</p>
             </div>
             <div class="product-card__edit-review" id="edit-review__form">
@@ -220,10 +197,11 @@
                                 </div>
                                 <div class="review-data-column__confirm-controls">
 
-                                    <button class="btn btn-primary btn-regular disabled">Add review</button>
-                                    <button class="btn btn-secondary btn-regular" id="review-data__review--cancel">
-                                        Cancel
+                                    <button class="btn btn-secondary btn-regular">Cancel</button>
+                                    <button class="btn btn-primary btn-regular disabled"
+                                            id="review-data__review--submit">Add review
                                     </button>
+
                                 </div>
                             </div>
                         </div>

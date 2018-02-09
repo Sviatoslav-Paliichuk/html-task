@@ -3,18 +3,22 @@ function editorNameChanged(value) {
 }
 
 function reviewTextChanged(value) {
+    var feedbackText = document.getElementById("review-data__review--text");
     var reviewText = document.querySelector('.product-card__review-text');
     reviewText.style.color = 'white';
     reviewText.style.opacity = '1';
     reviewText.style.fontStyle = 'inherit';
     reviewText.innerHTML = value;
+
+    if (feedbackText.value != "") handleAddReviewButton('show');
+    else handleAddReviewButton('hide');
 }
 
 function transformText(type) {
-    var reviewText = document.getElementById("review-data__review--text");
-    var selectionStart = reviewText.selectionStart;
-    var selectionEnd = reviewText.selectionEnd;
-    var selectedText = reviewText.value.substring(selectionStart, selectionEnd);
+    var feedbackText = document.getElementById("review-data__review--text");
+    var selectionStart = feedbackText.selectionStart;
+    var selectionEnd = feedbackText.selectionEnd;
+    var selectedText = feedbackText.value.substring(selectionStart, selectionEnd);
     var transformedText = "";
 
     switch (type) {
@@ -29,9 +33,22 @@ function transformText(type) {
             break;
     }
 
-    var editedText = reviewText.value.replace(selectedText, transformedText);
-    reviewText.value = editedText;
+    var editedText = feedbackText.value.replace(selectedText, transformedText);
+    feedbackText.value = editedText;
     reviewTextChanged(editedText);
+}
+
+function handleAddReviewButton(action) {
+    switch (action) {
+        case 'hide':
+            document.getElementById('review-data__review--submit').classList.add('disabled');
+            break;
+        case 'show':
+            document.getElementById('review-data__review--submit').classList.remove('disabled');
+            break;
+        default:
+            break;
+    }
 }
 
 function selectRating(event) {

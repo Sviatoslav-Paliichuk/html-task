@@ -1,10 +1,10 @@
 var created = false;
 var img, lens, result, cx, cy;
+var dataURL = "";
+
 function imageZoom(imgID, resultID) {
 
-
-    if(!created){
-
+    if (!created) {
         img = document.getElementById(imgID);
         result = document.getElementById(resultID);
         /*create lens:*/
@@ -17,9 +17,11 @@ function imageZoom(imgID, resultID) {
         cy = result.offsetHeight / lens.offsetHeight;
 
         /*calculate the ratio between result DIV and lens:*/
+        var dataURL = canvas.toDataURL();
+
 
         /*set background properties for the result DIV:*/
-        result.style.backgroundImage = "url('" +  document.getElementById("product-card__image-slider").src + "')";
+        result.style.backgroundImage = "url('" + dataURL + "')";
         result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
 
         /*execute a function when someone moves the cursor over the image, or the lens:*/
@@ -30,14 +32,14 @@ function imageZoom(imgID, resultID) {
         lens.addEventListener("touchmove", moveLens);
         img.addEventListener("touchmove", moveLens);
 
-
         created = true;
     }
-    result.style.backgroundImage = "url('" +  document.getElementById("product-card__image-slider").src + "')";
+
+    result.style.backgroundImage = "url('" + dataURL + "')";
     console.log('mouse come');
     myresult.style.display = 'block';
 
-    var myLens =  document.querySelector(".img-zoom-lens");
+    var myLens = document.querySelector(".img-zoom-lens");
     myLens.style.display = 'block';
 
     function moveLens(e) {
@@ -85,20 +87,11 @@ function imageZoom(imgID, resultID) {
 }
 
 function destroyimageZoom() {
+    var myresult = document.querySelector("#myresult");
+    var myLens = document.querySelector(".img-zoom-lens");
 
-        var myresult = document.querySelector("#myresult");
-        var myLens =  document.querySelector(".img-zoom-lens");
-
-        if(myresult.style.display == 'block'){
-            console.log('block');
-
-            myLens.style.display = 'none';
-            myresult.style.display = 'none';
-
-        }
-
-        console.log('mouse out');
-
-
-
+    if (myresult.style.display == 'block') {
+        myLens.style.display = 'none';
+        myresult.style.display = 'none';
+    }
 }
