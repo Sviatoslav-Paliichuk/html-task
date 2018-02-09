@@ -221,7 +221,7 @@
         var elem = popup.getAttribute("data-window-type");
         if (document.getElementById(elem).style.display == '') {
             document.getElementById(elem).style.display = 'block';
-            document.querySelector('main').style.minHeight = '105%';
+            document.querySelector('main').style.height = 'auto';
             document.querySelector('.product-card__review--purpose:last-child').innerText = "Share your thoughts with other customers:";
         }
         else
