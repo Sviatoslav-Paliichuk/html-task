@@ -1,35 +1,38 @@
+var TextTypeEnum = Object.freeze({
+    BOLD: "Bold",
+    EMPHASIZE: "Emphasize",
+    QUOTE: "Quote"
+});
+
 function editorNameChanged(value) {
-    document.querySelector('.editor-name').innerText = value;
+    editorNameLabel.innerText = value;
 }
 
 function reviewTextChanged(value) {
-    var feedbackText = document.getElementById("review-data__review--text");
-    var reviewText = document.querySelector('.product-card__review-text');
-    reviewText.style.color = 'white';
-    reviewText.style.opacity = '1';
-    reviewText.style.fontStyle = 'inherit';
+    reviewText.classList.add('review-text__changed');
     reviewText.innerHTML = value;
 
-    if (feedbackText.value != "") handleAddReviewButton('show');
-    else handleAddReviewButton('hide');
+    if (feedbackText.value != "") toggleAddReviewButton(true);
+    else toggleAddReviewButton(false);
 }
 
 function transformText(type) {
-    var feedbackText = document.getElementById("review-data__review--text");
     var selectionStart = feedbackText.selectionStart;
     var selectionEnd = feedbackText.selectionEnd;
     var selectedText = feedbackText.value.substring(selectionStart, selectionEnd);
     var transformedText = "";
 
     switch (type) {
-        case 'Bold':
+        case TextTypeEnum.BOLD:
             transformedText = "<b>" + selectedText + "</b>";
             break;
-        case 'Emphasize':
+        case TextTypeEnum.EMPHASIZE:
             transformedText = "<i>" + selectedText + "</i>";
             break;
-        case 'Quote':
+        case TextTypeEnum.QUOTE:
             transformedText = "<q>" + selectedText + "</q>";
+            break;
+        default:
             break;
     }
 
@@ -38,17 +41,9 @@ function transformText(type) {
     reviewTextChanged(editedText);
 }
 
-function handleAddReviewButton(action) {
-    switch (action) {
-        case 'hide':
-            document.getElementById('review-data__review--submit').classList.add('disabled');
-            break;
-        case 'show':
-            document.getElementById('review-data__review--submit').classList.remove('disabled');
-            break;
-        default:
-            break;
-    }
+function toggleAddReviewButton(hidden) {
+    if(!hidden) reviewDataSubmit.classList.add('disabled');
+    else reviewDataSubmit.classList.remove('disabled');
 }
 
 function selectRating(event) {
@@ -58,7 +53,7 @@ function selectRating(event) {
 }
 
 function uploadAvatar() {
-    var file = document.getElementById("upload-avatar__file").files[0];
+    var file = uploadAvatarButton.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
         document.getElementById('image-avatar').src = reader.result;
@@ -67,3 +62,43 @@ function uploadAvatar() {
 
     reader.readAsDataURL(file);
 }
+const reviewText = document.querySelector('.product-card__review-text');
+const feedbackText = document.getElementById("review-data__feedback--text");
+const uploadAvatarButton = document.getElementById('upload-avatar__file');
+const editorNameLabel = document.querySelector('.editor-name');
+const reviewDataRatingElement = document.getElementById('review-data__rating');
+const transformToBoldButton = document.getElementById('transformToBold');
+const transformToEmphasizeButton = document.getElementById('transformToEmphasize');
+const transformToQuoteButton = document.getElementById('transformToQuote');
+const reviewerNameInput = document.getElementById('personal-data__reviewer-name');
+const reviewDataSubmit = document.getElementById('review-data__review--submit');
+
+uploadAvatarButton.addEventListener('change', function () {
+    uploadAvatar();
+}, false);
+
+reviewDataRatingElement.addEventListener('click', function (event) {
+    selectRating(event);
+}, false);
+
+feedbackText.addEventListener('keyup', function () {
+    reviewTextChanged(this.value);
+}, false);
+
+transformToBoldButton.addEventListener('click', function () {
+    transformText(TextTypeEnum.BOLD);
+}, false);
+
+transformToEmphasizeButton.addEventListener('click', function () {
+    transformText(TextTypeEnum.EMPHASIZE);
+}, false);
+
+transformToQuoteButton.addEventListener('click', function () {
+    transformText(TextTypeEnum.QUOTE);
+}, false);
+
+reviewerNameInput.addEventListener('keyup', function () {
+    editorNameChanged(this.value);
+}, false);
+
+

@@ -1,6 +1,7 @@
-var currentImageIndex = 0;
-var currentImageLabel, canvas, context, imageObj = null;
+const resetLabel = document.getElementById('product-card__image-label');
+const resetImage = document.getElementById('product-card__image-container');
 
+var currentImageIndex = 0;
 var collections = [
     {
         id: 1,
@@ -19,51 +20,68 @@ var collections = [
     }
 ];
 
-function initImageSlider() {
-    currentImageLabel = document.getElementById("product-card__image-label");
-    canvas = document.getElementById("slider-canvas");
-    context = canvas.getContext("2d");
-    imageObj = new Image();
+window.onload = function () {
+    const context = document.getElementById("slider-canvas").getContext("2d");
+    const slider = new CustomSlider("slider-canvas", new Image(), 555, 350);
+    const nextImageButton = document.getElementById('nextImageButton');
+    const previousImageButton = document.getElementById('previousImageButton');
+    const currentImageLabel = document.getElementById('product-card__image-label');
 
-    canvas.width = 500;
-    canvas.height = 500;
+    CustomSlider.changeImage('default', context, currentImageLabel);
+
+    nextImageButton.addEventListener('click', function () {
+        CustomSlider.changeImage('next', context, currentImageLabel);
+        CustomSlider.resetAnimation();
+    }, false);
+
+    previousImageButton.addEventListener('click', function () {
+        CustomSlider.changeImage('previous', context, currentImageLabel);
+        CustomSlider.resetAnimation();
+    }, false);
 }
 
-function changeImage(action) {
-    switch (action) {
-        case 'next':
-            currentImageIndex++;
-            if (currentImageIndex === collections.length) currentImageIndex = 0;
-            break;
-        case 'previous':
-            if (currentImageIndex <= 0) currentImageIndex = collections.length;
-            currentImageIndex--;
-            break;
-        default:
-            break;
+function CustomSlider(canvasTemplateID, imageObj, canvasWidth, canvasHeight) {
+    this.canvas = document.getElementById(canvasTemplateID);
+    this.context = this.canvas.getContext("2d");
+    this.canvas.width = canvasWidth;
+    this.canvas.height = canvasHeight;
+
+    CustomSlider.changeImage = function (action, context, currentImageLabel) {
+        switch (action) {
+            case 'next':
+                currentImageIndex++;
+                if (currentImageIndex === collections.length) currentImageIndex = 0;
+                break;
+            case 'previous':
+                if (currentImageIndex <= 0) currentImageIndex = collections.length;
+                currentImageIndex--;
+                break;
+            default:
+                break;
+        }
+        imageObj = new Image();
+        imageObj.onload = function () {
+            context.drawImage(imageObj, 0, 0);
+            context.font = "18px PT Sans";
+            context.fillStyle = "white";
+            context.fillText("DEMO SHOP", 50, 40);
+        };
+
+        imageObj.src = collections[currentImageIndex]["path"];
+
+        var canvas = document.getElementById('slider-canvas');
+        dataURL = canvas.toDataURL();
+
+        currentImageLabel.innerText = collections[currentImageIndex]["description"];
     }
 
-    imageObj.onload = function () {
-        context.drawImage(imageObj, 0, 0);
-        context.font = "18px Calibri";
-        context.fillStyle = "white";
-        context.fillText("DEMO SHOP", 360, 40);
-    };
+    CustomSlider.resetAnimation = function () {
+        resetLabel.style.animation = 'none';
+        resetLabel.offsetHeight;//work code
+        resetLabel.style.animation = null;
 
-    imageObj.src = collections[currentImageIndex]["path"];
-    currentImageLabel.innerText = collections[currentImageIndex]["description"];
-
-    reset_animation();
-}
-
-function reset_animation() {
-    var resetLabel = document.getElementById('product-card__image-label');
-    resetLabel.style.animation = 'none';
-    resetLabel.offsetHeight;
-    resetLabel.style.animation = null;
-}
-
-window.onload = function () {
-    initImageSlider();
-    changeImage('default');
-}
+        resetImage.style.animation = 'none';
+        resetImage.offsetHeight;//work code
+        resetImage.style.animation = null;
+    }
+};

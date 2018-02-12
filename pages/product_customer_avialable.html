@@ -12,10 +12,8 @@
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
     <script src="../resources/js/image-slider/image-slider.js" defer></script>
-    <script src="../resources/js/image-zoom/image-zoom.js"></script>
-    <script src="../resources/js/product_customer/product-review.js"></script>
-    <!--<script src="../resources/js/watermark-generator/watermark-generator.js" defer  ></script>-->
-
+    <script src="../resources/js/image-zoom/image-zoom.js" defer></script>
+    <script src="../resources/js/product_customer/product-review.js" defer></script>
 </head>
 
 <body>
@@ -53,15 +51,15 @@
             <div class="product-card__details">
                 <div class="product-card__details-container">
                     <div class="product-card-details__image">
-                        <div id="myresult" class="img-zoom-result"></div>
-                        <div class="product-card-details__image-container img-zoom-container"
-                             onmouseleave="destroyimageZoom()">
-                            <i class="prev-image__icon" onclick="changeImage('previous')"
-                               onmouseover="destroyimageZoom()"></i>
-                            <i class="next-image__icon" onclick="changeImage('next')"
-                               onmouseover="destroyimageZoom()"></i>
-                            <canvas class="product-card__image" id="slider-canvas"
-                                    onmouseenter="imageZoom('slider-canvas', 'myresult')"></canvas>
+                        <div id="zoom-result__window" class="img-zoom-result"></div>
+                        <div class="product-card-details__image-container img-zoom-container" id="img-zoom__container">
+                            <i class="prev-image__icon" id="previousImageButton"></i>
+
+                            <i class="next-image__icon" id="nextImageButton"></i>
+
+                            <div id="product-card__image-container">
+                                <canvas class="product-card__image" id="slider-canvas"></canvas>
+                            </div>
 
                             <span class="product-card-details__image-description" id="product-card__image-label">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -112,7 +110,7 @@
 
                 <div class="product-card__edit-review-header">
                     <div class="product-card__edit-review--username"><span>By </span><span
-                            class="editor-name">your name </span><span>March 4, 2017</span>
+                            class="editor-name">your name </span><span> March 4, 2017</span>
                         <fieldset class="review-rating review-rating-disabled" id="review-rating__disabled-stars">
                             <label></label>
                             <label></label>
@@ -137,7 +135,7 @@
                         <div class="personal-data-column">
                             <label for="personal-data__reviewer-name" class="form-group__label">Enter your name:</label>
                             <input type="text" class="personal-data__name" id="personal-data__reviewer-name"
-                                   onkeyup="editorNameChanged(this.value)">
+                                   >
 
                             <div class="upload-btn__container">
                                 <label for="upload-avatar" class="form-group__label">Choose your avatar:</label>
@@ -146,7 +144,7 @@
                                         <p class="">Image not selected</p>
                                         <span class="upload-btn__logo" id="upload-logo__sample"></span>
                                     </button>
-                                    <input type="file" id="upload-avatar__file" onchange="uploadAvatar()"/>
+                                    <input type="file" id="upload-avatar__file"/>
                                 </div>
                             </div>
 
@@ -156,7 +154,7 @@
                                 <label for="review-data__review--text">Write your review:</label>
                                 <div class="product-rate"><span>Rate product:</span>
                                     <div class="review-data__rating">
-                                        <div class="" id="review-data__rating" onclick="selectRating(event)">
+                                        <div class="" id="review-data__rating">
                                             <fieldset class="review-rating" id="review-data__stars">
 
                                                 <input type="radio" id="star1" name="review-rating" value="1"/>
@@ -181,18 +179,18 @@
 
                             </div>
 
-                            <textarea name="" id="review-data__review--text"
-                                      onkeyup="reviewTextChanged(this.value)"></textarea>
+                            <textarea name="" id="review-data__feedback--text"></textarea>
+
                             <div class="review-data-column__controls-container">
                                 <div class="review-data-column__edit-review-controls">
                                     <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            onclick="transformText('Bold')">Bold
+                                            id="transformToBold">Bold
                                     </button>
                                     <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            onclick="transformText('Emphasize')">Emphasize
+                                            id="transformToEmphasize">Emphasize
                                     </button>
                                     <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            onclick="transformText('Quote')">Quote
+                                            id="transformToQuote">Quote
                                     </button>
                                 </div>
                                 <div class="review-data-column__confirm-controls">
