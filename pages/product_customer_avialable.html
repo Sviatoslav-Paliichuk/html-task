@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
     <script src="../resources/js/image-slider/image-slider.js" defer></script>
-    <script src="../resources/js/image-zoom/image-zoom.js" defer></script>
+    <!--<script src="../resources/js/image-zoom/image-zoom.js" defer></script>-->
     <script src="../resources/js/product_customer/product-review.js" defer></script>
 </head>
 
@@ -51,7 +51,6 @@
             <div class="product-card__details">
                 <div class="product-card__details-container">
                     <div class="product-card-details__image">
-                        <div id="zoom-result__window" class="img-zoom-result"></div>
                         <div class="product-card-details__image-container img-zoom-container" id="img-zoom__container">
                             <i class="prev-image__icon" id="previousImageButton"></i>
 
@@ -77,6 +76,7 @@
                     </div>
                     <div class="product-card-details__description-container">
                         <div class="product-card-details__description-content">
+                            <div id="zoom-result__window" class="img-zoom-result"></div>
                             <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
                                 Adipisicing Elit.4</h4>
                             <hr class="product-card__hr">
@@ -135,7 +135,7 @@
                         <div class="personal-data-column">
                             <label for="personal-data__reviewer-name" class="form-group__label">Enter your name:</label>
                             <input type="text" class="personal-data__name" id="personal-data__reviewer-name"
-                                   >
+                            >
 
                             <div class="upload-btn__container">
                                 <label for="upload-avatar" class="form-group__label">Choose your avatar:</label>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="review-data-column">
                             <div class="review-data-column__lable-container">
-                                <label for="review-data__review--text">Write your review:</label>
+                                <label for="review-data__rating">Write your review:</label>
                                 <div class="product-rate"><span>Rate product:</span>
                                     <div class="review-data__rating">
                                         <div class="" id="review-data__rating">
