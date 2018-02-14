@@ -473,7 +473,9 @@ q q:after {
         margin-top: 0;
         padding-top: 20px;
     }
-
+    .product-card__edit-review-content-label__container{
+        width: 100%;
+    }
     #slider-canvas{
         height: auto;
     }

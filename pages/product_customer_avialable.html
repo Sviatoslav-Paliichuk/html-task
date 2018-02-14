@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../resources/css/pages/products/products.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
+    <script src="../resources/js/product_customer/review-constants.js" defer></script>
     <script src="../resources/js/image-slider/image-slider.js" defer></script>
     <script src="../resources/js/image-zoom/image-zoom.js" defer></script>
     <script src="../resources/js/product_customer/product-review.js" defer></script>
@@ -100,9 +101,10 @@
             </div>
             <div class="product-card__review">
                 <p class="product-card__review--purpose">There is no user to reviews for now</p>
-                <p class="product-card__review--purpose">Would you like to <span class="product-card__add-review"
-                                                                                 onclick="handlePopup(this)"
-                                                                                 data-window-type="edit-review__form"> share your thoughts with other customers</span>
+                <p class="product-card__review--purpose" id="share-thoughts__container">Would you like to <span
+                        class="product-card__add-review"
+                        id="review-form__show"
+                        data-window-type="edit-review__form"> share your thoughts with other customers</span>
                     ?</p>
             </div>
             <div class="product-card__edit-review" id="edit-review__form">
@@ -141,7 +143,7 @@
                                 <label for="upload-avatar" class="form-group__label">Choose your avatar:</label>
                                 <div class="upload-btn-wrapper" id="upload-avatar">
                                     <button class="upload-btn">
-                                        <p class="">Image not selected</p>
+                                        <p id="avatar-status__label">Image not selected</p>
                                         <span class="upload-btn__logo" id="upload-logo__sample"></span>
                                     </button>
                                     <input type="file" id="upload-avatar__file"/>
@@ -195,7 +197,8 @@
                                 </div>
                                 <div class="review-data-column__confirm-controls">
 
-                                    <button class="btn btn-secondary btn-regular">Cancel</button>
+                                    <button class="btn btn-secondary btn-regular" id="add-review__cancel">Cancel
+                                    </button>
                                     <button class="btn btn-primary btn-regular disabled"
                                             id="review-data__review--submit">Add review
                                     </button>
@@ -214,18 +217,6 @@
 <footer>
     <p class="copyright">Copyright 'DemoShop', 2017</p>
 </footer>
-<script>
-    function handlePopup(popup) {
-        var elem = popup.getAttribute("data-window-type");
-        if (document.getElementById(elem).style.display == '') {
-            document.getElementById(elem).style.display = 'block';
-            document.querySelector('main').style.height = 'auto';
-            document.querySelector('.product-card__review--purpose:last-child').innerText = "Share your thoughts with other customers:";
-        }
-        else
-            document.getElementById(elem).style.display = '';
-    }
-</script>
 
 </body>
 

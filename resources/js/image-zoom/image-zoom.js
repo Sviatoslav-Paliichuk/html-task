@@ -103,12 +103,6 @@
         }
     }
 
-    const zoomResultWindow = document.getElementById("zoom-result__window");
-    const canvasSlider = document.getElementById('slider-canvas');
-    const nextImageButton = document.getElementById('nextImageButton');
-    const previousImageButton = document.getElementById('previousImageButton');
-    const zoomContainer = document.getElementById('img-zoom__container');
-
     var createdZoomLens = false;
     var objectToZoom, lensWindow, resultOfZoom, coordinateX, coordinateY, dataURL;
     const imageZoom = new ImageZoom('slider-canvas', 'zoom-result__window');

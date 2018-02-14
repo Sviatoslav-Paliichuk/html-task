@@ -1,121 +1,133 @@
-var TextTypeEnum = Object.freeze({
-    BOLD: "Bold",
-    EMPHASIZE: "Emphasize",
-    QUOTE: "Quote"
-});
+(function () {
 
-function editorNameChanged(value) {
-    editorNameLabel.innerText = value;
-}
+    var TextTypeEnum = Object.freeze({
+        BOLD: "Bold",
+        EMPHASIZE: "Emphasize",
+        QUOTE: "Quote"
+    });
 
-function reviewTextChanged(value) {
-    reviewText.classList.add('review-text__changed');
-    reviewText.innerHTML = value;
-
-    if (feedbackText.value != "") toggleAddReviewButton(true);
-    else toggleAddReviewButton(false);
-}
-
-function transformText(transformType) {
-    var selectionStart = feedbackText.selectionStart;
-    var selectionEnd = feedbackText.selectionEnd;
-    var selectedText = feedbackText.value.substring(selectionStart, selectionEnd);
-    var transformedText = "";
-
-    switch (transformType) {
-        case TextTypeEnum.BOLD:
-            transformedText = "<b>" + selectedText + "</b>";
-            break;
-        case TextTypeEnum.EMPHASIZE:
-            transformedText = "<i>" + selectedText + "</i>";
-            break;
-        case TextTypeEnum.QUOTE:
-            transformedText = "<q>" + selectedText + "</q>";
-            break;
-        default:
-            break;
+    function editorNameChanged(value) {
+        editorNameLabel.innerText = value;
     }
 
-    var editedText = feedbackText.value.replace(selectedText, transformedText);
-    feedbackText.value = editedText;
+    function reviewTextChanged(value) {
+        reviewText.classList.add('review-text__changed');
+        reviewText.innerHTML = value;
 
-    reviewTextChanged(editedText);
-}
-
-function toggleAddReviewButton(hidden) {
-    if (!hidden) reviewDataSubmit.classList.add('disabled');
-    else reviewDataSubmit.classList.remove('disabled');
-}
-
-function selectRating(event) {
-    var previousRating = 0;
-    var maxRating = 5;
-    var currentRating = event.target.value;
-
-    disabledStart.style.display = 'block';
-
-    for (var i = 0; i <= maxRating - currentRating; i++) {
-        reviewRating.children[i].classList.add("orange");
-        previousRating = maxRating - currentRating + 1;
+        if (feedbackText.value != "") toggleAddReviewButton(true);
+        else toggleAddReviewButton(false);
     }
 
-    for (var i = maxRating - currentRating + 1; i <= maxRating - 1; i++) {
-        reviewRating.children[i].classList.remove("orange");
+    function transformText(transformType) {
+        var selectionStart = feedbackText.selectionStart;
+        var selectionEnd = feedbackText.selectionEnd;
+        var selectedText = feedbackText.value.substring(selectionStart, selectionEnd);
+        var transformedText = "";
+
+        switch (transformType) {
+            case TextTypeEnum.BOLD:
+                transformedText = "<b>" + selectedText + "</b>";
+                break;
+            case TextTypeEnum.EMPHASIZE:
+                transformedText = "<i>" + selectedText + "</i>";
+                break;
+            case TextTypeEnum.QUOTE:
+                transformedText = "<q>" + selectedText + "</q>";
+                break;
+            default:
+                break;
+        }
+
+        var editedText = feedbackText.value.replace(selectedText, transformedText);
+        feedbackText.value = editedText;
+
+        reviewTextChanged(editedText);
     }
-}
 
-function uploadAvatar() {
-    var file = uploadAvatarButton.files[0];
-    var reader = new FileReader();
-    reader.onloadend = function () {
-        reviewAvatar.src = reader.result;
-        reviewAvatarSample.style.backgroundImage = "url(" + reader.result + ")";
+    function toggleAddReviewButton(hidden) {
+        if (!hidden) reviewDataSubmit.classList.add('disabled');
+        else reviewDataSubmit.classList.remove('disabled');
     }
 
-    reader.readAsDataURL(file);
-}
+    function selectRating(event) {
+        var previousRating = 0;
+        var maxRating = 5;
+        var currentRating = event.target.value;
 
-const reviewAvatarSample = document.getElementById('upload-logo__sample');
-const reviewAvatar = document.getElementById('image-avatar');
-const disabledStart = document.getElementById('review-rating__disabled-stars');
-const reviewRating = document.querySelector(".review-rating-disabled");
-const reviewText = document.querySelector('.product-card__review-text');
-const feedbackText = document.getElementById("review-data__feedback--text");
-const uploadAvatarButton = document.getElementById('upload-avatar__file');
-const editorNameLabel = document.querySelector('.editor-name');
-const reviewDataRatingElement = document.getElementById('review-data__rating');
-const transformToBoldButton = document.getElementById('transformToBold');
-const transformToEmphasizeButton = document.getElementById('transformToEmphasize');
-const transformToQuoteButton = document.getElementById('transformToQuote');
-const reviewerNameInput = document.getElementById('personal-data__reviewer-name');
-const reviewDataSubmit = document.getElementById('review-data__review--submit');
+        disabledStart.style.display = 'block';
 
-uploadAvatarButton.addEventListener('change', function () {
-    uploadAvatar();
-}, false);
+        for (var i = 0; i <= maxRating - currentRating; i++) {
+            reviewRating.children[i].classList.add("orange");
+            previousRating = maxRating - currentRating + 1;
+        }
 
-reviewDataRatingElement.addEventListener('click', function (event) {
-    selectRating(event);
-}, false);
+        for (var i = maxRating - currentRating + 1; i <= maxRating - 1; i++) {
+            reviewRating.children[i].classList.remove("orange");
+        }
+    }
 
-feedbackText.addEventListener('keyup', function () {
-    reviewTextChanged(this.value);
-}, false);
+    function uploadAvatar() {
+        var file = uploadAvatarButton.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            reviewAvatar.src = reader.result;
+            reviewAvatarSample.style.backgroundImage = "url(" + reader.result + ")";
+            avatarStatusLabel.innerText = 'Image selected';
+        }
+        reader.readAsDataURL(file);
+    }
 
-transformToBoldButton.addEventListener('click', function () {
-    transformText(TextTypeEnum.BOLD);
-}, false);
+    function toggleAddReviewForm(element) {
+        if (element.style.display == '') {
+            reviewForm.style.display = 'block';
+            mainTagElement.style.height = 'auto';
+            shareThoughtsContainer.innerText = "Share your thoughts with other customers:";
+        }
+    }
 
-transformToEmphasizeButton.addEventListener('click', function () {
-    transformText(TextTypeEnum.EMPHASIZE);
-}, false);
+    function reviewCanceled(componentID) {
+        componentID.style.display = 'none';
+        mainTagElement.style.height = '';
+        shareThoughtsContainer.innerHTML = "<p class=\"product-card__review--purpose\" id=\"share-thoughts__container\">Would you like to <span class=\"product-card__add-review\" id=\"review-form__show\"> share your thoughts with other customers</span> ?</p>";
+        shareThoughtsContainer.addEventListener('click', function () {
+            toggleAddReviewForm(this);
+        });
+    }
 
-transformToQuoteButton.addEventListener('click', function () {
-    transformText(TextTypeEnum.QUOTE);
-}, false);
+    uploadAvatarButton.addEventListener('change', function () {
+        uploadAvatar();
+    }, false);
 
-reviewerNameInput.addEventListener('keyup', function () {
-    editorNameChanged(this.value);
-}, false);
+    reviewDataRatingElement.addEventListener('click', function (event) {
+        selectRating(event);
+    }, false);
 
+    feedbackText.addEventListener('keyup', function () {
+        reviewTextChanged(this.value);
+    }, false);
 
+    transformToBoldButton.addEventListener('click', function () {
+        transformText(TextTypeEnum.BOLD);
+    }, false);
+
+    transformToEmphasizeButton.addEventListener('click', function () {
+        transformText(TextTypeEnum.EMPHASIZE);
+    }, false);
+
+    transformToQuoteButton.addEventListener('click', function () {
+        transformText(TextTypeEnum.QUOTE);
+    }, false);
+
+    reviewerNameInput.addEventListener('keyup', function () {
+        editorNameChanged(this.value);
+    }, false);
+
+    reviewFormToggleButton.addEventListener('click', function () {
+        toggleAddReviewForm(this);
+    })
+
+    cancelAddReview.addEventListener('click', function () {
+        reviewCanceled(reviewForm);
+    })
+
+}());

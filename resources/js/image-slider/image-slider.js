@@ -93,11 +93,6 @@
 }());
 
 window.onload = function () {
-    const context = document.getElementById("slider-canvas").getContext("2d");
-    const nextImageButton = document.getElementById('nextImageButton');
-    const previousImageButton = document.getElementById('previousImageButton');
-    const currentImageLabel = document.getElementById('product-card__image-label');
-
     var defaultWaterMarkConfig = {
         "font": "18px PT Sans",
         "fillStyle": "white",
@@ -105,9 +100,9 @@ window.onload = function () {
         "labelPositionX": 50,
         "labelPositionY": 40
     }
+    var imageCollectionJSON = null;
 
     const slider = new CustomSlider("slider-canvas", new Image(), 555, 350, defaultWaterMarkConfig);
-    var imageCollectionJSON = null;
 
     slider.loadJSON(function (response) {
         imageCollectionJSON = JSON.parse(response);
