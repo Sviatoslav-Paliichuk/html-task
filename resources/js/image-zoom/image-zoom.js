@@ -1,127 +1,131 @@
-var createdZoomLens = false;
-var objectToZoom, lensWindow, resultOfZoom, coordinateX, coordinateY;
-var dataURL = "";
+(function () {
+    var canvasID, resultWindowID = null;
+    this.ImageZoom = function (canvasID, resultWindowID) {
+        this.canvasID = canvasID;
+        this.resultWindowID = resultWindowID;
+    }
 
-const zoomResultWindow = document.querySelector("#zoom-result__window");
+    ImageZoom.prototype.create = function (objectToZoomID, resultOfZoomID) {
+        const canvas = document.getElementById(objectToZoomID);
+        dataURL = canvas.toDataURL();
 
-function imageZoom(objectToZoomID, resultOfZoomID) {
+        if (!createdZoomLens) {
+            objectToZoom = document.getElementById(objectToZoomID);
+            resultOfZoom = document.getElementById(resultOfZoomID);
 
-    const canvas = document.getElementById(objectToZoomID);
-    dataURL = canvas.toDataURL();
+            /*create lensWindow:*/
+            lensWindow = document.createElement("div");
+            lensWindow.setAttribute("class", "img-zoom-lens");
 
-    if (!createdZoomLens) {
-        objectToZoom = document.getElementById(objectToZoomID);
-        resultOfZoom = document.getElementById(resultOfZoomID);
+            /*insert lensWindow:*/
+            objectToZoom.parentElement.insertBefore(lensWindow, objectToZoom);
 
-        /*create lensWindow:*/
-        lensWindow = document.createElement("DIV");
-        lensWindow.setAttribute("class", "img-zoom-lens");
+            coordinateX = resultOfZoom.offsetWidth / lensWindow.offsetWidth;
+            coordinateY = resultOfZoom.offsetHeight / lensWindow.offsetHeight;
 
-        /*insert lensWindow:*/
-        objectToZoom.parentElement.insertBefore(lensWindow, objectToZoom);
+            /*set background properties for the result DIV:*/
+            resultOfZoom.style.backgroundImage = "url('" + dataURL + "')";
+            resultOfZoom.style.backgroundSize = (objectToZoom.width * coordinateX) + "px " + (objectToZoom.height * coordinateY) + "px";
 
-        coordinateX = resultOfZoom.offsetWidth / lensWindow.offsetWidth;
-        coordinateY = resultOfZoom.offsetHeight / lensWindow.offsetHeight;
+            /*execute a function when someone moves the cursor over the image, or the lensWindow:*/
+            lensWindow.addEventListener("mousemove", moveLens);
+            objectToZoom.addEventListener("mousemove", moveLens);
 
-        /*set background properties for the result DIV:*/
+            /*touch screens:*/
+            lensWindow.addEventListener("touchmove", moveLens);
+            objectToZoom.addEventListener("touchmove", moveLens);
+
+            createdZoomLens = true;
+        }
+
         resultOfZoom.style.backgroundImage = "url('" + dataURL + "')";
-        resultOfZoom.style.backgroundSize = (objectToZoom.width * coordinateX) + "px " + (objectToZoom.height * coordinateY) + "px";
+        zoomResultWindow.style.display = 'block';
 
-        /*execute a function when someone moves the cursor over the image, or the lensWindow:*/
-        lensWindow.addEventListener("mousemove", moveLens);
-        objectToZoom.addEventListener("mousemove", moveLens);
+        var zoomLens = document.querySelector(".img-zoom-lens");
+        zoomLens.style.display = 'block';
 
-        /*and also for touch screens:*/
-        lensWindow.addEventListener("touchmove", moveLens);
-        objectToZoom.addEventListener("touchmove", moveLens);
+        function moveLens(e) {
+            var cursorPosition, x, y;
+            e.preventDefault();
 
-        createdZoomLens = true;
-    }
+            /*get the cursor's x and y cursorPosition:*/
+            cursorPosition = getCursorPos(e);
 
-    resultOfZoom.style.backgroundImage = "url('" + dataURL + "')";
-    zoomResultWindow.style.display = 'block';
+            /*calculate the position of the lensWindow:*/
+            x = cursorPosition.x - (lensWindow.offsetWidth / 2);
+            y = cursorPosition.y - (lensWindow.offsetHeight / 2);
 
+            /*prevent the lensWindow from being positioned outside the image:*/
+            if (x > objectToZoom.width - lensWindow.offsetWidth) {
+                x = objectToZoom.width - lensWindow.offsetWidth;
+            }
+            if (x < 0) {
+                x = 0;
+            }
+            if (y > objectToZoom.height - lensWindow.offsetHeight) {
+                y = objectToZoom.height - lensWindow.offsetHeight;
+            }
+            if (y < 0) {
+                y = 0;
+            }
 
-    var zoomLens = document.querySelector(".img-zoom-lens");
-    zoomLens.style.display = 'block';
+            /*set the position of the lensWindow:*/
+            lensWindow.style.left = x + "px";
+            lensWindow.style.top = y + "px";
 
-    function moveLens(e) {
-        var cursorPosition, x, y;
-        e.preventDefault();
-
-        /*get the cursor's x and y cursorPosition:*/
-        cursorPosition = getCursorPos(e);
-
-        /*calculate the position of the lensWindow:*/
-        x = cursorPosition.x - (lensWindow.offsetWidth / 2);
-        y = cursorPosition.y - (lensWindow.offsetHeight / 2);
-
-        /*prevent the lensWindow from being positioned outside the image:*/
-        if (x > objectToZoom.width - lensWindow.offsetWidth) {
-            x = objectToZoom.width - lensWindow.offsetWidth;
-        }
-        if (x < 0) {
-            x = 0;
-        }
-        if (y > objectToZoom.height - lensWindow.offsetHeight) {
-            y = objectToZoom.height - lensWindow.offsetHeight;
-        }
-        if (y < 0) {
-            y = 0;
+            /*display what the lensWindow "sees":*/
+            resultOfZoom.style.backgroundPosition = "-" + (x * coordinateX) + "px -" + (y * coordinateY) + "px";
         }
 
-        /*set the position of the lensWindow:*/
-        lensWindow.style.left = x + "px";
-        lensWindow.style.top = y + "px";
+        function getCursorPos(e) {
+            var clientRect, x = 0, y = 0;
+            e = e || window.event;
 
-        /*display what the lensWindow "sees":*/
-        resultOfZoom.style.backgroundPosition = "-" + (x * coordinateX) + "px -" + (y * coordinateY) + "px";
+            /*get the x and y positions of the image:*/
+            clientRect = objectToZoom.getBoundingClientRect();
+
+            /*calculate the cursor's x and y coordinates, relative to the image:*/
+            x = e.pageX - clientRect.left;
+            y = e.pageY - clientRect.top;
+
+            /*consider any page scrolling:*/
+            x = x - window.pageXOffset;
+            y = y - window.pageYOffset;
+            return {x: x, y: y};
+        }
+    }
+    ImageZoom.prototype.hideZoomElements = function () {
+        var zoomLens = document.querySelector(".img-zoom-lens");
+
+        if (zoomResultWindow.style.display == 'block') {
+            zoomLens.style.display = 'none';
+            zoomResultWindow.style.display = 'none';
+        }
     }
 
-    function getCursorPos(e) {
-        var clientRect, x = 0, y = 0;
-        e = e || window.event;
+    const zoomResultWindow = document.getElementById("zoom-result__window");
+    const canvasSlider = document.getElementById('slider-canvas');
+    const nextImageButton = document.getElementById('nextImageButton');
+    const previousImageButton = document.getElementById('previousImageButton');
+    const zoomContainer = document.getElementById('img-zoom__container');
 
-        /*get the x and y positions of the image:*/
-        clientRect = objectToZoom.getBoundingClientRect();
+    var createdZoomLens = false;
+    var objectToZoom, lensWindow, resultOfZoom, coordinateX, coordinateY, dataURL;
+    const imageZoom = new ImageZoom('slider-canvas', 'zoom-result__window');
 
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - clientRect.left;
-        y = e.pageY - clientRect.top;
+    canvasSlider.addEventListener('mouseenter', function () {
+        imageZoom.create('slider-canvas', 'zoom-result__window');
+    }, false);
 
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        return {x: x, y: y};
-    }
-}
+    nextImageButton.addEventListener('mouseover', function () {
+        imageZoom.hideZoomElements();
+    }, false);
 
-function hideZoomElements() {
-    var zoomLens = document.querySelector(".img-zoom-lens");
+    previousImageButton.addEventListener('mouseover', function () {
+        imageZoom.hideZoomElements();
+    }, false);
 
-    if (zoomResultWindow.style.display == 'block') {
-        zoomLens.style.display = 'none';
-        zoomResultWindow.style.display = 'none';
-    }
-}
-
-const canvasSlider = document.getElementById('slider-canvas');
-const nextImageButton = document.getElementById('nextImageButton');
-const previousImageButton = document.getElementById('previousImageButton');
-const zoomContainer = document.getElementById('img-zoom__container');
-
-canvasSlider.addEventListener('mouseenter', function () {
-    imageZoom('slider-canvas', 'zoom-result__window')
-}, false);
-
-nextImageButton.addEventListener('mouseover', function () {
-    hideZoomElements();
-}, false);
-
-previousImageButton.addEventListener('mouseover', function () {
-    hideZoomElements();
-}, false);
-
-zoomContainer.addEventListener('mouseleave', function () {
-    hideZoomElements();
-}, false);
+    zoomContainer.addEventListener('mouseleave', function () {
+        imageZoom.hideZoomElements();
+    }, false);
+}());

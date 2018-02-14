@@ -1,57 +1,54 @@
-const resetLabel = document.getElementById('product-card__image-label');
-const resetImage = document.getElementById('product-card__image-container');
-
-function loadJSON(callback, path) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', path, true);
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == 200)
-            callback(xobj.responseText);
-    };
-    xobj.send(null);
-}
-
 (function () {
+    const resetLabel = document.getElementById('product-card__image-label');
+    const resetImage = document.getElementById('product-card__image-container');
+
     var currentImageIndex = 0;
     var imageCollection = null;
-    var defaultWaterMarkConfig = {
-        "font": "18px PT Sans",
-        "fillStyle": "white",
-        "Text": "DEMO SHOP",
-        "labelPositionX": 50,
-        "labelPositionY": 40
-    }
-
+    var defaultWaterMarkConfig, dataURL = null;
     var DirectionTypeEnum = Object.freeze({
         NEXT: "next",
         PREVIOUS: "previous"
     });
 
-    this.CustomSlider = function (canvasTemplateID, imageObj, canvasWidth, canvasHeight) {
+    this.CustomSlider = function (canvasTemplateID, imageObj, canvasWidth, canvasHeight, customWaterMarkConfig) {
         this.canvas = document.getElementById(canvasTemplateID);
         this.context = this.canvas.getContext("2d");
         this.canvas.width = canvasWidth;
         this.canvas.height = canvasHeight;
+        this.defaultWaterMarkConfig = customWaterMarkConfig;
     }
 
     CustomSlider.prototype.changeImage = function (direction, context, currentImageLabel, imgCollection) {
         setImageCollection(imgCollection);
         setSliderDirection(direction);
-        this.addWaterMark(context, imageCollection, defaultWaterMarkConfig);
+        addWaterMark(context, imageCollection, this.defaultWaterMarkConfig);
         getCanvasImgURL();
         renderImageLabel(currentImageLabel);
         resetAnimation();
     }
 
-    CustomSlider.prototype.addWaterMark = function (context, imageCollection, defaultWaterMarkConfig) {
+    CustomSlider.prototype.loadJSON = function (callback, path) {
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', path, true);
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == 200)
+                callback(xobj.responseText);
+        };
+        xobj.send(null);
+    }
+
+    this.addWaterMark = function (context, imageCollection, customWaterMarkConfig) {
         var imageObj = new Image();
         imageObj.onload = function () {
             context.drawImage(imageObj, 0, 0);
-            context.font = defaultWaterMarkConfig.font;
-            context.fillStyle = defaultWaterMarkConfig.fillStyle;
-            context.fillText(defaultWaterMarkConfig.Text, defaultWaterMarkConfig.labelPositionX, defaultWaterMarkConfig.labelPositionY);
+            if (customWaterMarkConfig != undefined) {
+                context.font = customWaterMarkConfig.font;
+                context.fillStyle = customWaterMarkConfig.fillStyle;
+                context.fillText(customWaterMarkConfig.Text, customWaterMarkConfig.labelPositionX, customWaterMarkConfig.labelPositionY);
+            }
         };
+
         imageObj.src = imageCollection[currentImageIndex]["path"];
     }
 
@@ -65,10 +62,10 @@ function loadJSON(callback, path) {
         switch (direction) {
             case DirectionTypeEnum.NEXT:
                 currentImageIndex++;
-                if (currentImageIndex === imageCollection.length) currentImageIndex = 0;
+                currentImageIndex === imageCollection.length ? currentImageIndex = 0 : currentImageIndex;
                 break;
             case DirectionTypeEnum.PREVIOUS:
-                if (currentImageIndex <= 0) currentImageIndex = imageCollection.length;
+                currentImageIndex <= 0 ? currentImageIndex = imageCollection.length : currentImageIndex;
                 currentImageIndex--;
                 break;
             default:
@@ -87,10 +84,10 @@ function loadJSON(callback, path) {
 
     this.resetAnimation = function () {
         resetLabel.style.animation = 'none';
-        resetLabel.offsetHeight;//work code
+        resetLabel.offsetHeight;
         resetLabel.style.animation = null;
         resetImage.style.animation = 'none';
-        resetImage.offsetHeight;//work code
+        resetImage.offsetHeight;
         resetImage.style.animation = null;
     }
 }());
@@ -101,10 +98,18 @@ window.onload = function () {
     const previousImageButton = document.getElementById('previousImageButton');
     const currentImageLabel = document.getElementById('product-card__image-label');
 
-    const slider = new CustomSlider("slider-canvas", new Image(), 555, 350);
+    var defaultWaterMarkConfig = {
+        "font": "18px PT Sans",
+        "fillStyle": "white",
+        "Text": "DEMO SHOP",
+        "labelPositionX": 50,
+        "labelPositionY": 40
+    }
+
+    const slider = new CustomSlider("slider-canvas", new Image(), 555, 350, defaultWaterMarkConfig);
     var imageCollectionJSON = null;
 
-    loadJSON(function (response) {
+    slider.loadJSON(function (response) {
         imageCollectionJSON = JSON.parse(response);
         slider.changeImage('default', context, currentImageLabel, imageCollectionJSON);
     }, '../resources/js/image-slider/imageCollection.json');
