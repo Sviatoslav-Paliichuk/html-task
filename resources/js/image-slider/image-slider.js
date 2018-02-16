@@ -1,7 +1,4 @@
 (function () {
-    const resetLabel = document.getElementById('product-card__image-label');
-    const resetImage = document.getElementById('product-card__image-container');
-
     var currentImageIndex = 0;
     var imageCollection = null;
     var defaultWaterMarkConfig, dataURL = null;
