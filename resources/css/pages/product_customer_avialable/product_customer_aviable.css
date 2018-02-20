@@ -379,6 +379,7 @@ q q:after {
     border-radius: 5px;
     background-color: #FFFFFF;
     border: 1px solid white;
+    resize: none;
 }
 
 .review-data-column__lable-container, .review-data-column__controls-container {

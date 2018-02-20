@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_avialable/product_customer_aviable.css">
     <script src="../resources/js/product_customer/review-constants.js" defer></script>
-    <script src="../resources/js/image-slider/image-slider.js" defer></script>
-    <script src="../resources/js/image-zoom/image-zoom.js" defer></script>
-    <script src="../resources/js/product_customer/product-review.js" defer></script>
+    <script src="../resources/js/product_customer/review-form-constants.js" defer></script>
+    <script src="../resources/js/image-slider/image-slider-constants.js" defer></script>
+    <script src="../resources/js/image-slider/image-slider-es.js" defer></script>
+    <!--<script src="../resources/js/image-zoom/image-zoom.js" defer></script>-->
+    <script src="../resources/js/product_customer/product-review-es.js" defer></script>
 </head>
 
 <body>
@@ -51,29 +53,7 @@
             </nav>
             <div class="product-card__details">
                 <div class="product-card__details-container">
-                    <div class="product-card-details__image">
-                        <div class="product-card-details__image-container img-zoom-container" id="img-zoom__container">
-                            <i class="prev-image__icon" id="previousImageButton"></i>
-
-                            <i class="next-image__icon" id="nextImageButton"></i>
-
-                            <div id="product-card__image-container">
-                                <canvas class="product-card__image" id="slider-canvas"></canvas>
-                            </div>
-
-                            <span class="product-card-details__image-description" id="product-card__image-label">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </span>
-                            <div class="product-card__rating">
-                                <fieldset class="product-rating review-rating">
-                                    <label></label>
-                                    <label></label>
-                                    <label></label>
-                                    <label></label>
-                                    <label></label>
-                                </fieldset>
-                            </div>
-                        </div>
+                    <div class="product-card-details__image" id="slider-container">
                     </div>
                     <div class="product-card-details__description-container">
                         <div class="product-card-details__description-content">
@@ -107,109 +87,7 @@
                         data-window-type="edit-review__form"> share your thoughts with other customers</span>
                     ?</p>
             </div>
-            <div class="product-card__edit-review" id="edit-review__form">
-                <span class="product-card__edit-review-label">Add review</span>
-
-                <div class="product-card__edit-review-header">
-                    <div class="product-card__edit-review--username"><span>By </span><span
-                            class="editor-name">your name </span><span> March 4, 2017</span>
-                        <fieldset class="review-rating review-rating-disabled" id="review-rating__disabled-stars">
-                            <label></label>
-                            <label></label>
-                            <label></label>
-                            <label></label>
-                            <label></label>
-                        </fieldset>
-                    </div>
-
-                    <img src="../resources/images/empty-logo.png" alt="" class="empty-avatar" id="image-avatar"
-                         align="left">
-
-                    <p class="product-card__review-text">Start typing and your review text will appear here...</p>
-                </div>
-                <div class="product-card__edit-review-content-label__container">
-                    <div class="product-card__edit-review-content-label">
-                        <span>EDIT YOUR REVIEW</span>
-                    </div>
-                </div>
-                <div class="product-card__edit-review-content">
-                    <div class="edit-review__controls-container">
-                        <div class="personal-data-column">
-                            <label for="personal-data__reviewer-name" class="form-group__label">Enter your name:</label>
-                            <input type="text" class="personal-data__name" id="personal-data__reviewer-name"
-                            >
-
-                            <div class="upload-btn__container">
-                                <label for="upload-avatar" class="form-group__label">Choose your avatar:</label>
-                                <div class="upload-btn-wrapper" id="upload-avatar">
-                                    <button class="upload-btn">
-                                        <p id="avatar-status__label">Image not selected</p>
-                                        <span class="upload-btn__logo" id="upload-logo__sample"></span>
-                                    </button>
-                                    <input type="file" id="upload-avatar__file"/>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="review-data-column">
-                            <div class="review-data-column__lable-container">
-                                <label for="review-data__rating">Write your review:</label>
-                                <div class="product-rate"><span>Rate product:</span>
-                                    <div class="review-data__rating">
-                                        <div class="" id="review-data__rating">
-                                            <fieldset class="review-rating" id="review-data__stars">
-
-                                                <input type="radio" id="star1" name="review-rating" value="1"/>
-                                                <label for="star1" title="Meh - 3 stars"></label>
-
-                                                <input type="radio" id="star2" name="review-rating" value="2"/>
-                                                <label for="star2" title="Meh - 3.5 stars"></label>
-
-                                                <input type="radio" id="star3" name="review-rating" value="3"/>
-                                                <label for="star3" title="Pretty good - 4 stars"></label>
-
-                                                <input type="radio" id="star4" name="review-rating" value="4"/>
-                                                <label for="star4" title="Pretty good - 4.5 stars"></label>
-
-                                                <input type="radio" id="star5" name="review-rating" value="5"/>
-                                                <label for="star5" title="Awesome - 5 stars"></label>
-
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <textarea name="" id="review-data__feedback--text"></textarea>
-
-                            <div class="review-data-column__controls-container">
-                                <div class="review-data-column__edit-review-controls">
-                                    <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            id="transformToBold">Bold
-                                    </button>
-                                    <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            id="transformToEmphasize">Emphasize
-                                    </button>
-                                    <button class="btn btn-secondary btn-regular custom-btn-regular"
-                                            id="transformToQuote">Quote
-                                    </button>
-                                </div>
-                                <div class="review-data-column__confirm-controls">
-
-                                    <button class="btn btn-secondary btn-regular" id="add-review__cancel">Cancel
-                                    </button>
-                                    <button class="btn btn-primary btn-regular disabled"
-                                            id="review-data__review--submit">Add review
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div id="review-form__template-container"></div>
         </div>
     </div>
 </main>

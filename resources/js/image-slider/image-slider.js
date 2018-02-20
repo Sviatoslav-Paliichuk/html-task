@@ -78,7 +78,7 @@
     this.renderImageLabel = function (currentImageLabel) {
         currentImageLabel.innerText = imageCollection[currentImageIndex]["description"];
     }
-
+ // TODO Review animation code
     this.resetAnimation = function () {
         resetLabel.style.animation = 'none';
         resetLabel.offsetHeight;
@@ -114,3 +114,5 @@ window.onload = function () {
         slider.changeImage('previous', context, currentImageLabel, imageCollectionJSON);
     }, false);
 }
+
+// TODO remove dead code, implement animation on the slider
