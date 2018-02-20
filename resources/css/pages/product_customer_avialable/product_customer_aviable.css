@@ -222,7 +222,6 @@ q q:after {
 }
 
 .product-card__edit-review-content {
-    height: 300px;
     border: 3px solid #3FC5CB;
     display: flex;
     align-items: center;
@@ -296,7 +295,7 @@ q q:after {
 
 .personal-data__name {
     height: 35px;
-    width: 235px;
+    width: 85%;
     border-radius: 5px;
     border: 1px solid white;
     background-color: #FFFFFF;
@@ -327,13 +326,13 @@ q q:after {
     overflow: hidden;
     display: inline-block;
     height: 100px;
-    width: 235px;
+    width: 85%;
     border: 1px solid white;
     border-radius: 5px;
 }
 
 .upload-btn {
-    width: inherit;
+    width: 100%;
     height: inherit;
     color: gray;
     background-color: white;
@@ -345,7 +344,7 @@ q q:after {
 }
 
 .upload-btn-wrapper input[type=file] {
-    width: inherit;
+    width: 85%;
     font-size: 100px;
     position: absolute;
     left: 0;
@@ -393,7 +392,7 @@ q q:after {
     padding-bottom: 5px;
 }
 
-.review-text__changed{
+.review-text__changed {
     color: white;
     opacity: 1;
     font-style: inherit;
@@ -444,7 +443,7 @@ q q:after {
 .review-data-column__confirm-controls > button, .review-data-column__edit-review-controls > button {
     position: relative;
     padding: 1px;
-    margin: 10px 15px 15px 0;
+    margin: 10px 10px 15px 0;
 }
 
 .custom-btn-regular {
@@ -470,22 +469,51 @@ q q:after {
 }
 
 @media screen and (max-width: 1200px) {
-    .product-card-details__image-container{
+    .product-card-details__image-container {
         margin-top: 0;
         padding-top: 20px;
     }
-    .product-card__edit-review-content-label__container{
+
+    .product-card__edit-review-content-label__container {
         width: 100%;
     }
-    #slider-canvas{
+
+    #slider-canvas {
         height: auto;
     }
 
-    #zoom-result__window, div.img-zoom-lens{
+    #zoom-result__window, div.img-zoom-lens {
         display: none !important;
     }
 
-    main{
+    main {
         height: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .review-data-column__confirm-controls > button {
+        width: 120px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: right;
+        margin: 10px 0 0 10px;
+
+    }
+
+    .edit-review__controls-container {
+        display: block;
+    }
+
+    .personal-data__name, .upload-btn-wrapper, .upload-btn-wrapper input[type=file], #review-data__feedback--text {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .review-data-column {
+        padding-top: 20px;
     }
 }
