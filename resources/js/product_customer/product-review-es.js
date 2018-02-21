@@ -4,26 +4,25 @@ class ReviewForm {
     }
 
     renderFormTemplate(containerId) {
-        const _this = this;
         this.loadTemplate(function (response) {
             const reviewFormContainer = document.getElementById(containerId);
             reviewFormContainer.innerHTML = response;
-            _this.initializeFormNodes();
-            _this.createHandlers(_this);
-        }, _this);
+            this.initializeConstantNodes();
+            this.createHandlers(this);
+        }.bind(this));
     }
 
     loadTemplate(callback) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open("GET", "../resources/js/product_customer/review-form-template.html");
         xhr.onload = function () {
-            if (xhr.readyState == 4 && xhr.status == 200)
+            if (xhr.readyState === 4 && xhr.status === 200)
                 callback(xhr.responseText);
         }
         xhr.send(null);
     }
 
-    initializeFormNodes() {
+    initializeConstantNodes() {
         this.reviewNameInput = document.getElementById(REVIEWER_NAME_INPUT);
         this.uploadAvatarButton = document.getElementById(UPLOAD_AVATAR_BUTTON);
         this.reviewRating = document.getElementById(REVIEW_RATING_COMPONENT);
@@ -47,41 +46,33 @@ class ReviewForm {
         this.avatarStatusLabel = document.getElementById(REVIEW_AVATAR_STATUS_LABEL);
     }
 
-    createHandlers(_this) {
-        _this.reviewNameInput.addEventListener('keyup', function () {
-            _this.reviewerNameChanged(this.value);
+    createHandlers(reviewForm) {
+        reviewForm.reviewNameInput.addEventListener('keyup', function () {
+            reviewForm.reviewerNameChanged(this.value);
         }, false);
-
-        _this.uploadAvatarButton.addEventListener('change', function () {
-            _this.uploadAvatar();
+        reviewForm.uploadAvatarButton.addEventListener('change', function () {
+            reviewForm.uploadAvatar();
         }, false);
-
-        _this.reviewRating.addEventListener('click', function (event) {
-            _this.ratingChanged(event);
+        reviewForm.reviewRating.addEventListener('click', function (event) {
+            reviewForm.ratingChanged(event);
         }, false);
-
-        _this.feedBackTextArea.addEventListener('keyup', function () {
-            _this.reviewTextChanged(this.value);
+        reviewForm.feedBackTextArea.addEventListener('keyup', function () {
+            reviewForm.reviewTextChanged(this.value);
         }, false)
-
-        _this.transformToBoldButton.addEventListener('click', function () {
-            _this.transformText('BOLD');
+        reviewForm.transformToBoldButton.addEventListener('click', function () {
+            reviewForm.transformText('BOLD');
         }, false);
-
-        _this.transformToEmphasizeButton.addEventListener('click', function () {
-            _this.transformText('EMPHASIZE');
+        reviewForm.transformToEmphasizeButton.addEventListener('click', function () {
+            reviewForm.transformText('EMPHASIZE');
         }, false);
-
-        _this.transformToQuoteButton.addEventListener('click', function () {
-            _this.transformText('QUOTE');
+        reviewForm.transformToQuoteButton.addEventListener('click', function () {
+            reviewForm.transformText('QUOTE');
         }, false);
-
-        _this.reviewFormToggleButton.addEventListener('click', function () {
-            _this.toggleAddReviewForm(this);
+        reviewForm.reviewFormToggleButton.addEventListener('click', function () {
+            reviewForm.toggleAddReviewForm(this);
         }, false);
-
-        _this.cancelAddReview.addEventListener('click', function () {
-            _this.reviewCanceled(REVIEW_FORM);
+        reviewForm.cancelAddReview.addEventListener('click', function () {
+            reviewForm.reviewCanceled(REVIEW_FORM);
         }, false);
     }
 
@@ -91,13 +82,12 @@ class ReviewForm {
 
     uploadAvatar() {
         const file = this.uploadAvatarButton.files[0];
-        const _this = this;
         let reader = new FileReader();
         reader.onloadend = function () {
-            _this.reviewAvatarImage.src = reader.result;
-            _this.reviewAvatarSampleImage.style.backgroundImage = "url(" + reader.result + ")";
-            _this.avatarStatusLabel.innerText = 'Image selected';
-        };
+            this.reviewAvatarImage.src = reader.result;
+            this.reviewAvatarSampleImage.style.backgroundImage = "url(" + reader.result + ")";
+            this.avatarStatusLabel.innerText = 'Image selected';
+        }.bind(this);
         reader.readAsDataURL(file);
     }
 
@@ -105,29 +95,29 @@ class ReviewForm {
         const maxRating = 5;
         let previousRating = 0;
         let currentRating = event.target.value;
-        this.disabledStars.style.display = 'block';
+        this.disabledStars.style.display = DISPLAY_BLOCK;
 
         for (let i = 0; i <= maxRating - currentRating; i++) {
-            this.reviewRatingDisabled.children[i].classList.add("orange");
+            this.reviewRatingDisabled.children[i].classList.add(SELECTED_STAR);
             previousRating = maxRating - currentRating + 1;
         }
 
         for (let i = maxRating - currentRating + 1; i <= maxRating - 1; i++) {
-            this.reviewRatingDisabled.children[i].classList.remove("orange");
+            this.reviewRatingDisabled.children[i].classList.remove(SELECTED_STAR);
         }
     }
 
     reviewTextChanged(value) {
-        this.reviewText.classList.add('review-text__changed');
+        this.reviewText.classList.add(REVIEW_TEXT_CHANGED);
         this.reviewText.innerHTML = value;
 
-        if (this.feedbackText.value != "") this.toggleAddReviewButton(true);
+        if (this.feedbackText.value !== "") this.toggleAddReviewButton(true);
         else this.toggleAddReviewButton(false);
     }
 
     toggleAddReviewButton(hidden) {
-        if (!hidden) this.reviewDataSubmit.classList.add('disabled');
-        else this.reviewDataSubmit.classList.remove('disabled');
+        if (!hidden) this.reviewDataSubmit.classList.add(DISABLED_BUTTON);
+        else this.reviewDataSubmit.classList.remove(DISABLED_BUTTON);
     }
 
     transformText(transformType) {
@@ -156,8 +146,7 @@ class ReviewForm {
     getSelectedText() {
         const selectionStart = this.feedBackTextArea.selectionStart;
         const selectionEnd = this.feedBackTextArea.selectionEnd;
-        let selectedText = this.feedBackTextArea.value.substring(selectionStart, selectionEnd);
-        return selectedText;
+        return this.feedBackTextArea.value.substring(selectionStart, selectionEnd);
     }
 
     transformToBold(selectedText) {
@@ -173,21 +162,20 @@ class ReviewForm {
     }
 
     toggleAddReviewForm(element) {
-        if (element.style.display == '') {
-            this.reviewForm.style.display = 'block';
-            this.mainTagElement.style.height = 'auto';
+        if (element.style.display === '') {
+            this.reviewForm.style.display = DISPLAY_BLOCK;
+            this.mainTagElement.style.height = HEIGHT_AUTO;
             this.shareThoughtsContainer.innerText = "Share your thoughts with other customers:";
         }
     }
 
     reviewCanceled(componentId) {
-        document.getElementById(componentId).style.display = 'none';
+        document.getElementById(componentId).style.display = DISPLAY_NONE;
         this.mainTagElement.style.height = '';
         this.shareThoughtsContainer.innerHTML = "<p class=\"product-card__review--purpose\" id=\"share-thoughts__container\">Would you like to <span class=\"product-card__add-review\" id=\"review-form__show\"> share your thoughts with other customers</span> ?</p>";
         this.shareThoughtsContainer.addEventListener('click', function () {
-            this.toggleAddReviewForm(this);
-            // TODO Fix hiding event
-        });
+            this.toggleAddReviewForm(this.shareThoughtsContainer);
+        }.bind(this));
     }
 }
 

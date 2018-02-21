@@ -10,34 +10,42 @@ class CustomSlider {
     }
 
     renderTemplate(containerId) {
-        const _this = this;
-
         this.loadTemplate(function (response) {
             const sliderContainer = document.getElementById(containerId);
             sliderContainer.innerHTML = response;
-            _this.renderImage(_this.width, _this.height, _this.customWaterMarkConfig);
-            _this.createHandlers(_this);
-        }, _this);
+            this.renderSlider(this.width, this.height, this.customWaterMarkConfig);
+            this.initializeConstantNodes();
+            this.createHandlers(this);
+        }.bind(this));
     }
 
-    createHandlers(_this) {
-        const nextImageButton = document.getElementById(NEXT_IMAGE_BUTTON);
-        const previousImageButton = document.getElementById(PREVIOUS_IMAGE_BUTTON);
+    initializeConstantNodes() {
+        this.nextImageButton = document.getElementById(NEXT_IMAGE_BUTTON);
+        this.previousImageButton = document.getElementById(PREVIOUS_IMAGE_BUTTON);
+        this.currentImage = document.getElementById(CURRENT_IMAGE);
+        this.imageLabel = document.getElementById(CURRENT_IMAGE_LABEL);
+        this.currentLabel = document.getElementById(CURRENT_IMAGE_LABEL);
+    }
 
-        nextImageButton.addEventListener('click', function () {
-            _this.nextImage();
-        }, false);
+    createHandlers(slider) {
+        this.nextImageButton.addEventListener('click', function () {
+            slider.nextImage();
+            slider.resetAnimation();
+            slider.renderCanvasLabel(this.imageCollection[this.currentImageIndex]["description"]);
+        }.bind(this), false);
 
-        previousImageButton.addEventListener('click', function () {
-            _this.previousImage();
-        }, false);
+        this.previousImageButton.addEventListener('click', function () {
+            slider.previousImage();
+            slider.resetAnimation();
+            slider.renderCanvasLabel(this.imageCollection[this.currentImageIndex]["description"]);
+        }.bind(this), false);
     }
 
     loadTemplate(callback) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open("GET", "../resources/js/image-slider/image-slider-template.html");
         xhr.onload = function () {
-            if (xhr.readyState == 4 && xhr.status == 200)
+            if (xhr.readyState === 4 && xhr.status === 200)
                 callback(xhr.responseText);
         }
         xhr.send(null);
@@ -46,36 +54,47 @@ class CustomSlider {
     nextImage() {
         this.currentImageIndex++;
         this.currentImageIndex === this.imageCollection.length ? this.currentImageIndex = 0 : this.currentImageIndex;
-        this.renderImage(this.width, this.height, this.customWaterMarkConfig);
+        this.renderSlider(this.width, this.height, this.customWaterMarkConfig);
     }
 
     previousImage() {
         this.currentImageIndex <= 0 ? this.currentImageIndex = this.imageCollection.length : this.currentImageIndex;
         this.currentImageIndex--;
-        this.renderImage(this.width, this.height, this.customWaterMarkConfig);
+        this.renderSlider(this.width, this.height, this.customWaterMarkConfig);
     }
 
-    renderImage(width = 550, height = 350, customWaterMarkConfig) {
+    renderSlider(width = 550, height = 350, customWaterMarkConfig) {
         let imageObj = new Image();
         imageObj.onload = function () {
-            let canvas = document.getElementById(SLIDER_ID);
-            canvas.context = canvas.getContext("2d");
-            canvas.width = width;
-            canvas.height = height;
-            canvas.context.drawImage(imageObj, 0, 0);
-            if (customWaterMarkConfig != undefined) {
-                canvas.context.font = customWaterMarkConfig.font;
-                canvas.context.fillStyle = customWaterMarkConfig.fillStyle;
-                canvas.context.fillText(customWaterMarkConfig.Text, customWaterMarkConfig.labelPositionX, customWaterMarkConfig.labelPositionY);
-            }
-        };
+            this.renderCanvas(imageObj);
+        }.bind(this);
         imageObj.src = this.imageCollection[this.currentImageIndex]["path"];
-        this.renderImageLabel(this.imageCollection[this.currentImageIndex]["description"])
     }
 
-    renderImageLabel(labelText) {
-        const currentLabel = document.getElementById(CURRENT_IMAGE_LABEL);
-        currentLabel.innerText = labelText;
+    renderCanvas(imageObj) {
+        let canvas = document.getElementById(SLIDER_ID);
+        canvas.context = canvas.getContext("2d");
+        canvas.width = this.width;
+        canvas.height = this.height;
+        canvas.context.drawImage(imageObj, 0, 0);
+        if (this.customWaterMarkConfig !== undefined) {
+            canvas.context.font = this.customWaterMarkConfig.font;
+            canvas.context.fillStyle = this.customWaterMarkConfig.fillStyle;
+            canvas.context.fillText(this.customWaterMarkConfig.Text, this.customWaterMarkConfig.labelPositionX, this.customWaterMarkConfig.labelPositionY);
+        }
+    }
+
+    renderCanvasLabel(labelText) {
+        this.currentLabel.innerText = labelText;
+    }
+
+    resetAnimation() {
+        this.imageLabel.style.animation = 'none';
+        this.imageLabel.offsetHeight; // force repaint reflow for render animation
+        this.imageLabel.style.animation = null;
+        this.currentImage.style.animation = 'none';
+        this.currentImage.offsetHeight;
+        this.currentImage.style.animation = null;
     }
 }
 
