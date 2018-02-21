@@ -117,4 +117,4 @@ let mySlider = new CustomSlider('slider-container', [
     "Text": "MY DEMO SHOP",
     "labelPositionX": 20,
     "labelPositionY": 30
-});
+}, 555, 350);
