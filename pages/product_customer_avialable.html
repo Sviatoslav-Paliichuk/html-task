@@ -11,11 +11,51 @@
     <link rel="stylesheet" href="../resources/css/pages/products/products.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer/product_customer.css">
     <link rel="stylesheet" href="../resources/css/pages/product_customer_available/product_customer_available.css">
-    <script src="../resources/js/product_customer/review-form-constants.js" defer></script>
-    <script src="../resources/js/image-slider/image-slider-constants.js" defer></script>
-    <script src="../resources/js/image-slider/image-slider-es.js" defer></script>
-    <script src="../resources/js/product_customer/product-review-es.js" defer></script>
-    <script src="../resources/js/image-zoom/image-zoom-es.js" defer></script>
+    <script src="../resources/js/product_customer/review-form-constants.js"></script>
+    <script src="../resources/js/image-slider/image-slider-constants.js"></script>
+    <script src="../resources/js/image-slider/image-slider.js"></script>
+    <script src="../resources/js/product_customer/product-review-es.js"></script>
+    <script src="../resources/js/image-zoom/image-zoom.js"></script>
+
+    <script>
+        let sliderConfig = {
+            containerSelector: 'slider-container',
+            images: [
+                {
+                    path: "../resources/images/product-items/1.jpg",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                },
+                {
+                    path: "../resources/images/product-items/2.jpg",
+                    description: "Alias aperiam culpa error facilis maiores nisi. Lorem ipsum dolor sit amet."
+                },
+                {
+                    path: "../resources/images/product-items/3.jpg",
+                    description: "Optio reiciendis repellend us soluta voluptate. Alias aperiam culpa error."
+                }
+            ],
+            watermarkConfig: {
+                "font": "18px PT Sans",
+                "fillStyle": "white",
+                "Text": "MY DEMO SHOP",
+                "labelPositionX": 20,
+                "labelPositionY": 30
+            },
+            isWatermarkVisible: true,
+            width: 555,
+            height: 350
+        };
+
+        let mySlider = new CustomSlider(sliderConfig);
+
+        let myZoom = new ImageZoom('.slider-canvas', 'zoom-result__window');
+
+        setTimeout(function () {
+            document.querySelector('.slider-canvas').addEventListener('mouseenter', function () {
+                myZoom.create();
+            }, false);
+        }, 50)
+    </script>
 </head>
 
 <body>

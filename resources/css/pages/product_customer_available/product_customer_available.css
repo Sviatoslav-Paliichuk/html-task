@@ -29,7 +29,7 @@ main {
     margin-left: 10px;
 }
 
-#product-card__image-container {
+.product-card__image-container {
     width: auto;
     height: auto;
 
@@ -98,7 +98,7 @@ main {
     }
 }
 
-#slider-canvas {
+.slider-canvas {
     -webkit-animation-duration: 0.5s;
     -webkit-animation-name: slideinImage;
     -moz-animation-duration: 0.5s;
@@ -478,7 +478,7 @@ q q:after {
         width: 100%;
     }
 
-    #slider-canvas {
+    .slider-canvas {
         height: auto;
     }
 
