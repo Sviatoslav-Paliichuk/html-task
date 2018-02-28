@@ -21,12 +21,12 @@ main {
 .next-image__icon {
     right: 0;
     transform: rotate(-180deg);
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .prev-image__icon {
     left: 0;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .product-card__image-container {
@@ -482,7 +482,7 @@ q q:after {
         height: auto;
     }
 
-    #zoom-result__window, div.img-zoom-lens {
+    .zoom-result__window, div.img-zoom-lens {
         display: none !important;
     }
 

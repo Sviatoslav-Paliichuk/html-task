@@ -1,7 +1,7 @@
 class ImageZoom {
-    constructor(objectToZoomId, resultOfZoomId) {
-        this.objectToZoomID = objectToZoomId;
-        this.resultOfZoomID = resultOfZoomId;
+    constructor(objectToZoomSelector, resultOfZoomSelector) {
+        this.objectToZoomSelector = objectToZoomSelector;
+        this.resultOfZoomSelector = resultOfZoomSelector;
         this.dataURL = null;
         this.lensWindow = null;
         this.coordinateX = null;
@@ -12,8 +12,8 @@ class ImageZoom {
     }
 
     initializeZoomContainer() {
-        this.objectToZoom = document.querySelector(this.objectToZoomID);
-        this.resultOfZoom = document.getElementById(this.resultOfZoomID);
+        this.objectToZoom = document.querySelector(this.objectToZoomSelector);
+        this.resultOfZoom = document.querySelector(this.resultOfZoomSelector);
     }
 
     create() {

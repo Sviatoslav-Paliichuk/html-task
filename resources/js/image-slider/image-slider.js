@@ -11,9 +11,9 @@ class CustomSlider {
         this.renderTemplate(sliderConfig.containerSelector);
     }
 
-    renderTemplate(containerId) {
+    renderTemplate(containerSelector) {
         this.loadTemplate(function (response) {
-            this.renderMarkup(containerId, response);
+            this.renderMarkup(containerSelector, response);
             this.renderImage();
             this.initializeConstantNodes();
             this.createHandlers();

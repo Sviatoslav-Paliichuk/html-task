@@ -48,13 +48,15 @@
 
         let mySlider = new CustomSlider(sliderConfig);
 
-        let myZoom = new ImageZoom('.slider-canvas', 'zoom-result__window');
+        let myZoom = new ImageZoom('.slider-canvas', '.zoom-result__window');
 
         setTimeout(function () {
             document.querySelector('.slider-canvas').addEventListener('mouseenter', function () {
                 myZoom.create();
             }, false);
         }, 0)
+
+        let customReviewForm = new ReviewForm('review-form__template-container');
     </script>
 </head>
 
@@ -96,7 +98,7 @@
                     </div>
                     <div class="product-card-details__description-container">
                         <div class="product-card-details__description-content">
-                            <div id="zoom-result__window" class="img-zoom-result"></div>
+                            <div class="img-zoom-result zoom-result__window"></div>
                             <h4 class="product-card-detail__title">Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
                                 Adipisicing Elit.4</h4>
                             <hr class="product-card__hr">

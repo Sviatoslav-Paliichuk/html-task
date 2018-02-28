@@ -178,5 +178,3 @@ class ReviewForm {
         }.bind(this));
     }
 }
-
-let customReviewForm = new ReviewForm('review-form__template-container');
