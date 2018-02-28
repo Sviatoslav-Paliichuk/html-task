@@ -20,8 +20,8 @@ class CustomSlider {
         }.bind(this));
     }
 
-    renderMarkup(containerId, response) {
-        const sliderContainer = document.getElementById(containerId);
+    renderMarkup(containerSelector, response) {
+        const sliderContainer = document.querySelector(`.${containerSelector}`);
         sliderContainer.innerHTML = response;
     }
 
